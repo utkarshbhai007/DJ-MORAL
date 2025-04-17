@@ -1,6 +1,6 @@
 
 import React, { useEffect, useRef, useState } from 'react';
-import { ChevronDown, Music, Play, Instagram } from 'lucide-react';
+import { ChevronDown, Music, Instagram } from 'lucide-react';
 import AudioVisualizer from './AudioVisualizer';
 
 const Hero = () => {
@@ -36,7 +36,7 @@ const Hero = () => {
           <h2 className="text-xl md:text-2xl font-light text-white/90 mb-2">Experience The Beat With</h2>
           <h1 className="text-4xl md:text-7xl font-bold mb-6 shimmer-text">DJ MORAL</h1>
           <p className="text-lg md:text-xl text-white/80 mb-8 max-w-lg mx-auto lg:mx-0">
-            Elevate your event with India's top DJ who has performed at over 1000 shows across the globe.
+            India's Top DJ: Elevating Events with Over 1000 Shows Across Global Stages
           </p>
           
           {/* Animated audio visualizer */}
@@ -85,7 +85,7 @@ const Hero = () => {
             <div className="w-64 h-64 md:w-96 md:h-96 mx-auto rounded-full bg-gradient-to-br from-dj-purple to-dj-electric p-1 animate-pulse-glow">
               <div className="w-full h-full rounded-full overflow-hidden relative">
                 <img 
-                  src="/lovable-uploads/6d363468-141d-4d07-8f1d-7e8595cd7bb1.png" 
+                  src="/lovable-uploads/7adb2c5d-9afd-4c68-a816-4fe1c27ab289.png" 
                   alt="DJ Moral" 
                   className="w-full h-full object-cover object-center scale-[1.15] translate-y-5"
                 />
@@ -110,3 +110,4 @@ const Hero = () => {
 };
 
 export default Hero;
+

@@ -1,10 +1,8 @@
 
-import React, { useState } from 'react';
+import React from 'react';
 import { useInView } from 'react-intersection-observer';
-import { Phone, Mail, Instagram, Music, Send, Calendar, MapPin } from 'lucide-react';
+import { Phone, Mail, Instagram, Music, MapPin } from 'lucide-react';
 import { Button } from './ui/button';
-import { Input } from './ui/input';
-import { Textarea } from './ui/textarea';
 import { Card, CardContent } from './ui/card';
 
 const Contact = () => {
@@ -13,11 +11,9 @@ const Contact = () => {
     triggerOnce: true,
   });
 
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: '',
-  });
+  const handleCallClick = () => {
+    window.location.href = 'tel:+918401430191';
+  };
 
   return (
     <section id="contact" className="py-20 relative overflow-hidden bg-gradient-to-b from-black to-dj-dark">
@@ -100,8 +96,8 @@ const Contact = () => {
                   </div>
                 </div>
                 
-                {/* Right side - Contact info + form */}
-                <div className="p-8 md:p-12 backdrop-blur-md bg-black/50">
+                {/* Right side - Contact info + CTA button */}
+                <div className="p-8 md:p-12 backdrop-blur-md bg-black/50 flex flex-col">
                   <h3 className="text-2xl font-bold text-gradient mb-8">Get In Touch</h3>
                   
                   <div className="space-y-6 mb-8">
@@ -142,35 +138,18 @@ const Contact = () => {
                     </div>
                   </div>
                   
-                  {/* Quick contact form */}
-                  <div className="mt-8 p-6 rounded-lg bg-black/30 border border-white/5">
-                    <h4 className="text-lg font-medium text-white mb-4">Quick Booking Inquiry</h4>
-                    
-                    <div className="space-y-4">
-                      <div>
-                        <Input 
-                          type="text" 
-                          placeholder="Your Name" 
-                          className="bg-white/5 border-white/10 focus:border-dj-electric text-white" 
-                        />
-                      </div>
-                      <div>
-                        <Input 
-                          type="text" 
-                          placeholder="Event Date" 
-                          className="bg-white/5 border-white/10 focus:border-dj-electric text-white" 
-                        />
-                      </div>
-                      <div>
-                        <Textarea 
-                          placeholder="Tell us about your event..." 
-                          className="bg-white/5 border-white/10 focus:border-dj-electric text-white resize-none" 
-                        />
-                      </div>
-                      <Button className="w-full bg-gradient-to-r from-dj-electric to-dj-pink hover:shadow-lg hover:shadow-dj-pink/20 transition-all">
-                        <Send className="w-4 h-4 mr-2" /> Send Inquiry
-                      </Button>
-                    </div>
+                  {/* Contact Us Button - Prominent CTA */}
+                  <div className="mt-auto">
+                    <Button 
+                      onClick={handleCallClick}
+                      className="w-full h-16 text-lg font-bold bg-gradient-to-r from-dj-electric to-dj-pink hover:shadow-lg hover:shadow-dj-pink/20 transition-all group"
+                    >
+                      <Phone className="w-6 h-6 mr-3 group-hover:animate-pulse" /> 
+                      Contact DJ Moral Now
+                    </Button>
+                    <p className="text-white/50 text-center mt-3 text-sm">
+                      Click to call directly
+                    </p>
                   </div>
                 </div>
               </div>

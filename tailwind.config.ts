@@ -119,6 +119,14 @@ export default {
 				'rotate': {
 					'0%': { transform: 'rotate(0deg)' },
 					'100%': { transform: 'rotate(360deg)' }
+				},
+				'neon-flash': {
+					'0%, 18%, 22%, 25%, 53%, 57%, 100%': {
+						textShadow: '0 0 4px #fff, 0 0 11px #fff, 0 0 19px #fff, 0 0 40px #8B5CF6, 0 0 80px #8B5CF6, 0 0 90px #8B5CF6, 0 0 100px #8B5CF6, 0 0 150px #8B5CF6'
+					},
+					'20%, 24%, 55%': {
+						textShadow: 'none'
+					}
 				}
 			},
 			animation: {
@@ -132,6 +140,8 @@ export default {
 				'wave': 'wave 1.2s ease-in-out infinite',
 				'text-shimmer': 'text-shimmer 4s ease-in-out infinite',
 				'spin-slow': 'rotate 12s linear infinite',
+				'neon-flash': 'neon-flash 2.5s infinite alternate',
+				'orbit': 'orbit 20s linear infinite'
 			}
 		}
 	},

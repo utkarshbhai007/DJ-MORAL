@@ -13,7 +13,7 @@ const Contact = () => {
     triggerOnce: true,
   });
 
-  const [formData, useState] = useState({
+  const [formData, setFormData] = useState({
     name: '',
     email: '',
     message: '',

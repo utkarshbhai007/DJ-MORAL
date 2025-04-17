@@ -82,6 +82,8 @@
 
   .visualizer-bar {
     @apply w-1 rounded-full bg-gradient-to-t from-dj-electric to-dj-pink mx-[2px];
+    animation: audio-wave calc(1s + (random() * 0.5s)) ease-in-out infinite;
+    animation-delay: calc(random() * 0.5s);
   }
 
   .text-glow {
@@ -126,4 +128,20 @@
 .audio-visualizer .bar {
   animation: audio-wave var(--speed) ease infinite;
   animation-delay: var(--delay);
+}
+
+/* New effect for the contact form */
+@keyframes neon-pulse {
+  0%, 100% {
+    box-shadow: 0 0 5px rgba(139, 92, 246, 0.5), 0 0 10px rgba(217, 70, 239, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 10px rgba(139, 92, 246, 0.7), 0 0 20px rgba(217, 70, 239, 0.5);
+  }
+}
+
+.input-glow:focus {
+  animation: neon-pulse 2s infinite;
+  outline: none;
+  border-color: theme('colors.dj.electric');
 }

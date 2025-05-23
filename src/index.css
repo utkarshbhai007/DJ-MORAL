@@ -1,26 +1,25 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   :root {
-    --background: 260 80% 5%;
+    --background: 260 80% 2%;
     --foreground: 0 0% 98%;
 
-    --card: 260 80% 5%;
+    --card: 260 80% 2%;
     --card-foreground: 0 0% 98%;
 
-    --popover: 260 80% 5%;
+    --popover: 260 80% 2%;
     --popover-foreground: 0 0% 98%;
 
     --primary: 270 75% 60%;
     --primary-foreground: 0 0% 98%;
 
-    --secondary: 240 40% 15%;
+    --secondary: 240 40% 12%;
     --secondary-foreground: 0 0% 98%;
 
-    --muted: 240 40% 15%;
+    --muted: 240 40% 12%;
     --muted-foreground: 240 5% 64.9%;
 
     --accent: 300 70% 50%;
@@ -29,8 +28,8 @@
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 240 40% 20%;
-    --input: 240 40% 20%;
+    --border: 240 40% 15%;
+    --input: 240 40% 15%;
     --ring: 270 75% 60%;
 
     --radius: 0.5rem;
@@ -39,11 +38,11 @@
 
 @layer base {
   * {
-    @apply border-border selection:bg-dj-electric/10 selection:text-white;
+    @apply border-border selection:bg-dj-electric/20 selection:text-white;
   }
   
   body {
-    @apply bg-dj-dark text-foreground antialiased overflow-x-hidden;
+    @apply bg-black text-foreground antialiased overflow-x-hidden;
     font-feature-settings: "ss01", "ss02", "cv01", "cv02", "cv03";
   }
 
@@ -75,9 +74,9 @@
   }
   
   .hero-gradient {
-    background: linear-gradient(to right, rgba(110, 89, 165, 0.8), rgba(217, 70, 239, 0.8)), 
-                radial-gradient(circle at top right, rgba(14, 165, 233, 0.6), transparent 80%),
-                radial-gradient(circle at bottom left, rgba(139, 92, 246, 0.6), transparent 80%);
+    background: radial-gradient(circle at center, rgba(14, 10, 42, 0.8) 0%, rgba(0, 0, 0, 1) 100%), 
+                radial-gradient(circle at top right, rgba(139, 92, 246, 0.2), transparent 70%),
+                radial-gradient(circle at bottom left, rgba(217, 70, 239, 0.2), transparent 70%);
   }
 
   .visualizer-bar {
@@ -117,6 +116,19 @@
       linear-gradient(to right, rgba(139, 92, 246, 0.05) 1px, transparent 1px),
       linear-gradient(to bottom, rgba(139, 92, 246, 0.05) 1px, transparent 1px);
     background-size: 30px 30px;
+  }
+
+  .moving-gradient {
+    background: linear-gradient(
+      45deg,
+      rgba(139, 92, 246, 0.3) 0%,
+      rgba(217, 70, 239, 0.3) 25%,
+      rgba(14, 165, 233, 0.3) 50%,
+      rgba(217, 70, 239, 0.3) 75%,
+      rgba(139, 92, 246, 0.3) 100%
+    );
+    background-size: 400% 400%;
+    animation: gradientAnimation 15s ease infinite;
   }
 }
 
@@ -220,4 +232,20 @@
 
 .animate-orbit {
   animation: orbit 20s linear infinite;
+}
+
+/* New animations for spotlight effect */
+@keyframes spotlight-slow {
+  0%, 100% {
+    opacity: 0.7;
+    transform: scale(1) translate(-50%, -50%);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(1.1) translate(-45%, -45%);
+  }
+}
+
+.animate-spotlight-slow {
+  animation: spotlight-slow 8s ease-in-out infinite;
 }

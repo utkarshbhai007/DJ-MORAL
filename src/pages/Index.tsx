@@ -14,16 +14,20 @@ const Index = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-dj-dark text-white overflow-hidden">
+    <div className="min-h-screen bg-black text-white overflow-hidden">
       <Navbar />
       <Hero />
-      <About />
-      <Services />
-      <Gallery />
-      <Contact />
+      
+      {/* Content sections with black background */}
+      <div className="bg-black">
+        <About />
+        <Services />
+        <Gallery />
+        <Contact />
+      </div>
       
       {/* Footer */}
-      <footer className="py-8 text-center text-white/50 text-sm">
+      <footer className="py-8 text-center text-white/50 text-sm bg-black border-t border-white/5">
         <div className="container mx-auto px-4">
           <p>&copy; {new Date().getFullYear()} DJ Moral. All rights reserved.</p>
         </div>

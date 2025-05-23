@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -127,6 +126,33 @@ export default {
 					'20%, 24%, 55%': {
 						textShadow: 'none'
 					}
+				},
+				'spotlight-move': {
+					'0%': { 
+						transform: 'translate(-50%, -50%) scale(1)',
+						opacity: '0.6'
+					},
+					'50%': { 
+						transform: 'translate(-45%, -45%) scale(1.1)',
+						opacity: '0.8'
+					},
+					'100%': { 
+						transform: 'translate(-50%, -50%) scale(1)',
+						opacity: '0.6'
+					}
+				},
+				'grain': {
+					'0%, 100%': { transform: 'translate(0, 0)' },
+					'10%': { transform: 'translate(-5%, -10%)' },
+					'30%': { transform: 'translate(3%, -15%)' },
+					'50%': { transform: 'translate(12%, 9%)' },
+					'70%': { transform: 'translate(9%, 4%)' },
+					'90%': { transform: 'translate(-1%, 7%)' }
+				},
+				'text-gradient-animation': {
+					'0%': { backgroundPosition: '0% 50%' },
+					'50%': { backgroundPosition: '100% 50%' },
+					'100%': { backgroundPosition: '0% 50%' }
 				}
 			},
 			animation: {
@@ -141,7 +167,10 @@ export default {
 				'text-shimmer': 'text-shimmer 4s ease-in-out infinite',
 				'spin-slow': 'rotate 12s linear infinite',
 				'neon-flash': 'neon-flash 2.5s infinite alternate',
-				'orbit': 'orbit 20s linear infinite'
+				'orbit': 'orbit 20s linear infinite',
+				'spotlight-move': 'spotlight-move 8s ease-in-out infinite',
+				'grain': 'grain 1.5s steps(6) infinite',
+				'text-gradient': 'text-gradient-animation 5s ease infinite'
 			}
 		}
 	},

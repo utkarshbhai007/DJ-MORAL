@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState, useRef } from 'react';
 import { ArrowDown, Music, Instagram, Play, ExternalLink } from 'lucide-react';
 import AudioVisualizer from './AudioVisualizer';
@@ -104,14 +103,6 @@ const Hero = () => {
             
             {/* CTA buttons */}
             <div className="mt-12 flex flex-wrap gap-6 justify-center">
-              <a 
-                href="#about" 
-                className="group relative px-10 py-5 bg-transparent overflow-hidden border border-white/30 backdrop-blur-md transition-all"
-              >
-                <div className="absolute inset-0 w-0 bg-gradient-to-r from-dj-electric to-dj-pink group-hover:w-full transition-all duration-500 ease-out opacity-80"></div>
-                <span className="relative text-white font-medium text-lg group-hover:text-white transition-colors duration-300 ease-out z-10">DISCOVER MY SOUND</span>
-              </a>
-              
               <a 
                 href="#contact" 
                 className="group relative px-10 py-5 bg-gradient-to-r from-dj-electric to-dj-pink text-white font-medium text-lg hover:shadow-lg hover:shadow-dj-pink/30 transition-all overflow-hidden animate-pulse-glow"

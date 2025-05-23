@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { useInView } from 'react-intersection-observer';
 import { ChevronLeft, ChevronRight, X, Music, Play, Pause } from 'lucide-react';
@@ -21,7 +20,7 @@ const Gallery = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [autoPlay, setAutoPlay] = useState(true);
 
-  // Updated gallery with new performance images
+  // Updated gallery with all performance images including the new ones
   const galleryImages = [
     {
       src: "/lovable-uploads/76af0415-8d26-4a3c-b1c7-073b0789b69e.png",
@@ -87,6 +86,51 @@ const Gallery = () => {
       src: "/lovable-uploads/7acc4be9-43b1-47e2-bedc-4239604eafb5.png",
       alt: "DJ Moral in the zone with blue stage lighting",
       category: "Live Performance"
+    },
+    {
+      src: "/lovable-uploads/507df730-5cc3-4735-9b2a-b58c5d2b885b.png",
+      alt: "DJ Moral performing with hands up and vibrant pink lighting",
+      category: "Live Performance"
+    },
+    {
+      src: "/lovable-uploads/45e127e4-48bc-418f-ac6a-8eed3946cff4.png",
+      alt: "DJ Moral energizing the crowd with blue and pink stage lighting",
+      category: "Festival"
+    },
+    {
+      src: "/lovable-uploads/1afc50c1-c65b-419b-924e-96a79595b387.png",
+      alt: "DJ Moral performing with green lighting and atmospheric effects",
+      category: "Club Event"
+    },
+    {
+      src: "/lovable-uploads/58fea17e-97c1-4186-be10-97ac632d8a02.png",
+      alt: "DJ Moral performing with arms raised in pink stage lighting",
+      category: "Live Performance"
+    },
+    {
+      src: "/lovable-uploads/d9427ed8-f358-497d-9aef-7811958d6871.png",
+      alt: "DJ Moral performing with microphone under starry blue lights",
+      category: "Concert"
+    },
+    {
+      src: "/lovable-uploads/f532b663-19dc-4634-b3a4-7edb7d620f64.png",
+      alt: "DJ Moral performing with microphone in red hoodie under blue lights",
+      category: "Live Performance"
+    },
+    {
+      src: "/lovable-uploads/28a6f700-4344-4d3f-aac9-7dbf0e282195.png",
+      alt: "DJ Moral performing intensely under dramatic teal spotlight",
+      category: "Club Event"
+    },
+    {
+      src: "/lovable-uploads/67d23abf-baec-40ea-a7fb-8ca68e165939.png",
+      alt: "DJ Moral performing with microphone in dramatic red smoke effects",
+      category: "Festival"
+    },
+    {
+      src: "/lovable-uploads/538ecef5-4f0c-47f3-9c21-491e6d34b9c5.png",
+      alt: "DJ Moral performing with arms raised in orange lighting",
+      category: "Live Performance"
     }
   ];
 
@@ -115,16 +159,26 @@ const Gallery = () => {
     setSelectedImage((prev) => (prev === 0 ? galleryImages.length - 1 : prev! - 1));
   };
 
+  // Handle clicking on the lightbox overlay to close it
+  const handleOverlayClick = (e: React.MouseEvent) => {
+    if (e.target === e.currentTarget) {
+      setSelectedImage(null);
+    }
+  };
+
   // Enhanced colors for gallery items
   const colors = [
     'from-purple-600 to-blue-600', 'from-pink-600 to-red-600', 'from-blue-600 to-cyan-600', 
     'from-red-600 to-yellow-600', 'from-emerald-600 to-cyan-600', 'from-pink-600 to-purple-600',
     'from-orange-600 to-red-600', 'from-indigo-600 to-purple-600', 'from-green-600 to-blue-600',
     'from-yellow-600 to-orange-600', 'from-cyan-600 to-blue-600', 'from-violet-600 to-pink-600',
-    'from-teal-600 to-green-600'
+    'from-teal-600 to-green-600', 'from-rose-600 to-pink-600', 'from-blue-600 to-indigo-600',
+    'from-green-600 to-emerald-600', 'from-purple-600 to-violet-600', 'from-red-600 to-rose-600',
+    'from-cyan-600 to-teal-600', 'from-orange-600 to-yellow-600', 'from-indigo-600 to-blue-600',
+    'from-pink-600 to-rose-600'
   ];
 
-  const categories = ['All', 'Live Performance', 'Club Event', 'Festival', 'Private Event', 'Outdoor Event'];
+  const categories = ['All', 'Live Performance', 'Club Event', 'Festival', 'Private Event', 'Outdoor Event', 'Concert'];
   const [selectedCategory, setSelectedCategory] = useState('All');
 
   const filteredImages = selectedCategory === 'All' 
@@ -292,9 +346,12 @@ const Gallery = () => {
         </div>
       </div>
 
-      {/* Enhanced Lightbox */}
+      {/* Enhanced Lightbox with overlay click to close */}
       {selectedImage !== null && (
-        <div className="fixed inset-0 bg-black/95 z-50 flex items-center justify-center p-4 animate-fade-in backdrop-blur-sm">
+        <div 
+          className="fixed inset-0 bg-black/95 z-50 flex items-center justify-center p-4 animate-fade-in backdrop-blur-sm"
+          onClick={handleOverlayClick}
+        >
           <button 
             onClick={() => setSelectedImage(null)}
             className="absolute top-6 right-6 text-white/70 hover:text-white bg-black/50 p-3 rounded-full transition-all duration-300 hover:bg-black/80 hover:scale-110 z-10"
@@ -309,7 +366,7 @@ const Gallery = () => {
             <ChevronLeft className="w-8 h-8" />
           </button>
           
-          <div className="max-w-5xl max-h-[85vh] relative">
+          <div className="max-w-5xl max-h-[85vh] relative" onClick={(e) => e.stopPropagation()}>
             <img 
               src={filteredImages[selectedImage]?.src} 
               alt={filteredImages[selectedImage]?.alt} 

@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -261,6 +262,15 @@
   animation: spotlight-slow 8s ease-in-out infinite;
 }
 
+/* Force black backgrounds */
+* {
+  background-color: #000000;
+}
+
+html, body, #root {
+  background-color: #000000 !important;
+}
+
 /* Black theme overrides */
 .bg-white {
   @apply bg-black !important;
@@ -268,7 +278,10 @@
 
 .bg-gray-50,
 .bg-gray-100,
-.bg-gray-200 {
+.bg-gray-200,
+.bg-gray-300,
+.bg-gray-400,
+.bg-gray-500 {
   @apply bg-black !important;
 }
 
@@ -281,4 +294,9 @@
 .border-gray-200,
 .border-gray-300 {
   @apply border-white/20 !important;
+}
+
+/* Override any background gradients that aren't black */
+section:not([class*="bg-gradient"]):not([class*="bg-black"]) {
+  background-color: #000000 !important;
 }

@@ -1,24 +1,18 @@
 
 import React, { useEffect } from 'react';
 import Navbar from '@/components/Navbar';
-import Hero from '@/components/Hero';
-import About from '@/components/About';
+import Gallery from '@/components/Gallery';
 
-const Index = () => {
+const GalleryPage = () => {
   useEffect(() => {
-    // Update page title
-    document.title = "DJ MORAL - Music Producer & DJ";
+    document.title = "DJ MORAL - Gallery";
   }, []);
 
   return (
     <div className="min-h-screen bg-black text-white">
       <Navbar />
-      <Hero />
-      
-      {/* Content sections with black background */}
-      <div className="bg-black relative z-10">
-        <div className="absolute top-0 inset-x-0 h-24 bg-gradient-to-b from-black to-transparent z-10"></div>
-        <About />
+      <div className="pt-20 bg-black">
+        <Gallery />
       </div>
       
       {/* Footer */}
@@ -32,4 +26,4 @@ const Index = () => {
   );
 };
 
-export default Index;
+export default GalleryPage;

@@ -71,6 +71,19 @@ const Navbar = () => {
             )}></span>
           </Link>
           <Link 
+            to="/gallery" 
+            className={cn(
+              "text-white/80 hover:text-gradient transition-all relative group",
+              isActive('/gallery') && "text-gradient"
+            )}
+          >
+            GALLERY
+            <span className={cn(
+              "absolute -bottom-1 left-0 h-0.5 bg-gradient-to-r from-dj-electric to-dj-pink transition-all duration-300",
+              isActive('/gallery') ? "w-full" : "w-0 group-hover:w-full"
+            )}></span>
+          </Link>
+          <Link 
             to="/contact" 
             className={cn(
               "text-white/80 hover:text-gradient transition-all relative group",
@@ -119,6 +132,13 @@ const Navbar = () => {
               onClick={() => setIsMobileMenuOpen(false)}
             >
               SERVICES
+            </Link>
+            <Link 
+              to="/gallery" 
+              className="text-white text-2xl font-medium hover:text-gradient" 
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              GALLERY
             </Link>
             <Link 
               to="/contact" 

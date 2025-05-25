@@ -2,10 +2,12 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, Music, Instagram, Play } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { Link, useLocation } from 'react-router-dom';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -15,6 +17,13 @@ const Navbar = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  const isActive = (path: string) => {
+    if (path === '/') {
+      return location.pathname === '/';
+    }
+    return location.pathname === path;
+  };
 
   return (
     <header
@@ -26,31 +35,54 @@ const Navbar = () => {
       )}
     >
       <div className="container flex justify-between items-center">
-        <a href="#" className="flex items-center gap-3 group">
+        <Link to="/" className="flex items-center gap-3 group">
           <div className="w-10 h-10 rounded-full bg-gradient-to-r from-dj-electric to-dj-pink flex items-center justify-center group-hover:animate-pulse-glow transition-all">
             <Music className="text-white w-5 h-5" />
           </div>
           <span className="text-xl font-bold text-glow group-hover:text-gradient transition-all">DJ MORAL</span>
-        </a>
+        </Link>
 
         {/* Desktop Nav */}
         <nav className="hidden md:flex items-center gap-8">
-          <a href="#about" className="text-white/80 hover:text-gradient transition-all relative group">
-            ABOUT
-            <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-dj-electric to-dj-pink group-hover:w-full transition-all duration-300"></span>
-          </a>
-          <a href="#services" className="text-white/80 hover:text-gradient transition-all relative group">
+          <Link 
+            to="/" 
+            className={cn(
+              "text-white/80 hover:text-gradient transition-all relative group",
+              isActive('/') && "text-gradient"
+            )}
+          >
+            HOME
+            <span className={cn(
+              "absolute -bottom-1 left-0 h-0.5 bg-gradient-to-r from-dj-electric to-dj-pink transition-all duration-300",
+              isActive('/') ? "w-full" : "w-0 group-hover:w-full"
+            )}></span>
+          </Link>
+          <Link 
+            to="/services" 
+            className={cn(
+              "text-white/80 hover:text-gradient transition-all relative group",
+              isActive('/services') && "text-gradient"
+            )}
+          >
             SERVICES
-            <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-dj-electric to-dj-pink group-hover:w-full transition-all duration-300"></span>
-          </a>
-          <a href="#gallery" className="text-white/80 hover:text-gradient transition-all relative group">
-            GALLERY
-            <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-dj-electric to-dj-pink group-hover:w-full transition-all duration-300"></span>
-          </a>
-          <a href="#contact" className="text-white/80 hover:text-gradient transition-all relative group">
+            <span className={cn(
+              "absolute -bottom-1 left-0 h-0.5 bg-gradient-to-r from-dj-electric to-dj-pink transition-all duration-300",
+              isActive('/services') ? "w-full" : "w-0 group-hover:w-full"
+            )}></span>
+          </Link>
+          <Link 
+            to="/contact" 
+            className={cn(
+              "text-white/80 hover:text-gradient transition-all relative group",
+              isActive('/contact') && "text-gradient"
+            )}
+          >
             CONTACT
-            <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-dj-electric to-dj-pink group-hover:w-full transition-all duration-300"></span>
-          </a>
+            <span className={cn(
+              "absolute -bottom-1 left-0 h-0.5 bg-gradient-to-r from-dj-electric to-dj-pink transition-all duration-300",
+              isActive('/contact') ? "w-full" : "w-0 group-hover:w-full"
+            )}></span>
+          </Link>
           <a 
             href="https://soundcloud.com/dj_moral" 
             target="_blank" 
@@ -74,34 +106,27 @@ const Navbar = () => {
       {isMobileMenuOpen && (
         <div className="fixed inset-0 bg-black/95 z-40 pt-20 backdrop-blur-xl animate-fade-in">
           <nav className="flex flex-col items-center gap-8 p-8">
-            <a 
-              href="#about" 
+            <Link 
+              to="/" 
               className="text-white text-2xl font-medium hover:text-gradient" 
               onClick={() => setIsMobileMenuOpen(false)}
             >
-              ABOUT
-            </a>
-            <a 
-              href="#services" 
+              HOME
+            </Link>
+            <Link 
+              to="/services" 
               className="text-white text-2xl font-medium hover:text-gradient" 
               onClick={() => setIsMobileMenuOpen(false)}
             >
               SERVICES
-            </a>
-            <a 
-              href="#gallery" 
-              className="text-white text-2xl font-medium hover:text-gradient" 
-              onClick={() => setIsMobileMenuOpen(false)}
-            >
-              GALLERY
-            </a>
-            <a 
-              href="#contact" 
+            </Link>
+            <Link 
+              to="/contact" 
               className="text-white text-2xl font-medium hover:text-gradient" 
               onClick={() => setIsMobileMenuOpen(false)}
             >
               CONTACT
-            </a>
+            </Link>
             <div className="flex gap-6 mt-8">
               <a 
                 href="https://soundcloud.com/dj_moral" 

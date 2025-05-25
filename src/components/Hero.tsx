@@ -1,12 +1,12 @@
+
 import React, { useEffect, useState, useRef } from 'react';
-import { ArrowDown, Music, Instagram, Play, ExternalLink } from 'lucide-react';
+import { ArrowDown, Music, Instagram, ExternalLink } from 'lucide-react';
 import AudioVisualizer from './AudioVisualizer';
 
 const Hero = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const heroRef = useRef<HTMLDivElement>(null);
-  const [isPlaying, setIsPlaying] = useState(false);
 
   useEffect(() => {
     setIsVisible(true);
@@ -23,10 +23,6 @@ const Hero = () => {
     window.addEventListener('mousemove', handleMouseMove);
     return () => window.removeEventListener('mousemove', handleMouseMove);
   }, []);
-
-  const handlePlayClick = () => {
-    setIsPlaying(!isPlaying);
-  };
 
   return (
     <section 
@@ -86,19 +82,9 @@ const Hero = () => {
               INDIA'S PREMIER DJ & MUSIC PRODUCER
             </h2>
             
-            {/* Audio visualizer effect */}
+            {/* Audio visualizer effect without play/pause */}
             <div className="mt-8 relative">
-              <AudioVisualizer barCount={32} className="mb-8" active={isPlaying} />
-              <button 
-                onClick={handlePlayClick}
-                className="absolute bottom-16 left-1/2 transform -translate-x-1/2 bg-dj-electric/20 hover:bg-dj-electric/30 backdrop-blur-md w-12 h-12 rounded-full flex items-center justify-center transition-all group"
-              >
-                {isPlaying ? (
-                  <span className="w-4 h-4 bg-white rounded-sm"></span>
-                ) : (
-                  <Play size={20} className="text-white ml-1" />
-                )}
-              </button>
+              <AudioVisualizer barCount={32} className="mb-8" active={true} />
             </div>
             
             {/* CTA buttons */}
@@ -110,45 +96,45 @@ const Hero = () => {
                 <span className="relative z-10 group-hover:animate-pulse transition-all">BOOK NOW</span>
                 <div className="absolute inset-0 w-full bg-white opacity-0 group-hover:opacity-20 transition-opacity"></div>
               </a>
-              
-              <a 
-                href="https://soundcloud.com/dj_moral" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="group relative px-10 py-5 bg-black/50 backdrop-blur-xl border border-white/20 overflow-hidden"
-              >
-                <div className="absolute inset-0 w-0 bg-white/10 group-hover:w-full transition-all duration-300 ease-out"></div>
-                <span className="relative z-10 text-white font-medium text-lg flex items-center gap-3">
-                  <Play className="w-5 h-5" /> LISTEN TO MY MIXES
-                </span>
-              </a>
             </div>
             
-            {/* Social links */}
+            {/* Social links with enhanced styling */}
             <div className="mt-16 flex gap-8 justify-center">
               <a 
                 href="https://soundcloud.com/dj_moral" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="text-white/70 hover:text-white transition-all hover:scale-125 group"
+                className="group relative px-6 py-3 bg-gradient-to-r from-orange-500 to-orange-600 rounded-full hover:shadow-lg hover:shadow-orange-500/30 transition-all overflow-hidden"
               >
-                <Music className="w-8 h-8 group-hover:animate-pulse" />
+                <div className="absolute inset-0 w-0 bg-white/10 group-hover:w-full transition-all duration-300 ease-out"></div>
+                <span className="relative z-10 text-white font-medium flex items-center gap-3">
+                  <Music className="w-6 h-6 group-hover:animate-pulse" />
+                  SOUNDCLOUD
+                </span>
               </a>
               <a 
                 href="https://www.instagram.com/dj_moral/" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="text-white/70 hover:text-white transition-all hover:scale-125 group"
+                className="group relative px-6 py-3 bg-gradient-to-r from-pink-500 to-purple-600 rounded-full hover:shadow-lg hover:shadow-pink-500/30 transition-all overflow-hidden"
               >
-                <Instagram className="w-8 h-8 group-hover:animate-pulse" />
+                <div className="absolute inset-0 w-0 bg-white/10 group-hover:w-full transition-all duration-300 ease-out"></div>
+                <span className="relative z-10 text-white font-medium flex items-center gap-3">
+                  <Instagram className="w-6 h-6 group-hover:animate-pulse" />
+                  INSTAGRAM
+                </span>
               </a>
               <a 
                 href="https://djmoral.com" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="text-white/70 hover:text-white transition-all hover:scale-125 group"
+                className="group relative px-6 py-3 bg-gradient-to-r from-dj-electric to-dj-blue rounded-full hover:shadow-lg hover:shadow-dj-electric/30 transition-all overflow-hidden"
               >
-                <ExternalLink className="w-8 h-8 group-hover:animate-pulse" />
+                <div className="absolute inset-0 w-0 bg-white/10 group-hover:w-full transition-all duration-300 ease-out"></div>
+                <span className="relative z-10 text-white font-medium flex items-center gap-3">
+                  <ExternalLink className="w-6 h-6 group-hover:animate-pulse" />
+                  WEBSITE
+                </span>
               </a>
             </div>
 

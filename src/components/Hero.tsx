@@ -1,6 +1,6 @@
 
 import React, { useEffect, useState, useRef } from 'react';
-import { ArrowDown, Music, Instagram, ExternalLink } from 'lucide-react';
+import { ArrowDown, Music, Instagram } from 'lucide-react';
 import AudioVisualizer from './AudioVisualizer';
 
 const Hero = () => {
@@ -122,18 +122,6 @@ const Hero = () => {
                 <span className="relative z-10 text-white font-medium flex items-center gap-3">
                   <Instagram className="w-6 h-6 group-hover:animate-pulse" />
                   INSTAGRAM
-                </span>
-              </a>
-              <a 
-                href="https://djmoral.com" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="group relative px-6 py-3 bg-gradient-to-r from-dj-electric to-dj-blue rounded-full hover:shadow-lg hover:shadow-dj-electric/30 transition-all overflow-hidden"
-              >
-                <div className="absolute inset-0 w-0 bg-white/10 group-hover:w-full transition-all duration-300 ease-out"></div>
-                <span className="relative z-10 text-white font-medium flex items-center gap-3">
-                  <ExternalLink className="w-6 h-6 group-hover:animate-pulse" />
-                  WEBSITE
                 </span>
               </a>
             </div>

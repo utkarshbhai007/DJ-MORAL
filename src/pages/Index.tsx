@@ -2,6 +2,7 @@
 import React, { useEffect } from 'react';
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
+import ImageSlideshow from '@/components/ImageSlideshow';
 import About from '@/components/About';
 
 const Index = () => {
@@ -14,6 +15,9 @@ const Index = () => {
     <div className="min-h-screen bg-black text-white">
       <Navbar />
       <Hero />
+      
+      {/* Image slideshow section */}
+      <ImageSlideshow />
       
       {/* Content sections with black background */}
       <div className="bg-black relative z-10">

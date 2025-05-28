@@ -37,7 +37,7 @@ const Navbar = () => {
       <div className="container flex justify-between items-center">
         <Link to="/" className="flex items-center gap-3 group">
           <img 
-            src="/lovable-uploads/992718ef-f41d-4440-8401-9113fc6f0aaf.png"
+            src="/lovable-uploads/d79a8e6f-167c-43c5-a5c6-81983abe8000.png"
             alt="DJ Moral Logo"
             className="w-12 h-12 object-contain group-hover:animate-pulse-glow transition-all"
           />

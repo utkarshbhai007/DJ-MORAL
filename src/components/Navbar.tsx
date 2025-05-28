@@ -36,10 +36,11 @@ const Navbar = () => {
     >
       <div className="container flex justify-between items-center">
         <Link to="/" className="flex items-center gap-3 group">
-          <div className="w-10 h-10 rounded-full bg-gradient-to-r from-dj-electric to-dj-pink flex items-center justify-center group-hover:animate-pulse-glow transition-all">
-            <Music className="text-white w-5 h-5" />
-          </div>
-          <span className="text-xl font-bold text-glow group-hover:text-gradient transition-all">DJ MORAL</span>
+          <img 
+            src="/lovable-uploads/992718ef-f41d-4440-8401-9113fc6f0aaf.png"
+            alt="DJ Moral Logo"
+            className="w-12 h-12 object-contain group-hover:animate-pulse-glow transition-all"
+          />
         </Link>
 
         {/* Desktop Nav */}

@@ -58,11 +58,6 @@ const Hero = () => {
         {/* Light beams */}
         <div className="absolute top-0 left-1/4 w-1 h-screen bg-gradient-to-b from-dj-electric/70 via-transparent to-transparent opacity-70 animate-pulse-slow"></div>
         <div className="absolute top-0 right-1/4 w-1 h-screen bg-gradient-to-b from-dj-pink/70 via-transparent to-transparent opacity-70 animate-pulse-slow" style={{animationDelay: '1.5s'}}></div>
-        
-        {/* Moving particles */}
-        <div className="absolute top-20 right-20 w-8 h-8 rounded-full bg-dj-electric/50 animate-float" style={{ animationDelay: '0.5s' }} />
-        <div className="absolute bottom-40 left-32 w-12 h-12 rounded-full bg-dj-pink/30 animate-float" style={{ animationDelay: '1.2s' }} />
-        <div className="absolute top-40 left-40 w-6 h-6 rounded-full bg-dj-blue/30 animate-float" style={{ animationDelay: '0.8s' }} />
       </div>
 
       {/* Grid overlay */}
@@ -85,11 +80,6 @@ const Hero = () => {
             {/* Audio visualizer effect without play/pause */}
             <div className="mt-8 relative">
               <AudioVisualizer barCount={32} className="mb-8" active={true} />
-            </div>
-
-            {/* Experience tag */}
-            <div className="mt-16 py-2 px-6 bg-black/70 backdrop-blur-xl border border-dj-electric/30 inline-block">
-              <p className="text-sm text-white/80 uppercase tracking-wider">Experience the ultimate mix</p>
             </div>
           </div>
         </div>

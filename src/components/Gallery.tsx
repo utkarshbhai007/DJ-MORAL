@@ -1,6 +1,7 @@
+
 import React, { useState, useEffect } from 'react';
 import { useInView } from 'react-intersection-observer';
-import { ChevronLeft, ChevronRight, X, Music, Play, Pause } from 'lucide-react';
+import { ChevronLeft, ChevronRight, X, Play, Pause } from 'lucide-react';
 import {
   Carousel,
   CarouselContent,
@@ -20,117 +21,95 @@ const Gallery = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [autoPlay, setAutoPlay] = useState(true);
 
-  // Updated gallery with all performance images including the new ones
+  // Updated gallery with all performance images
   const galleryImages = [
     {
       src: "/lovable-uploads/76af0415-8d26-4a3c-b1c7-073b0789b69e.png",
-      alt: "DJ Moral performing with vibrant green and red lighting effects",
-      category: "Live Performance"
+      alt: "DJ Moral performing with vibrant green and red lighting effects"
     },
     {
       src: "/lovable-uploads/0c497e6b-1154-4caa-b3da-172097c9398b.png",
-      alt: "DJ Moral energizing the crowd with blue stage lighting",
-      category: "Club Event"
+      alt: "DJ Moral energizing the crowd with blue stage lighting"
     },
     {
       src: "/lovable-uploads/3b285992-85aa-48a0-acb8-b8d189a80b04.png",
-      alt: "DJ Moral performing with stunning green lighting and crowd",
-      category: "Live Performance"
+      alt: "DJ Moral performing with stunning green lighting and crowd"
     },
     {
       src: "/lovable-uploads/a33d2a3b-3406-422a-a5dc-0643d1f09318.png",
-      alt: "DJ Moral in an electrifying blue-lit performance",
-      category: "Festival"
+      alt: "DJ Moral in an electrifying blue-lit performance"
     },
     {
       src: "/lovable-uploads/936e9a57-3dcf-480e-98ec-c17e75197021.png",
-      alt: "DJ Moral performing in an intimate venue with crowd",
-      category: "Private Event"
+      alt: "DJ Moral performing in an intimate venue with crowd"
     },
     {
       src: "/lovable-uploads/be65cc36-3c52-47ae-ac8d-0f9a0cfe9903.png",
-      alt: "DJ Moral at the decks with dramatic stage lighting",
-      category: "Club Event"
+      alt: "DJ Moral at the decks with dramatic stage lighting"
     },
     {
       src: "/lovable-uploads/d47c4fa3-9f22-4b4e-a7eb-a926b2582c43.png",
-      alt: "DJ Moral performing with red LED panels and bokeh effects",
-      category: "Festival"
+      alt: "DJ Moral performing with red LED panels and bokeh effects"
     },
     {
       src: "/lovable-uploads/b58078d5-cef3-498f-9a4f-02ccc5507ea2.png",
-      alt: "DJ Moral performing outdoor with blue lighting and trees",
-      category: "Outdoor Event"
+      alt: "DJ Moral performing outdoor with blue lighting and trees"
     },
     {
       src: "/lovable-uploads/5752b1a1-fb0d-4d84-9a5a-986bfb48ca7a.png",
-      alt: "DJ Moral performing with crowd and orange LED backdrop",
-      category: "Club Event"
+      alt: "DJ Moral performing with crowd and orange LED backdrop"
     },
     {
       src: "/lovable-uploads/f19c8ec3-be92-4e64-8ff6-0758710164ed.png",
-      alt: "DJ Moral performing with stunning bokeh lighting effects",
-      category: "Live Performance"
+      alt: "DJ Moral performing with stunning bokeh lighting effects"
     },
     {
       src: "/lovable-uploads/8c1a15ed-1a11-4fc6-a005-f73a769f60c2.png",
-      alt: "DJ Moral energizing the crowd with red geometric lighting",
-      category: "Festival"
+      alt: "DJ Moral energizing the crowd with red geometric lighting"
     },
     {
       src: "/lovable-uploads/3cd1f07c-4122-4b24-aa0c-372b5d626ac9.png",
-      alt: "DJ Moral performing with intense red lighting and bokeh",
-      category: "Club Event"
+      alt: "DJ Moral performing with intense red lighting and bokeh"
     },
     {
       src: "/lovable-uploads/7acc4be9-43b1-47e2-bedc-4239604eafb5.png",
-      alt: "DJ Moral in the zone with blue stage lighting",
-      category: "Live Performance"
+      alt: "DJ Moral in the zone with blue stage lighting"
     },
     {
       src: "/lovable-uploads/507df730-5cc3-4735-9b2a-b58c5d2b885b.png",
-      alt: "DJ Moral performing with hands up and vibrant pink lighting",
-      category: "Live Performance"
+      alt: "DJ Moral performing with hands up and vibrant pink lighting"
     },
     {
       src: "/lovable-uploads/45e127e4-48bc-418f-ac6a-8eed3946cff4.png",
-      alt: "DJ Moral energizing the crowd with blue and pink stage lighting",
-      category: "Festival"
+      alt: "DJ Moral energizing the crowd with blue and pink stage lighting"
     },
     {
       src: "/lovable-uploads/1afc50c1-c65b-419b-924e-96a79595b387.png",
-      alt: "DJ Moral performing with green lighting and atmospheric effects",
-      category: "Club Event"
+      alt: "DJ Moral performing with green lighting and atmospheric effects"
     },
     {
       src: "/lovable-uploads/58fea17e-97c1-4186-be10-97ac632d8a02.png",
-      alt: "DJ Moral performing with arms raised in pink stage lighting",
-      category: "Live Performance"
+      alt: "DJ Moral performing with arms raised in pink stage lighting"
     },
     {
       src: "/lovable-uploads/d9427ed8-f358-497d-9aef-7811958d6871.png",
-      alt: "DJ Moral performing with microphone under starry blue lights",
-      category: "Concert"
+      alt: "DJ Moral performing with microphone under starry blue lights"
     },
     {
       src: "/lovable-uploads/f532b663-19dc-4634-b3a4-7edb7d620f64.png",
-      alt: "DJ Moral performing with microphone in red hoodie under blue lights",
-      category: "Live Performance"
+      alt: "DJ Moral performing with microphone in red hoodie under blue lights"
     },
     {
       src: "/lovable-uploads/28a6f700-4344-4d3f-aac9-7dbf0e282195.png",
-      alt: "DJ Moral performing intensely under dramatic teal spotlight",
-      category: "Club Event"
+      alt: "DJ Moral performing intensely under dramatic teal spotlight"
     },
     {
       src: "/lovable-uploads/67d23abf-baec-40ea-a7fb-8ca68e165939.png",
-      alt: "DJ Moral performing with microphone in dramatic red smoke effects",
-      category: "Festival"
+      alt: "DJ Moral performing with microphone in dramatic red smoke effects"
     },
     {
       src: "/lovable-uploads/538ecef5-4f0c-47f3-9c21-491e6d34b9c5.png",
-      alt: "DJ Moral performing with arms raised in orange lighting",
-      category: "Live Performance"
+      alt: "DJ Moral performing with arms raised in orange lighting"
     }
   ];
 
@@ -178,13 +157,6 @@ const Gallery = () => {
     'from-pink-600 to-rose-600'
   ];
 
-  const categories = ['All', 'Live Performance', 'Club Event', 'Festival', 'Private Event', 'Outdoor Event', 'Concert'];
-  const [selectedCategory, setSelectedCategory] = useState('All');
-
-  const filteredImages = selectedCategory === 'All' 
-    ? galleryImages 
-    : galleryImages.filter(img => img.category === selectedCategory);
-
   return (
     <section id="gallery" className="py-24 relative overflow-hidden">
       {/* Background elements */}
@@ -203,30 +175,6 @@ const Gallery = () => {
           <div className="w-40 h-3 bg-gradient-to-r from-dj-electric via-dj-pink to-dj-blue mx-auto mb-8 rounded-full relative overflow-hidden">
             <div className="absolute inset-0 bg-white/40 animate-pulse-slow"></div>
           </div>
-          <p className="text-white/90 max-w-3xl mx-auto text-xl leading-relaxed">
-            Experience the electrifying energy of DJ Moral's performances across various venues, festivals, and exclusive events.
-          </p>
-          
-          {/* Category filters */}
-          <div className="flex flex-wrap justify-center gap-3 mt-12">
-            {categories.map((category, index) => (
-              <button
-                key={category}
-                onClick={() => setSelectedCategory(category)}
-                className={cn(
-                  "px-6 py-3 rounded-full transition-all duration-500 text-sm font-medium",
-                  selectedCategory === category
-                    ? "bg-gradient-to-r from-dj-electric to-dj-pink text-white shadow-lg scale-105"
-                    : "bg-white/10 text-white/70 hover:bg-white/20 hover:text-white"
-                )}
-                style={{ 
-                  transitionDelay: `${index * 100}ms`
-                }}
-              >
-                {category}
-              </button>
-            ))}
-          </div>
         </div>
 
         {/* Featured hero image with enhanced style */}
@@ -238,8 +186,8 @@ const Gallery = () => {
             }}
           >
             <img 
-              src={filteredImages[activeIndex % filteredImages.length]?.src} 
-              alt={filteredImages[activeIndex % filteredImages.length]?.alt} 
+              src={galleryImages[activeIndex % galleryImages.length]?.src} 
+              alt={galleryImages[activeIndex % galleryImages.length]?.alt} 
               className="w-full h-full object-cover transition-all duration-1000 ease-out"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-black/30"></div>
@@ -248,10 +196,7 @@ const Gallery = () => {
             <div className="absolute bottom-0 left-0 right-0 p-8">
               <div className="flex items-center justify-between">
                 <div>
-                  <span className="inline-block px-3 py-1 bg-dj-electric/80 text-white text-sm rounded-full mb-3">
-                    {filteredImages[activeIndex % filteredImages.length]?.category}
-                  </span>
-                  <p className="text-white/90 text-lg">{filteredImages[activeIndex % filteredImages.length]?.alt}</p>
+                  <p className="text-white/90 text-lg">{galleryImages[activeIndex % galleryImages.length]?.alt}</p>
                 </div>
                 
                 <button 
@@ -269,12 +214,12 @@ const Gallery = () => {
             
             {/* Enhanced navigation dots */}
             <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-3">
-              {filteredImages.map((_, index) => (
+              {galleryImages.map((_, index) => (
                 <button 
                   key={index} 
                   className={cn(
                     "transition-all duration-500",
-                    index === (activeIndex % filteredImages.length) 
+                    index === (activeIndex % galleryImages.length) 
                       ? "w-8 h-3 bg-dj-electric rounded-full" 
                       : "w-3 h-3 bg-white/40 rounded-full hover:bg-white/60"
                   )}
@@ -292,7 +237,7 @@ const Gallery = () => {
         <div ref={ref} className="max-w-7xl mx-auto">
           <Carousel className="w-full">
             <CarouselContent className="-ml-1">
-              {filteredImages.map((image, index) => (
+              {galleryImages.map((image, index) => (
                 <CarouselItem key={index} className="pl-1 lg:basis-1/4 md:basis-1/3 sm:basis-1/2">
                   <div 
                     className={cn(
@@ -316,13 +261,6 @@ const Gallery = () => {
                         alt={image.alt} 
                         className="w-full h-full object-cover transition-all duration-700 ease-out group-hover:scale-110 group-hover:rotate-2"
                       />
-                      
-                      {/* Enhanced category badge */}
-                      <div className="absolute top-4 left-4 z-20">
-                        <span className="px-3 py-1 bg-black/70 text-white text-xs rounded-full border border-white/20">
-                          {image.category}
-                        </span>
-                      </div>
                       
                       {/* Enhanced hover content */}
                       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 flex items-end p-6 z-20">
@@ -368,16 +306,13 @@ const Gallery = () => {
           
           <div className="max-w-5xl max-h-[85vh] relative" onClick={(e) => e.stopPropagation()}>
             <img 
-              src={filteredImages[selectedImage]?.src} 
-              alt={filteredImages[selectedImage]?.alt} 
+              src={galleryImages[selectedImage]?.src} 
+              alt={galleryImages[selectedImage]?.alt} 
               className="max-h-[85vh] mx-auto rounded-2xl shadow-2xl"
               style={{ boxShadow: "0 25px 80px -15px rgba(139, 92, 246, 0.8)" }}
             />
             <div className="text-center mt-6 space-y-2">
-              <span className="inline-block px-4 py-2 bg-dj-electric/80 text-white text-sm rounded-full">
-                {filteredImages[selectedImage]?.category}
-              </span>
-              <p className="text-white/90 text-lg max-w-2xl mx-auto">{filteredImages[selectedImage]?.alt}</p>
+              <p className="text-white/90 text-lg max-w-2xl mx-auto">{galleryImages[selectedImage]?.alt}</p>
             </div>
           </div>
           

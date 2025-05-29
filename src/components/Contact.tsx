@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { useInView } from 'react-intersection-observer';
-import { Phone, Mail, Instagram, Music, MapPin, Headphones } from 'lucide-react';
+import { Phone, Mail, Instagram, Music, MapPin } from 'lucide-react';
 import { Button } from './ui/button';
 import { Card, CardContent } from './ui/card';
 import AudioVisualizer from './AudioVisualizer';
@@ -43,14 +43,8 @@ const Contact = () => {
       </div>
       
       <div className="container mx-auto px-4 relative z-10">
-        {/* Section header with rotating record animation */}
+        {/* Section header */}
         <div className="text-center mb-20 relative">
-          <div className="absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2">
-            <div className="w-16 h-16 rounded-full border-2 border-dj-electric animate-spin-slow flex items-center justify-center overflow-hidden">
-              <div className="w-2 h-2 bg-dj-pink rounded-full"></div>
-            </div>
-          </div>
-          
           <h2 className="text-4xl md:text-6xl font-bold mb-4 shimmer-text">
             Connect With DJ Moral
           </h2>
@@ -60,10 +54,6 @@ const Contact = () => {
             <div className="absolute -top-1 right-0 w-4 h-4 rounded-full bg-dj-pink animate-pulse" style={{ animationDelay: '0.5s' }}></div>
           </div>
           
-          <p className="text-white/80 max-w-2xl mx-auto text-lg">
-            Ready to <span className="text-dj-electric font-bold">elevate</span> your event with <span className="text-dj-pink font-bold">electrifying</span> beats?
-          </p>
-          
           <AudioVisualizer className="mt-6" barCount={12} />
         </div>
 
@@ -71,19 +61,12 @@ const Contact = () => {
           ref={ref} 
           className="max-w-6xl mx-auto relative"
         >
-          {/* Main contact card with futuristic design */}
+          {/* Main contact card */}
           <div 
             className={`transition-all duration-1000 ${
               inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-20'
             }`}
           >
-            {/* Orbiting element */}
-            <div className="absolute z-10 animate-orbit">
-              <div className="w-12 h-12 rounded-full border border-dj-electric/50 flex items-center justify-center">
-                <Headphones className="w-6 h-6 text-dj-electric" />
-              </div>
-            </div>
-            
             <Card className="neo-blur overflow-hidden rounded-3xl border-white/10 shadow-[0_0_30px_rgba(139,92,246,0.2)]">
               <div className="grid md:grid-cols-2 gap-0 relative overflow-hidden">
                 {/* Left side - Visual */}
@@ -229,19 +212,6 @@ const Contact = () => {
                 </div>
               </div>
             </Card>
-            
-            {/* Decorative elements */}
-            <div className="absolute -top-8 -left-8 w-16 h-16 rounded-full border border-dj-electric/30 animate-spin-slow"></div>
-            <div className="absolute -bottom-8 -right-8 w-24 h-24 rounded-full border border-dj-pink/30 animate-spin-slow" style={{ animationDuration: '25s' }}></div>
-            <div className="absolute top-1/2 -right-4 transform -translate-y-1/2 flex flex-col gap-2">
-              {[...Array(5)].map((_, i) => (
-                <div 
-                  key={i} 
-                  className="w-2 h-8 rounded-full bg-gradient-to-b from-dj-electric to-transparent"
-                  style={{ opacity: 0.7 - i * 0.15 }}
-                ></div>
-              ))}
-            </div>
           </div>
         </div>
         

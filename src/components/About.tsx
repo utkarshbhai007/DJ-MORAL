@@ -56,7 +56,7 @@ const About = () => {
                   activeCard === 0 ? "text-white animate-pulse" : "text-dj-electric"
                 )} />
               </div>
-              <h3 className="text-3xl font-bold text-white mb-2 text-center group-hover:text-glow">6+ Years</h3>
+              <h3 className="text-3xl font-bold text-white mb-2 text-center group-hover:text-glow">8+ Years</h3>
               <p className="text-white/70 text-center group-hover:text-white">Professional Experience</p>
             </div>
             
@@ -69,13 +69,13 @@ const About = () => {
                 "flex items-center justify-center w-16 h-16 rounded-full mb-4 mx-auto transition-all duration-500",
                 activeCard === 1 ? "bg-gradient-to-r from-dj-pink to-dj-electric" : "bg-dj-pink/20"
               )}>
-                <Headphones className={cn(
+                <Globe className={cn(
                   "w-8 h-8 transition-all duration-500",
                   activeCard === 1 ? "text-white animate-pulse" : "text-dj-pink"
                 )} />
               </div>
-              <h3 className="text-3xl font-bold text-white mb-2 text-center group-hover:text-glow">1000+</h3>
-              <p className="text-white/70 text-center group-hover:text-white">Shows Performed</p>
+              <h3 className="text-3xl font-bold text-white mb-2 text-center group-hover:text-glow">India & International</h3>
+              <p className="text-white/70 text-center group-hover:text-white">Performing Across</p>
             </div>
             
             <div 
@@ -87,13 +87,13 @@ const About = () => {
                 "flex items-center justify-center w-16 h-16 rounded-full mb-4 mx-auto transition-all duration-500",
                 activeCard === 2 ? "bg-gradient-to-r from-dj-blue to-dj-light" : "bg-dj-blue/20"
               )}>
-                <Globe className={cn(
+                <Users className={cn(
                   "w-8 h-8 transition-all duration-500",
                   activeCard === 2 ? "text-white animate-pulse" : "text-dj-blue"
                 )} />
               </div>
-              <h3 className="text-3xl font-bold text-white mb-2 text-center group-hover:text-glow">Multiple</h3>
-              <p className="text-white/70 text-center group-hover:text-white">Cities & Countries</p>
+              <h3 className="text-3xl font-bold text-white mb-2 text-center group-hover:text-glow">Celebrity & Destination</h3>
+              <p className="text-white/70 text-center group-hover:text-white">Weddings</p>
             </div>
             
             <div 
@@ -105,13 +105,13 @@ const About = () => {
                 "flex items-center justify-center w-16 h-16 rounded-full mb-4 mx-auto transition-all duration-500",
                 activeCard === 3 ? "bg-gradient-to-r from-dj-light to-dj-blue" : "bg-dj-light/20"
               )}>
-                <Users className={cn(
+                <Headphones className={cn(
                   "w-8 h-8 transition-all duration-500",
                   activeCard === 3 ? "text-white animate-pulse" : "text-dj-light"
                 )} />
               </div>
-              <h3 className="text-3xl font-bold text-white mb-2 text-center group-hover:text-glow">A-List</h3>
-              <p className="text-white/70 text-center group-hover:text-white">Wedding Events</p>
+              <h3 className="text-3xl font-bold text-white mb-2 text-center group-hover:text-glow">Premium</h3>
+              <p className="text-white/70 text-center group-hover:text-white">Sound & Experience</p>
             </div>
           </div>
           

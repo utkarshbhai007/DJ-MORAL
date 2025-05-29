@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from 'react';
 import { useInView } from 'react-intersection-observer';
 import { Headphones, Calendar, Globe, Users, Instagram, Music } from 'lucide-react';
@@ -56,8 +55,8 @@ const About = () => {
                   activeCard === 0 ? "text-white animate-pulse" : "text-dj-electric"
                 )} />
               </div>
-              <h3 className="text-3xl font-bold text-white mb-2 text-center group-hover:text-glow">8+ Years</h3>
-              <p className="text-white/70 text-center group-hover:text-white">Professional Experience</p>
+              <h3 className="text-2xl sm:text-3xl font-bold text-white mb-2 text-center group-hover:text-glow">8+ Years</h3>
+              <p className="text-white/70 text-center group-hover:text-white text-sm">Professional Experience</p>
             </div>
             
             <div 
@@ -74,8 +73,8 @@ const About = () => {
                   activeCard === 1 ? "text-white animate-pulse" : "text-dj-pink"
                 )} />
               </div>
-              <h3 className="text-3xl font-bold text-white mb-2 text-center group-hover:text-glow">India & International</h3>
-              <p className="text-white/70 text-center group-hover:text-white">Performing Across</p>
+              <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-2 text-center group-hover:text-glow leading-tight">Global Shows</h3>
+              <p className="text-white/70 text-center group-hover:text-white text-sm">India & International</p>
             </div>
             
             <div 
@@ -92,8 +91,8 @@ const About = () => {
                   activeCard === 2 ? "text-white animate-pulse" : "text-dj-blue"
                 )} />
               </div>
-              <h3 className="text-3xl font-bold text-white mb-2 text-center group-hover:text-glow">Celebrity & Destination</h3>
-              <p className="text-white/70 text-center group-hover:text-white">Weddings</p>
+              <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-2 text-center group-hover:text-glow leading-tight">Premium Events</h3>
+              <p className="text-white/70 text-center group-hover:text-white text-sm">Celebrity & Destination Weddings</p>
             </div>
             
             <div 
@@ -110,8 +109,8 @@ const About = () => {
                   activeCard === 3 ? "text-white animate-pulse" : "text-dj-light"
                 )} />
               </div>
-              <h3 className="text-3xl font-bold text-white mb-2 text-center group-hover:text-glow">Premium</h3>
-              <p className="text-white/70 text-center group-hover:text-white">Sound & Experience</p>
+              <h3 className="text-2xl sm:text-3xl font-bold text-white mb-2 text-center group-hover:text-glow">1000+</h3>
+              <p className="text-white/70 text-center group-hover:text-white text-sm">Shows Performed</p>
             </div>
           </div>
           

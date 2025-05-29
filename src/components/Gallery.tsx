@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { useInView } from 'react-intersection-observer';
 import { ChevronLeft, ChevronRight, X, Play, Pause } from 'lucide-react';
@@ -177,7 +176,7 @@ const Gallery = () => {
           </div>
         </div>
 
-        {/* Featured hero image with enhanced style */}
+        {/* Featured hero image with enhanced style - removed all text overlays */}
         <div className="mb-20 max-w-6xl mx-auto">
           <div 
             className="relative aspect-video rounded-3xl overflow-hidden border-2 border-white/20 shadow-2xl transform hover:scale-[1.02] transition-all duration-700"
@@ -190,26 +189,19 @@ const Gallery = () => {
               alt={galleryImages[activeIndex % galleryImages.length]?.alt} 
               className="w-full h-full object-cover transition-all duration-1000 ease-out"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-black/30"></div>
             
-            {/* Enhanced overlay content */}
-            <div className="absolute bottom-0 left-0 right-0 p-8">
-              <div className="flex items-center justify-between">
-                <div>
-                  <p className="text-white/90 text-lg">{galleryImages[activeIndex % galleryImages.length]?.alt}</p>
-                </div>
-                
-                <button 
-                  className="p-4 rounded-full bg-black/50 hover:bg-black/70 text-white border border-white/20 transition-all duration-300 group"
-                  onClick={() => setAutoPlay(!autoPlay)}
-                >
-                  {autoPlay ? (
-                    <Pause className="w-6 h-6 group-hover:scale-110 transition-transform" />
-                  ) : (
-                    <Play className="w-6 h-6 group-hover:scale-110 transition-transform" />
-                  )}
-                </button>
-              </div>
+            {/* Only autoplay control button - no text */}
+            <div className="absolute bottom-6 right-6">
+              <button 
+                className="p-4 rounded-full bg-black/50 hover:bg-black/70 text-white border border-white/20 transition-all duration-300 group"
+                onClick={() => setAutoPlay(!autoPlay)}
+              >
+                {autoPlay ? (
+                  <Pause className="w-6 h-6 group-hover:scale-110 transition-transform" />
+                ) : (
+                  <Play className="w-6 h-6 group-hover:scale-110 transition-transform" />
+                )}
+              </button>
             </div>
             
             {/* Enhanced navigation dots */}
@@ -233,7 +225,7 @@ const Gallery = () => {
           </div>
         </div>
 
-        {/* Enhanced gallery grid */}
+        {/* Enhanced gallery grid - removed all text overlays */}
         <div ref={ref} className="max-w-7xl mx-auto">
           <Carousel className="w-full">
             <CarouselContent className="-ml-1">
@@ -248,7 +240,7 @@ const Gallery = () => {
                     onClick={() => setSelectedImage(index)}
                   >
                     <div className="aspect-square group relative overflow-hidden">
-                      {/* Enhanced gradient overlays */}
+                      {/* Enhanced gradient overlays - no text */}
                       <div className="absolute inset-0 bg-gradient-to-br from-black/30 to-transparent z-10 opacity-40 group-hover:opacity-0 transition-opacity duration-500"></div>
                       <div className={cn(
                         "absolute inset-0 bg-gradient-to-br opacity-0 group-hover:opacity-60 transition-all duration-700 z-10",
@@ -261,17 +253,6 @@ const Gallery = () => {
                         alt={image.alt} 
                         className="w-full h-full object-cover transition-all duration-700 ease-out group-hover:scale-110 group-hover:rotate-2"
                       />
-                      
-                      {/* Enhanced hover content */}
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 flex items-end p-6 z-20">
-                        <div>
-                          <p className="text-white text-sm leading-relaxed">{image.alt}</p>
-                          <div className="mt-3 flex items-center space-x-2">
-                            <div className="w-2 h-2 bg-dj-electric rounded-full animate-pulse"></div>
-                            <span className="text-dj-light text-xs">Click to view</span>
-                          </div>
-                        </div>
-                      </div>
                     </div>
                   </div>
                 </CarouselItem>
@@ -284,7 +265,7 @@ const Gallery = () => {
         </div>
       </div>
 
-      {/* Enhanced Lightbox with overlay click to close */}
+      {/* Enhanced Lightbox with overlay click to close - removed all text */}
       {selectedImage !== null && (
         <div 
           className="fixed inset-0 bg-black/95 z-50 flex items-center justify-center p-4 animate-fade-in backdrop-blur-sm"
@@ -311,9 +292,6 @@ const Gallery = () => {
               className="max-h-[85vh] mx-auto rounded-2xl shadow-2xl"
               style={{ boxShadow: "0 25px 80px -15px rgba(139, 92, 246, 0.8)" }}
             />
-            <div className="text-center mt-6 space-y-2">
-              <p className="text-white/90 text-lg max-w-2xl mx-auto">{galleryImages[selectedImage]?.alt}</p>
-            </div>
           </div>
           
           <button 

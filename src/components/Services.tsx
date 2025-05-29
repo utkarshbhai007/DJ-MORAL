@@ -91,7 +91,7 @@ const Services = () => {
     },
     {
       icon: <Glasses className="w-8 h-8 text-dj-blue group-hover:text-white transition-all duration-300" />,
-      title: "Destination Events",
+      title: "Destination Wedding",
       description: "Memorable A-list wedding performances with personalized playlists.",
       color: "#0EA5E9" // dj-blue
     },

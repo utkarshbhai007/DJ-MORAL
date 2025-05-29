@@ -1,6 +1,4 @@
-
 import React, { useEffect, useState, useRef } from 'react';
-import { ArrowDown } from 'lucide-react';
 import AudioVisualizer from './AudioVisualizer';
 
 const Hero = () => {
@@ -82,13 +80,6 @@ const Hero = () => {
               <AudioVisualizer barCount={32} className="mb-8" active={true} />
             </div>
           </div>
-        </div>
-      </div>
-
-      {/* Scroll indicator */}
-      <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce z-30">
-        <div className="p-2 bg-black/30 backdrop-blur-md rounded-full border border-white/10">
-          <ArrowDown className="text-white w-6 h-6" />
         </div>
       </div>
 

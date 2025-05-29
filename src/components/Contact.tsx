@@ -1,7 +1,6 @@
-
 import React from 'react';
 import { useInView } from 'react-intersection-observer';
-import { Phone, Mail, Instagram, Music, MapPin } from 'lucide-react';
+import { Phone, Mail, MapPin, Instagram, Music } from 'lucide-react';
 import { Button } from './ui/button';
 import { Card, CardContent } from './ui/card';
 import AudioVisualizer from './AudioVisualizer';
@@ -103,29 +102,26 @@ const Contact = () => {
                       
                       <p className="text-white/90 mb-6 text-xl">Music Producer & Professional DJ</p>
                       
-                      <div className="flex space-x-4 mt-4">
-                        {/* Social icons with hover animations */}
+                      {/* Social Media Buttons */}
+                      <div className="flex flex-col sm:flex-row gap-3 mt-4">
                         <a 
                           href="https://www.instagram.com/dj_moral/"
                           target="_blank"
                           rel="noopener noreferrer" 
-                          className="w-12 h-12 flex items-center justify-center rounded-full bg-white/5 hover:bg-dj-pink border border-white/10 hover:border-dj-pink/50 hover:scale-110 hover:shadow-lg hover:shadow-dj-pink/20 transition-all"
+                          className="flex items-center justify-center gap-3 px-6 py-3 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white font-semibold transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-purple-500/30"
                         >
                           <Instagram className="w-5 h-5" />
+                          <span>Instagram</span>
                         </a>
+                        
                         <a 
                           href="https://soundcloud.com/dj_moral"
                           target="_blank"
                           rel="noopener noreferrer" 
-                          className="w-12 h-12 flex items-center justify-center rounded-full bg-white/5 hover:bg-dj-electric border border-white/10 hover:border-dj-electric/50 hover:scale-110 hover:shadow-lg hover:shadow-dj-electric/20 transition-all"
+                          className="flex items-center justify-center gap-3 px-6 py-3 rounded-full bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white font-semibold transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-orange-500/30"
                         >
                           <Music className="w-5 h-5" />
-                        </a>
-                        <a 
-                          href="tel:+918401430191" 
-                          className="w-12 h-12 flex items-center justify-center rounded-full bg-white/5 hover:bg-dj-blue border border-white/10 hover:border-dj-blue/50 hover:scale-110 hover:shadow-lg hover:shadow-dj-blue/20 transition-all"
-                        >
-                          <Phone className="w-5 h-5" />
+                          <span>SoundCloud</span>
                         </a>
                       </div>
                     </div>
@@ -215,7 +211,7 @@ const Contact = () => {
           </div>
         </div>
         
-       
+        
       </div>
     </section>
   );

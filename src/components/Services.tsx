@@ -85,21 +85,21 @@ const Services = () => {
   const services = [
     {
       icon: <Music2 className="w-8 h-8 text-dj-electric group-hover:text-white transition-all duration-300" />,
-      title: "Club Events",
+      title: "Club",
       description: "High-energy DJ sets perfectly curated for clubs and nightlife venues.",
       color: "#8B5CF6" // dj-electric
+    },
+    {
+      icon: <Glasses className="w-8 h-8 text-dj-blue group-hover:text-white transition-all duration-300" />,
+      title: "Destination Events",
+      description: "Memorable A-list wedding performances with personalized playlists.",
+      color: "#0EA5E9" // dj-blue
     },
     {
       icon: <Users className="w-8 h-8 text-dj-pink group-hover:text-white transition-all duration-300" />,
       title: "Private Parties",
       description: "Customized music experiences for exclusive and private celebrations.",
       color: "#D946EF" // dj-pink
-    },
-    {
-      icon: <Glasses className="w-8 h-8 text-dj-blue group-hover:text-white transition-all duration-300" />,
-      title: "Wedding Events",
-      description: "Memorable A-list wedding performances with personalized playlists.",
-      color: "#0EA5E9" // dj-blue
     },
     {
       icon: <PartyPopper className="w-8 h-8 text-dj-light group-hover:text-white transition-all duration-300" />,

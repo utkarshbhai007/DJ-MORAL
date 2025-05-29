@@ -12,7 +12,7 @@ const LoadingScreen: React.FC<LoadingScreenProps> = ({ onLoadingComplete }) => {
     const timer = setTimeout(() => {
       setIsVisible(false);
       setTimeout(onLoadingComplete, 500); // Wait for fade-out animation
-    }, 3000); // Show for 3 seconds
+    }, 2000); // Show for 2 seconds (enough for one spin)
 
     return () => clearTimeout(timer);
   }, [onLoadingComplete]);
@@ -24,19 +24,19 @@ const LoadingScreen: React.FC<LoadingScreenProps> = ({ onLoadingComplete }) => {
       }`}
     >
       <div className="relative">
-        {/* Main spinning logo */}
+        {/* Main spinning logo - single spin animation */}
         <img 
-          src="/lovable-uploads/992718ef-f41d-4440-8401-9113fc6f0aaf.png"
+          src="/lovable-uploads/44b542b7-2988-42c7-9a79-3130c8fff5e9.png"
           alt="DJ Moral Logo"
-          className="w-32 h-32 object-contain animate-spin"
-          style={{ animationDuration: '2s' }}
+          className="w-32 h-32 object-contain"
+          style={{ 
+            animation: 'spin 1.5s ease-out 1',
+            animationFillMode: 'forwards'
+          }}
         />
         
         {/* Glowing effect */}
         <div className="absolute inset-0 w-32 h-32 bg-gradient-to-r from-dj-electric/30 to-dj-pink/30 rounded-full blur-xl animate-pulse"></div>
-        
-        {/* Outer ring */}
-        <div className="absolute -inset-8 border-2 border-dj-electric/20 rounded-full animate-spin" style={{ animationDuration: '4s', animationDirection: 'reverse' }}></div>
       </div>
       
       {/* Loading text */}

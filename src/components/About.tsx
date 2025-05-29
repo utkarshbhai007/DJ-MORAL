@@ -123,10 +123,7 @@ const About = () => {
             
             <div className="relative z-10">
               <p className="text-white/90 mb-6 leading-relaxed text-lg">
-                DJ Moral is an Indian music producer and disk jockey from Ahmedabad, Gujarat. His rise in the music industry has been meteoric, having performed at several A-list weddings of the elite that have been widely publicized like Esha Kansara & Siddharth Amit Bhavsar, Navdeep Saini & Swati Asthana, and many more.
-              </p>
-              <p className="text-white/90 mb-8 leading-relaxed text-lg">
-                With a career spanning over six years, Moral has mastered various genres including Bollywood, Punjabi, EDM, Techno, and Hip Hop. His journey includes not only thrilling club performances and private events but also unique experiences like spinning tracks on chartered flights.
+                DJ Moral is one of the most promising and dynamic DJs from Gujarat, India. With a growing presence in the national and international club scene, he has performed in top cities across India and rocked international stages as well. Known for his electrifying sets and crowd-pulling energy, DJ Moral is not just a performer — he's an experience. Whether it's a high-end club or a destination event, he knows how to make the night unforgettable.
               </p>
               
               {/* Social media links */}

@@ -215,26 +215,7 @@ const Contact = () => {
           </div>
         </div>
         
-        {/* Sound wave footer */}
-        <div className="mt-20 relative w-full h-14 overflow-hidden">
-          <div className="absolute inset-0 flex items-center">
-            <svg viewBox="0 0 1440 320" className="w-full absolute bottom-0">
-              <path 
-                fill="rgba(139, 92, 246, 0.2)" 
-                fillOpacity="1" 
-                d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,128C672,128,768,160,864,165.3C960,171,1056,149,1152,128C1248,107,1344,85,1392,74.7L1440,64L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
-                className="animate-wave-slow"
-              ></path>
-              <path 
-                fill="rgba(217, 70, 239, 0.2)" 
-                fillOpacity="1" 
-                d="M0,160L48,154.7C96,149,192,139,288,133.3C384,128,480,128,576,149.3C672,171,768,213,864,202.7C960,192,1056,128,1152,106.7C1248,85,1344,107,1392,117.3L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
-                className="animate-wave-slow"
-                style={{ animationDelay: '0.2s' }}
-              ></path>
-            </svg>
-          </div>
-        </div>
+       
       </div>
     </section>
   );

@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState } from 'react';
 import { useInView } from 'react-intersection-observer';
 import { Headphones, Calendar, Globe, Users, Instagram, Music } from 'lucide-react';
@@ -73,8 +74,8 @@ const About = () => {
                   activeCard === 1 ? "text-white animate-pulse" : "text-dj-pink"
                 )} />
               </div>
-              <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-2 text-center group-hover:text-glow leading-tight">Global Shows</h3>
-              <p className="text-white/70 text-center group-hover:text-white text-sm">India & International</p>
+              <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-2 text-center group-hover:text-glow leading-tight">India & International</h3>
+              <p className="text-white/70 text-center group-hover:text-white text-sm">Global Performances</p>
             </div>
             
             <div 
@@ -91,8 +92,8 @@ const About = () => {
                   activeCard === 2 ? "text-white animate-pulse" : "text-dj-blue"
                 )} />
               </div>
-              <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-2 text-center group-hover:text-glow leading-tight">Premium Events</h3>
-              <p className="text-white/70 text-center group-hover:text-white text-sm">Celebrity & Destination Weddings</p>
+              <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-2 text-center group-hover:text-glow leading-tight">Celebrity & Destination Weddings</h3>
+              <p className="text-white/70 text-center group-hover:text-white text-sm">Elite Events</p>
             </div>
             
             <div 
@@ -109,8 +110,8 @@ const About = () => {
                   activeCard === 3 ? "text-white animate-pulse" : "text-dj-light"
                 )} />
               </div>
-              <h3 className="text-2xl sm:text-3xl font-bold text-white mb-2 text-center group-hover:text-glow">1000+</h3>
-              <p className="text-white/70 text-center group-hover:text-white text-sm">Shows Performed</p>
+              <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-white mb-2 text-center group-hover:text-glow leading-tight">Premium Sound & Experience</h3>
+              <p className="text-white/70 text-center group-hover:text-white text-sm">High-Quality Performance</p>
             </div>
           </div>
           
@@ -123,6 +124,10 @@ const About = () => {
             <div className="relative z-10">
               <p className="text-white/90 mb-6 leading-relaxed text-lg">
                 DJ Moral is one of the most promising and dynamic DJs from Gujarat, India. With a growing presence in the national and international club scene, he has performed in top cities across India and rocked international stages as well. Known for his electrifying sets and crowd-pulling energy, DJ Moral is not just a performer — he's an experience. Whether it's a high-end club or a destination event, he knows how to make the night unforgettable.
+              </p>
+              
+              <p className="text-white/90 mb-6 leading-relaxed text-lg">
+                He is a passionate artist, his rise in the music industry has been quick after having played at several A-list weddings of the elite that have been widely publicized like Esha Kansara & Siddharth Amit Bhavsar, Navdeep Saini & Swati Asthana and more.
               </p>
               
               {/* Social media links */}

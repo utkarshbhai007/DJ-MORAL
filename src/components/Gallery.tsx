@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useInView } from 'react-intersection-observer';
-import { ChevronLeft, ChevronRight, X, Play, Pause, Instagram, Music, Youtube } from 'lucide-react';
+import { ChevronLeft, ChevronRight, X } from 'lucide-react';
 import {
   Carousel,
   CarouselContent,
@@ -17,8 +17,6 @@ const Gallery = () => {
   });
 
   const [selectedImage, setSelectedImage] = useState<null | number>(null);
-  const [activeIndex, setActiveIndex] = useState(0);
-  const [autoPlay, setAutoPlay] = useState(true);
 
   // Updated gallery with all performance images
   const galleryImages = [
@@ -112,21 +110,6 @@ const Gallery = () => {
     }
   ];
 
-  useEffect(() => {
-    // Auto rotate through images when autoPlay is enabled
-    let interval: NodeJS.Timeout | null = null;
-    
-    if (autoPlay) {
-      interval = setInterval(() => {
-        setActiveIndex(prev => (prev + 1) % galleryImages.length);
-      }, 3000);
-    }
-    
-    return () => {
-      if (interval) clearInterval(interval);
-    };
-  }, [autoPlay, galleryImages.length]);
-
   const handleNext = () => {
     if (selectedImage === null) return;
     setSelectedImage((prev) => (prev === galleryImages.length - 1 ? 0 : prev! + 1));
@@ -157,7 +140,7 @@ const Gallery = () => {
   ];
 
   return (
-    <section id="gallery" className="py-24 relative overflow-hidden">
+    <section id="gallery" className="py-24 relative overflow-hidden min-h-screen">
       {/* Background elements */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0">
         <div className="absolute top-0 left-0 w-full h-full bg-grid-pattern opacity-10"></div>
@@ -169,131 +152,48 @@ const Gallery = () => {
       
       <div className="container mx-auto px-4 relative z-10">
         {/* Enhanced section header */}
-        <div className="text-center mb-20 relative">
+        <div className="text-center mb-16 relative">
           <h2 className="text-5xl md:text-6xl font-bold mb-6 shimmer-text">Performance Gallery</h2>
           <div className="w-40 h-3 bg-gradient-to-r from-dj-electric via-dj-pink to-dj-blue mx-auto mb-8 rounded-full relative overflow-hidden">
             <div className="absolute inset-0 bg-white/40 animate-pulse-slow"></div>
           </div>
-          
-          {/* Social media icons */}
-          <div className="flex justify-center gap-4 mt-6">
-            <a 
-              href="https://instagram.com/djmoral" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="w-10 h-10 rounded-full bg-gradient-to-r from-purple-600 to-pink-600 flex items-center justify-center text-white hover:scale-110 transform transition-all duration-300"
-            >
-              <Instagram className="w-5 h-5" />
-            </a>
-            <a 
-              href="https://soundcloud.com/djmoral" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="w-10 h-10 rounded-full bg-gradient-to-r from-orange-500 to-red-500 flex items-center justify-center text-white hover:scale-110 transform transition-all duration-300"
-            >
-              <Music className="w-5 h-5" />
-            </a>
-            <a 
-              href="https://youtube.com/@dj_moral?si=GK3WszSphtCm33F8" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="w-10 h-10 rounded-full bg-gradient-to-r from-red-600 to-red-500 flex items-center justify-center text-white hover:scale-110 transform transition-all duration-300"
-            >
-              <Youtube className="w-5 h-5" />
-            </a>
-          </div>
         </div>
 
-        {/* Featured hero image with enhanced style - removed all text overlays */}
-        <div className="mb-20 max-w-6xl mx-auto">
-          <div 
-            className="relative aspect-video rounded-3xl overflow-hidden border-2 border-white/20 shadow-2xl transform hover:scale-[1.02] transition-all duration-700"
-            style={{ 
-              boxShadow: "0 25px 80px -15px rgba(139, 92, 246, 0.6), 0 0 50px rgba(217, 70, 239, 0.3)" 
-            }}
-          >
-            <img 
-              src={galleryImages[activeIndex % galleryImages.length]?.src} 
-              alt={galleryImages[activeIndex % galleryImages.length]?.alt} 
-              className="w-full h-full object-cover transition-all duration-1000 ease-out"
-            />
-            
-            {/* Only autoplay control button - no text */}
-            <div className="absolute bottom-6 right-6">
-              <button 
-                className="p-4 rounded-full bg-black/50 hover:bg-black/70 text-white border border-white/20 transition-all duration-300 group"
-                onClick={() => setAutoPlay(!autoPlay)}
-              >
-                {autoPlay ? (
-                  <Pause className="w-6 h-6 group-hover:scale-110 transition-transform" />
-                ) : (
-                  <Play className="w-6 h-6 group-hover:scale-110 transition-transform" />
-                )}
-              </button>
-            </div>
-            
-            {/* Enhanced navigation dots */}
-            <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-3">
-              {galleryImages.map((_, index) => (
-                <button 
-                  key={index} 
-                  className={cn(
-                    "transition-all duration-500",
-                    index === (activeIndex % galleryImages.length) 
-                      ? "w-8 h-3 bg-dj-electric rounded-full" 
-                      : "w-3 h-3 bg-white/40 rounded-full hover:bg-white/60"
-                  )}
-                  onClick={() => {
-                    setActiveIndex(index);
-                    setAutoPlay(false);
-                  }}
-                />
-              ))}
-            </div>
-          </div>
-        </div>
-
-        {/* Enhanced gallery grid - removed all text overlays */}
+        {/* Enhanced gallery grid - all images displayed */}
         <div ref={ref} className="max-w-7xl mx-auto">
-          <Carousel className="w-full">
-            <CarouselContent className="-ml-1">
-              {galleryImages.map((image, index) => (
-                <CarouselItem key={index} className="pl-1 lg:basis-1/4 md:basis-1/3 sm:basis-1/2">
-                  <div 
-                    className={cn(
-                      "gallery-item relative overflow-hidden rounded-2xl cursor-pointer transition-all duration-700 transform hover:-translate-y-2",
-                      inView ? "opacity-100 scale-100" : "opacity-0 scale-95"
-                    )}
-                    style={{ transitionDelay: `${index * 150}ms` }}
-                    onClick={() => setSelectedImage(index)}
-                  >
-                    <div className="aspect-square group relative overflow-hidden">
-                      {/* Enhanced gradient overlays - no text */}
-                      <div className="absolute inset-0 bg-gradient-to-br from-black/30 to-transparent z-10 opacity-40 group-hover:opacity-0 transition-opacity duration-500"></div>
-                      <div className={cn(
-                        "absolute inset-0 bg-gradient-to-br opacity-0 group-hover:opacity-60 transition-all duration-700 z-10",
-                        colors[index % colors.length]
-                      )}></div>
-                      
-                      {/* Image with enhanced effects */}
-                      <img 
-                        src={image.src} 
-                        alt={image.alt} 
-                        className="w-full h-full object-cover transition-all duration-700 ease-out group-hover:scale-110 group-hover:rotate-2"
-                      />
-                    </div>
-                  </div>
-                </CarouselItem>
-              ))}
-            </CarouselContent>
-            
-            <CarouselPrevious className="absolute -left-6 top-1/2 transform -translate-y-1/2 bg-black/40 border-white/20 hover:bg-black/80 text-white backdrop-blur-md" />
-            <CarouselNext className="absolute -right-6 top-1/2 transform -translate-y-1/2 bg-black/40 border-white/20 hover:bg-black/80 text-white backdrop-blur-md" />
-          </Carousel>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            {galleryImages.map((image, index) => (
+              <div 
+                key={index}
+                className={cn(
+                  "gallery-item relative overflow-hidden rounded-2xl cursor-pointer transition-all duration-700 transform hover:-translate-y-2",
+                  inView ? "opacity-100 scale-100" : "opacity-0 scale-95"
+                )}
+                style={{ transitionDelay: `${index * 50}ms` }}
+                onClick={() => setSelectedImage(index)}
+              >
+                <div className="aspect-square group relative overflow-hidden">
+                  {/* Enhanced gradient overlays */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-black/30 to-transparent z-10 opacity-40 group-hover:opacity-0 transition-opacity duration-500"></div>
+                  <div className={cn(
+                    "absolute inset-0 bg-gradient-to-br opacity-0 group-hover:opacity-60 transition-all duration-700 z-10",
+                    colors[index % colors.length]
+                  )}></div>
+                  
+                  {/* Image with enhanced effects */}
+                  <img 
+                    src={image.src} 
+                    alt={image.alt} 
+                    className="w-full h-full object-cover transition-all duration-700 ease-out group-hover:scale-110 group-hover:rotate-2"
+                  />
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
 
-      {/* Enhanced Lightbox with overlay click to close - removed all text */}
+      {/* Enhanced Lightbox with overlay click to close */}
       {selectedImage !== null && (
         <div 
           className="fixed inset-0 bg-black/95 z-50 flex items-center justify-center p-4 animate-fade-in backdrop-blur-sm"

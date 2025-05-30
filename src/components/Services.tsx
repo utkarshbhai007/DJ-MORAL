@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useInView } from 'react-intersection-observer';
-import { Music2, Users, Glasses, PartyPopper, Mic } from 'lucide-react';
+import { Music2, Users, Glasses, PartyPopper, Mic, Instagram, Music, Youtube } from 'lucide-react';
 import AudioVisualizer from './AudioVisualizer';
 import { cn } from '@/lib/utils';
 
@@ -134,6 +134,34 @@ const Services = () => {
           <p className="text-white/80 max-w-2xl mx-auto text-lg">
             From Bollywood to EDM, Punjabi to Techno, DJ Moral masters every genre to create the perfect vibe for any event.
           </p>
+          
+          {/* Social media icons */}
+          <div className="flex justify-center gap-4 mt-6">
+            <a 
+              href="https://instagram.com/djmoral" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="w-10 h-10 rounded-full bg-gradient-to-r from-purple-600 to-pink-600 flex items-center justify-center text-white hover:scale-110 transform transition-all duration-300"
+            >
+              <Instagram className="w-5 h-5" />
+            </a>
+            <a 
+              href="https://soundcloud.com/djmoral" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="w-10 h-10 rounded-full bg-gradient-to-r from-orange-500 to-red-500 flex items-center justify-center text-white hover:scale-110 transform transition-all duration-300"
+            >
+              <Music className="w-5 h-5" />
+            </a>
+            <a 
+              href="https://youtube.com/@dj_moral?si=GK3WszSphtCm33F8" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="w-10 h-10 rounded-full bg-gradient-to-r from-red-600 to-red-500 flex items-center justify-center text-white hover:scale-110 transform transition-all duration-300"
+            >
+              <Youtube className="w-5 h-5" />
+            </a>
+          </div>
         </div>
 
         {/* Audio visualizer */}

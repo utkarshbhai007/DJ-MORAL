@@ -1,7 +1,7 @@
 
 import React, { useEffect, useState } from 'react';
 import { useInView } from 'react-intersection-observer';
-import { Headphones, Calendar, Globe, Users, Instagram, Music } from 'lucide-react';
+import { Headphones, Calendar, Globe, Users, Instagram, Music, Youtube } from 'lucide-react';
 import AudioVisualizer from './AudioVisualizer';
 import { cn } from '@/lib/utils';
 
@@ -40,7 +40,6 @@ const About = () => {
             inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
           }`}
         >
-          {/* Stats with hover effects */}
           <div className="grid grid-cols-2 gap-6">
             <div 
               className="glass-morphism p-6 rounded-2xl transform transition-all duration-500 hover:scale-105 hover:bg-gradient-to-br hover:from-black hover:to-dj-dark hover:shadow-lg hover:shadow-dj-electric/30 hover:-translate-y-1 group"
@@ -131,12 +130,12 @@ const About = () => {
               </p>
               
               {/* Social media links */}
-              <div className="flex items-center justify-center gap-6 mt-8">
+              <div className="flex items-center justify-center gap-4 mt-8">
                 <a 
                   href="https://instagram.com/djmoral" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="flex items-center px-6 py-3 rounded-full bg-gradient-to-r from-purple-600 to-pink-600 text-white hover:scale-105 transform transition-all duration-300 group"
+                  className="flex items-center px-4 py-3 rounded-full bg-gradient-to-r from-purple-600 to-pink-600 text-white hover:scale-105 transform transition-all duration-300 group"
                 >
                   <Instagram className="w-5 h-5 mr-2 group-hover:animate-pulse" />
                   <span>Instagram</span>
@@ -146,10 +145,20 @@ const About = () => {
                   href="https://soundcloud.com/djmoral" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="flex items-center px-6 py-3 rounded-full bg-gradient-to-r from-orange-500 to-red-500 text-white hover:scale-105 transform transition-all duration-300 group"
+                  className="flex items-center px-4 py-3 rounded-full bg-gradient-to-r from-orange-500 to-red-500 text-white hover:scale-105 transform transition-all duration-300 group"
                 >
                   <Music className="w-5 h-5 mr-2 group-hover:animate-pulse" />
                   <span>SoundCloud</span>
+                </a>
+                
+                <a 
+                  href="https://youtube.com/@dj_moral?si=GK3WszSphtCm33F8" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="flex items-center px-4 py-3 rounded-full bg-gradient-to-r from-red-600 to-red-500 text-white hover:scale-105 transform transition-all duration-300 group"
+                >
+                  <Youtube className="w-5 h-5 mr-2 group-hover:animate-pulse" />
+                  <span>YouTube</span>
                 </a>
               </div>
             </div>

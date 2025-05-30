@@ -1,7 +1,6 @@
-
 import React, { useEffect, useState } from 'react';
 import { useInView } from 'react-intersection-observer';
-import { Headphones, Calendar, Globe, Users, Instagram, Music, Youtube } from 'lucide-react';
+import { Headphones, Calendar, Globe, Users, Instagram, Music } from 'lucide-react';
 import AudioVisualizer from './AudioVisualizer';
 import { cn } from '@/lib/utils';
 
@@ -40,6 +39,7 @@ const About = () => {
             inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
           }`}
         >
+          {/* Stats with hover effects */}
           <div className="grid grid-cols-2 gap-6">
             <div 
               className="glass-morphism p-6 rounded-2xl transform transition-all duration-500 hover:scale-105 hover:bg-gradient-to-br hover:from-black hover:to-dj-dark hover:shadow-lg hover:shadow-dj-electric/30 hover:-translate-y-1 group"
@@ -73,8 +73,8 @@ const About = () => {
                   activeCard === 1 ? "text-white animate-pulse" : "text-dj-pink"
                 )} />
               </div>
-              <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-2 text-center group-hover:text-glow leading-tight">India & International</h3>
-              <p className="text-white/70 text-center group-hover:text-white text-sm">Global Performances</p>
+              <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-2 text-center group-hover:text-glow leading-tight">Global Shows</h3>
+              <p className="text-white/70 text-center group-hover:text-white text-sm">International</p>
             </div>
             
             <div 
@@ -91,8 +91,8 @@ const About = () => {
                   activeCard === 2 ? "text-white animate-pulse" : "text-dj-blue"
                 )} />
               </div>
-              <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-2 text-center group-hover:text-glow leading-tight">Celebrity & Destination Weddings</h3>
-              <p className="text-white/70 text-center group-hover:text-white text-sm">Elite Events</p>
+              <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-2 text-center group-hover:text-glow leading-tight">Premium Events</h3>
+              <p className="text-white/70 text-center group-hover:text-white text-sm">Celebrity & Destination Weddings</p>
             </div>
             
             <div 
@@ -109,8 +109,8 @@ const About = () => {
                   activeCard === 3 ? "text-white animate-pulse" : "text-dj-light"
                 )} />
               </div>
-              <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-white mb-2 text-center group-hover:text-glow leading-tight">Premium Sound & Experience</h3>
-              <p className="text-white/70 text-center group-hover:text-white text-sm">High-Quality Performance</p>
+              <h3 className="text-2xl sm:text-3xl font-bold text-white mb-2 text-center group-hover:text-glow">1000+</h3>
+              <p className="text-white/70 text-center group-hover:text-white text-sm">Shows Performed</p>
             </div>
           </div>
           
@@ -125,17 +125,13 @@ const About = () => {
                 DJ Moral is one of the most promising and dynamic DJs from Gujarat, India. With a growing presence in the national and international club scene, he has performed in top cities across India and rocked international stages as well. Known for his electrifying sets and crowd-pulling energy, DJ Moral is not just a performer — he's an experience. Whether it's a high-end club or a destination event, he knows how to make the night unforgettable.
               </p>
               
-              <p className="text-white/90 mb-6 leading-relaxed text-lg">
-                He is a passionate artist, his rise in the music industry has been quick after having played at several A-list weddings of the elite that have been widely publicized like Esha Kansara & Siddharth Amit Bhavsar, Navdeep Saini & Swati Asthana and more.
-              </p>
-              
               {/* Social media links */}
-              <div className="flex items-center justify-center gap-4 mt-8">
+              <div className="flex items-center justify-center gap-6 mt-8">
                 <a 
                   href="https://instagram.com/djmoral" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="flex items-center px-4 py-3 rounded-full bg-gradient-to-r from-purple-600 to-pink-600 text-white hover:scale-105 transform transition-all duration-300 group"
+                  className="flex items-center px-6 py-3 rounded-full bg-gradient-to-r from-purple-600 to-pink-600 text-white hover:scale-105 transform transition-all duration-300 group"
                 >
                   <Instagram className="w-5 h-5 mr-2 group-hover:animate-pulse" />
                   <span>Instagram</span>
@@ -145,20 +141,10 @@ const About = () => {
                   href="https://soundcloud.com/djmoral" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="flex items-center px-4 py-3 rounded-full bg-gradient-to-r from-orange-500 to-red-500 text-white hover:scale-105 transform transition-all duration-300 group"
+                  className="flex items-center px-6 py-3 rounded-full bg-gradient-to-r from-orange-500 to-red-500 text-white hover:scale-105 transform transition-all duration-300 group"
                 >
                   <Music className="w-5 h-5 mr-2 group-hover:animate-pulse" />
                   <span>SoundCloud</span>
-                </a>
-                
-                <a 
-                  href="https://youtube.com/@dj_moral?si=GK3WszSphtCm33F8" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="flex items-center px-4 py-3 rounded-full bg-gradient-to-r from-red-600 to-red-500 text-white hover:scale-105 transform transition-all duration-300 group"
-                >
-                  <Youtube className="w-5 h-5 mr-2 group-hover:animate-pulse" />
-                  <span>YouTube</span>
                 </a>
               </div>
             </div>

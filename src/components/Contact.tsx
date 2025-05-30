@@ -1,6 +1,7 @@
+
 import React from 'react';
 import { useInView } from 'react-intersection-observer';
-import { Phone, Mail, MapPin, Instagram, Music } from 'lucide-react';
+import { Phone, Mail, MapPin, Instagram, Music, Youtube } from 'lucide-react';
 import { Button } from './ui/button';
 import { Card, CardContent } from './ui/card';
 import AudioVisualizer from './AudioVisualizer';
@@ -26,20 +27,6 @@ const Contact = () => {
       <div className="absolute top-40 left-20 w-60 h-60 rounded-full bg-dj-electric/5 blur-3xl animate-pulse-slow"></div>
       <div className="absolute bottom-20 right-20 w-80 h-80 rounded-full bg-dj-pink/5 blur-3xl animate-pulse-slow" style={{ animationDelay: '1.5s' }}></div>
       <div className="absolute top-1/3 right-1/4 w-40 h-40 rounded-full bg-dj-blue/5 blur-3xl animate-pulse-slow" style={{ animationDelay: '0.7s' }}></div>
-      
-      {/* Animated equalizer bars */}
-      <div className="absolute bottom-0 left-0 w-full h-20 flex items-end justify-center gap-1 overflow-hidden opacity-20">
-        {[...Array(30)].map((_, i) => (
-          <div 
-            key={i} 
-            className="visualizer-bar"
-            style={{ 
-              height: `${Math.random() * 100}%`,
-              animationDelay: `${i * 0.05}s` 
-            }}
-          ></div>
-        ))}
-      </div>
       
       <div className="container mx-auto px-4 relative z-10">
         {/* Section header */}
@@ -95,15 +82,8 @@ const Contact = () => {
                   {/* Content overlay */}
                   <div className="absolute inset-0 flex flex-col justify-end p-8 z-20">
                     <div className="backdrop-blur-md bg-black/40 p-8 rounded-xl border border-white/5 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-                      <div className="mb-4 relative overflow-hidden inline-block">
-                        <span className="relative z-10 text-3xl font-bold bg-gradient-to-r from-dj-electric via-white to-dj-pink bg-clip-text text-transparent">DJ MORAL</span>
-                        <div className="absolute bottom-0 left-0 h-[2px] w-full bg-gradient-to-r from-dj-electric to-dj-pink"></div>
-                      </div>
-                      
-                      <p className="text-white/90 mb-6 text-xl">Music Producer & Professional DJ</p>
-                      
                       {/* Social Media Buttons */}
-                      <div className="flex flex-col sm:flex-row gap-3 mt-4">
+                      <div className="flex flex-col sm:flex-row gap-3">
                         <a 
                           href="https://www.instagram.com/dj_moral/"
                           target="_blank"
@@ -122,6 +102,16 @@ const Contact = () => {
                         >
                           <Music className="w-5 h-5" />
                           <span>SoundCloud</span>
+                        </a>
+                        
+                        <a 
+                          href="https://youtube.com/@dj_moral?si=GK3WszSphtCm33F8"
+                          target="_blank"
+                          rel="noopener noreferrer" 
+                          className="flex items-center justify-center gap-3 px-6 py-3 rounded-full bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 text-white font-semibold transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-red-500/30"
+                        >
+                          <Youtube className="w-5 h-5" />
+                          <span>YouTube</span>
                         </a>
                       </div>
                     </div>

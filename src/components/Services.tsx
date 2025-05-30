@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { useInView } from 'react-intersection-observer';
 import { Music2, Users, Glasses, PartyPopper, Mic } from 'lucide-react';
@@ -110,7 +109,7 @@ const Services = () => {
     {
       icon: <Mic className="w-8 h-8 text-white group-hover:text-white transition-all duration-300" />,
       title: "Collaborative Sets",
-      description: "Enhanced performances with saxophonists, percussionists, vocalists & more.",
+      description: "DJ sets alongside SAXOPHONIST, PERCUSSIONIST, VOCALIST, EMCEE, DHOL for enhanced performances.",
       color: "#F472B6" // pink-400
     }
   ];

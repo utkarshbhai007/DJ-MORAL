@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { useInView } from 'react-intersection-observer';
 import { Phone, Mail, MapPin, Instagram, Music, Youtube } from 'lucide-react';
@@ -82,8 +81,8 @@ const Contact = () => {
                   {/* Content overlay */}
                   <div className="absolute inset-0 flex flex-col justify-end p-8 z-20">
                     <div className="backdrop-blur-md bg-black/40 p-8 rounded-xl border border-white/5 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-                      {/* Social Media Buttons */}
-                      <div className="flex flex-col sm:flex-row gap-3">
+                      {/* Social Media Buttons - Vertical Layout */}
+                      <div className="flex flex-col gap-3">
                         <a 
                           href="https://www.instagram.com/dj_moral/"
                           target="_blank"
@@ -200,8 +199,6 @@ const Contact = () => {
             </Card>
           </div>
         </div>
-        
-        
       </div>
     </section>
   );

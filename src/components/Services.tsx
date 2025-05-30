@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { useInView } from 'react-intersection-observer';
 import { Music2, Users, Glasses, PartyPopper, Mic } from 'lucide-react';
@@ -110,6 +109,9 @@ const Services = () => {
     
   ];
 
+  const musicGenres = ['Bollywood', 'Punjabi', 'EDM', 'Techno', 'Hip Hop', 'Commercial', 'House', 'Remixes'];
+  const performanceElements = ['SAXOPHONIST', 'PERCUSSIONIST', 'VOCALIST', 'EMCEE', 'DHOL'];
+
   return (
     <section id="services" className="py-24 relative overflow-hidden bg-gradient-to-b from-dj-dark to-black">
       {/* Background elements */}
@@ -165,9 +167,9 @@ const Services = () => {
         <div className="mt-24 text-center">
           <h3 className="text-2xl font-bold mb-8 text-gradient">Music Genres</h3>
           
-          <div className="relative min-h-[120px]">
+          <div className="relative min-h-[120px] mb-16">
             <div className="flex flex-wrap justify-center gap-4">
-              {['Bollywood', 'Punjabi', 'EDM', 'Techno', 'Hip Hop', 'Commercial', 'House', 'Remixes', 'SAXOPHONIST', 'PERCUSSIONIST', 'VOCALIST', 'EMCEE', 'DHOL'].map((genre, index) => (
+              {musicGenres.map((genre, index) => (
                 <span 
                   key={index}
                   className={`px-6 py-3 rounded-full text-white transition-all duration-700 ${
@@ -186,6 +188,32 @@ const Services = () => {
             
             {/* Background effect */}
             <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-32 bg-dj-electric/20 rounded-full blur-3xl -z-10"></div>
+          </div>
+
+          {/* DJ sets alongside section */}
+          <div className="relative min-h-[120px]">
+            <h4 className="text-xl font-bold mb-6 text-gradient">DJ sets alongside</h4>
+            <div className="flex flex-wrap justify-center gap-4">
+              {performanceElements.map((element, index) => (
+                <span 
+                  key={index}
+                  className={`px-6 py-3 rounded-full text-white font-semibold transition-all duration-700 ${
+                    inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+                  }`}
+                  style={{ 
+                    transitionDelay: `${(musicGenres.length + index + 1) * 150}ms`,
+                    background: `linear-gradient(45deg, rgba(14, 165, 233, ${0.8 - (index * 0.05)}), rgba(139, 92, 246, ${0.8 - (index * 0.05)}))`,
+                    boxShadow: `0 4px 20px -2px rgba(14, 165, 233, ${0.4 - (index * 0.03)})`,
+                    border: '1px solid rgba(255, 255, 255, 0.2)',
+                  }}
+                >
+                  {element}
+                </span>
+              ))}
+            </div>
+            
+            {/* Background effect */}
+            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-32 bg-dj-blue/20 rounded-full blur-3xl -z-10"></div>
           </div>
         </div>
       </div>

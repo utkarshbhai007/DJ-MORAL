@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { useInView } from 'react-intersection-observer';
 import { Phone, Mail, MapPin, Instagram, Music, Youtube } from 'lucide-react';
@@ -13,6 +14,10 @@ const Contact = () => {
 
   const handleCallClick = () => {
     window.location.href = 'tel:+918401430191';
+  };
+
+  const handleEmailClick = () => {
+    window.location.href = 'mailto:djmoral.booking@gmail.com';
   };
 
   return (
@@ -151,15 +156,15 @@ const Contact = () => {
                       </div>
                     </div>
                     
-                    <div className="flex items-start gap-6 group">
+                    <div className="flex items-start gap-6 group cursor-pointer" onClick={handleEmailClick}>
                       <div className="w-14 h-14 rounded-2xl glass-morphism group-hover:bg-gradient-to-br group-hover:from-dj-pink/20 group-hover:to-dj-pink/5 flex items-center justify-center shrink-0 transform group-hover:rotate-6 transition-all duration-300">
                         <Mail className="w-6 h-6 text-dj-pink" />
                       </div>
                       <div>
                         <h4 className="text-white text-lg font-medium mb-1 group-hover:text-dj-pink transition-colors">Email</h4>
-                        <a href="mailto:djmoral.booking@gmail.com" className="text-white/70 hover:text-white text-lg transition-colors">
+                        <span className="text-white/70 group-hover:text-white text-lg transition-colors">
                           djmoral.booking@gmail.com
-                        </a>
+                        </span>
                       </div>
                     </div>
                     

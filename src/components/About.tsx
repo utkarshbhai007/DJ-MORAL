@@ -73,8 +73,8 @@ const About = () => {
                   activeCard === 1 ? "text-white animate-pulse" : "text-dj-pink"
                 )} />
               </div>
-              <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-2 text-center group-hover:text-glow leading-tight">Global Shows</h3>
-              <p className="text-white/70 text-center group-hover:text-white text-sm">International</p>
+              <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-2 text-center group-hover:text-glow leading-tight">Shows</h3>
+              <p className="text-white/70 text-center group-hover:text-white text-sm">India & internationally</p>
             </div>
             
             <div 

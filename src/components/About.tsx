@@ -35,7 +35,7 @@ const About = () => {
         {/* About content */}
         <div 
           ref={ref} 
-          className={`grid md:grid-cols-2 gap-10 items-center transition-all duration-1000 ${
+          className={`grid md:grid-cols-2 gap-10 items-start transition-all duration-1000 ${
             inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
           }`}
         >
@@ -115,37 +115,55 @@ const About = () => {
           </div>
           
           {/* Bio with social media */}
-          <div className="glass-morphism p-8 rounded-3xl relative overflow-hidden group">
-            {/* Animated background */}
-            <div className="absolute inset-0 bg-gradient-to-br from-dj-dark/40 to-black/40 opacity-80 group-hover:opacity-100 transition-opacity duration-500"></div>
-            <div className="absolute -right-24 -bottom-24 w-48 h-48 rounded-full bg-dj-electric/20 blur-3xl group-hover:bg-dj-electric/30 transition-all duration-500"></div>
-            
-            <div className="relative z-10">
-              <p className="text-white/90 mb-6 leading-relaxed text-lg">
-                DJ Moral is one of the most promising and dynamic DJs from Gujarat, India. With a growing presence in the national and international club scene, he has performed in top cities across India and rocked international stages as well. Known for his electrifying sets and crowd-pulling energy, DJ Moral is not just a performer — he's an experience. Whether it's a high-end club or a destination event, he knows how to make the night unforgettable.
-              </p>
+          <div className="space-y-6">
+            {/* Main bio card */}
+            <div className="glass-morphism p-8 rounded-3xl relative overflow-hidden group">
+              {/* Animated background */}
+              <div className="absolute inset-0 bg-gradient-to-br from-dj-dark/40 to-black/40 opacity-80 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="absolute -right-24 -bottom-24 w-48 h-48 rounded-full bg-dj-electric/20 blur-3xl group-hover:bg-dj-electric/30 transition-all duration-500"></div>
               
-              {/* Social media links */}
-              <div className="flex items-center justify-center gap-6 mt-8">
-                <a 
-                  href="https://instagram.com/djmoral" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="flex items-center px-6 py-3 rounded-full bg-gradient-to-r from-purple-600 to-pink-600 text-white hover:scale-105 transform transition-all duration-300 group"
-                >
-                  <Instagram className="w-5 h-5 mr-2 group-hover:animate-pulse" />
-                  <span>Instagram</span>
-                </a>
+              <div className="relative z-10">
+                <p className="text-white/90 mb-6 leading-relaxed text-lg">
+                  DJ Moral is one of the most promising and dynamic DJs from Gujarat, India. With a growing presence in the national and international club scene, he has performed in top cities across India and rocked international stages as well. Known for his electrifying sets and crowd-pulling energy, DJ Moral is not just a performer — he's an experience. Whether it's a high-end club or a destination event, he knows how to make the night unforgettable.
+                </p>
                 
-                <a 
-                  href="https://soundcloud.com/djmoral" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="flex items-center px-6 py-3 rounded-full bg-gradient-to-r from-orange-500 to-red-500 text-white hover:scale-105 transform transition-all duration-300 group"
-                >
-                  <Music className="w-5 h-5 mr-2 group-hover:animate-pulse" />
-                  <span>SoundCloud</span>
-                </a>
+                {/* Social media links */}
+                <div className="flex items-center justify-center gap-6 mt-8">
+                  <a 
+                    href="https://instagram.com/djmoral" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="flex items-center px-6 py-3 rounded-full bg-gradient-to-r from-purple-600 to-pink-600 text-white hover:scale-105 transform transition-all duration-300 group"
+                  >
+                    <Instagram className="w-5 h-5 mr-2 group-hover:animate-pulse" />
+                    <span>Instagram</span>
+                  </a>
+                  
+                  <a 
+                    href="https://soundcloud.com/djmoral" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="flex items-center px-6 py-3 rounded-full bg-gradient-to-r from-orange-500 to-red-500 text-white hover:scale-105 transform transition-all duration-300 group"
+                  >
+                    <Music className="w-5 h-5 mr-2 group-hover:animate-pulse" />
+                    <span>SoundCloud</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            {/* High-profile performances card */}
+            <div className="glass-morphism p-8 rounded-3xl relative overflow-hidden group">
+              <div className="absolute inset-0 bg-gradient-to-br from-dj-pink/20 to-dj-electric/20 opacity-80 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="absolute -left-24 -top-24 w-48 h-48 rounded-full bg-dj-pink/20 blur-3xl group-hover:bg-dj-pink/30 transition-all duration-500"></div>
+              
+              <div className="relative z-10">
+                <p className="text-white/90 leading-relaxed text-lg">
+                  His rise in the music industry has been swift, especially after performing at several high-profile weddings of the elite — including the widely publicized celebrations of <span className="text-dj-electric font-semibold">Esha Kansara & Siddharth Amit Bhavsar</span>, <span className="text-dj-pink font-semibold">Navdeep Saini & Swati Asthana</span>, and more.
+                </p>
+                <p className="text-white/90 leading-relaxed text-lg mt-4">
+                  With a reputation for excellence and versatility, DJ Moral continues to set new benchmarks in live entertainment, leaving a lasting impression wherever he plays.
+                </p>
               </div>
             </div>
           </div>

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useInView } from 'react-intersection-observer';
-import { Music2, Users, Glasses, PartyPopper, Mic } from 'lucide-react';
+import { Music2, Users, Glasses, PartyPopper, Mic, Instagram, Music, Youtube } from 'lucide-react';
 import AudioVisualizer from './AudioVisualizer';
 import { cn } from '@/lib/utils';
 
@@ -163,8 +163,34 @@ const Services = () => {
           ))}
         </div>
 
-        {/* Genres */}
+        {/* DJ sets alongside section */}
         <div className="mt-24 text-center">
+          <h4 className="text-2xl font-bold mb-8 text-gradient">DJ sets alongside</h4>
+          <div className="relative min-h-[120px] mb-16">
+            <div className="flex flex-wrap justify-center gap-4">
+              {performanceElements.map((element, index) => (
+                <span 
+                  key={index}
+                  className={`px-6 py-3 rounded-full text-white font-semibold transition-all duration-700 ${
+                    inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+                  }`}
+                  style={{ 
+                    transitionDelay: `${(index + 1) * 150}ms`,
+                    background: `linear-gradient(45deg, rgba(14, 165, 233, ${0.8 - (index * 0.05)}), rgba(139, 92, 246, ${0.8 - (index * 0.05)}))`,
+                    boxShadow: `0 4px 20px -2px rgba(14, 165, 233, ${0.4 - (index * 0.03)})`,
+                    border: '1px solid rgba(255, 255, 255, 0.2)',
+                  }}
+                >
+                  {element}
+                </span>
+              ))}
+            </div>
+            
+            {/* Background effect */}
+            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-32 bg-dj-blue/20 rounded-full blur-3xl -z-10"></div>
+          </div>
+
+          {/* Genres */}
           <h3 className="text-2xl font-bold mb-8 text-gradient">Music Genres</h3>
           
           <div className="relative min-h-[120px] mb-16">
@@ -176,7 +202,7 @@ const Services = () => {
                     inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
                   }`}
                   style={{ 
-                    transitionDelay: `${(index + 1) * 150}ms`,
+                    transitionDelay: `${(performanceElements.length + index + 1) * 150}ms`,
                     background: `linear-gradient(45deg, rgba(139, 92, 246, ${0.7 - (index * 0.05)}), rgba(217, 70, 239, ${0.7 - (index * 0.05)}))`,
                     boxShadow: `0 4px 20px -2px rgba(139, 92, 246, ${0.3 - (index * 0.03)})`,
                   }}
@@ -190,30 +216,40 @@ const Services = () => {
             <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-32 bg-dj-electric/20 rounded-full blur-3xl -z-10"></div>
           </div>
 
-          {/* DJ sets alongside section */}
-          <div className="relative min-h-[120px]">
-            <h4 className="text-xl font-bold mb-6 text-gradient">DJ sets alongside</h4>
-            <div className="flex flex-wrap justify-center gap-4">
-              {performanceElements.map((element, index) => (
-                <span 
-                  key={index}
-                  className={`px-6 py-3 rounded-full text-white font-semibold transition-all duration-700 ${
-                    inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
-                  }`}
-                  style={{ 
-                    transitionDelay: `${(musicGenres.length + index + 1) * 150}ms`,
-                    background: `linear-gradient(45deg, rgba(14, 165, 233, ${0.8 - (index * 0.05)}), rgba(139, 92, 246, ${0.8 - (index * 0.05)}))`,
-                    boxShadow: `0 4px 20px -2px rgba(14, 165, 233, ${0.4 - (index * 0.03)})`,
-                    border: '1px solid rgba(255, 255, 255, 0.2)',
-                  }}
-                >
-                  {element}
-                </span>
-              ))}
+          {/* Social media section */}
+          <div className="mt-20">
+            <h4 className="text-xl font-bold mb-6 text-gradient">Follow for More</h4>
+            <div className="flex items-center justify-center gap-6">
+              <a 
+                href="https://instagram.com/djmoral" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="flex items-center px-6 py-3 rounded-full bg-gradient-to-r from-purple-600 to-pink-600 text-white hover:scale-105 transform transition-all duration-300 group"
+              >
+                <Instagram className="w-5 h-5 mr-2 group-hover:animate-pulse" />
+                <span>Instagram</span>
+              </a>
+              
+              <a 
+                href="https://soundcloud.com/djmoral" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="flex items-center px-6 py-3 rounded-full bg-gradient-to-r from-orange-500 to-red-500 text-white hover:scale-105 transform transition-all duration-300 group"
+              >
+                <Music className="w-5 h-5 mr-2 group-hover:animate-pulse" />
+                <span>SoundCloud</span>
+              </a>
+              
+              <a 
+                href="https://youtube.com/djmoral" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="flex items-center px-6 py-3 rounded-full bg-gradient-to-r from-red-600 to-red-700 text-white hover:scale-105 transform transition-all duration-300 group"
+              >
+                <Youtube className="w-5 h-5 mr-2 group-hover:animate-pulse" />
+                <span>YouTube</span>
+              </a>
             </div>
-            
-            {/* Background effect */}
-            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-32 bg-dj-blue/20 rounded-full blur-3xl -z-10"></div>
           </div>
         </div>
       </div>

@@ -150,7 +150,7 @@ const Gallery = () => {
               {/* Hover/Touch effect */}
               <div className="absolute inset-0 bg-dj-electric/20 opacity-0 group-hover:opacity-100 group-active:opacity-100 transition-all duration-300"></div>
             </div>
-          ))}}
+          ))}
         </div>
 
         {/* Social media section */}

@@ -216,41 +216,43 @@ const Services = () => {
             <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-32 bg-dj-electric/20 rounded-full blur-3xl -z-10"></div>
           </div>
 
-          {/* Social media section */}
-          <div className="mt-20">
-            <h4 className="text-xl font-bold mb-6 text-gradient">Follow for More</h4>
-            <div className="flex items-center justify-center gap-6">
-              <a 
-                href="https://instagram.com/djmoral" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="flex items-center px-6 py-3 rounded-full bg-gradient-to-r from-purple-600 to-pink-600 text-white hover:scale-105 transform transition-all duration-300 group"
-              >
-                <Instagram className="w-5 h-5 mr-2 group-hover:animate-pulse" />
-                <span>Instagram</span>
-              </a>
-              
-              <a 
-                href="https://soundcloud.com/djmoral" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="flex items-center px-6 py-3 rounded-full bg-gradient-to-r from-orange-500 to-red-500 text-white hover:scale-105 transform transition-all duration-300 group"
-              >
-                <Music className="w-5 h-5 mr-2 group-hover:animate-pulse" />
-                <span>SoundCloud</span>
-              </a>
-              
-              <a 
-                href="https://youtube.com/djmoral" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="flex items-center px-6 py-3 rounded-full bg-gradient-to-r from-red-600 to-red-700 text-white hover:scale-105 transform transition-all duration-300 group"
-              >
-                <Youtube className="w-5 h-5 mr-2 group-hover:animate-pulse" />
-                <span>YouTube</span>
-              </a>
-            </div>
-          </div>
+         // Replace the social media section (around line 165-190) with this improved version:
+
+{/* Social media section */}
+<div className="mt-20">
+  <h4 className="text-xl font-bold mb-6 text-gradient">Follow for More</h4>
+  <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 max-w-md sm:max-w-none mx-auto">
+    <a 
+      href="https://instagram.com/djmoral" 
+      target="_blank" 
+      rel="noopener noreferrer"
+      className="flex items-center justify-center w-full sm:w-auto px-6 py-3 rounded-full bg-gradient-to-r from-purple-600 to-pink-600 text-white hover:scale-105 transform transition-all duration-300 group min-w-[140px]"
+    >
+      <Instagram className="w-5 h-5 mr-2 group-hover:animate-pulse flex-shrink-0" />
+      <span className="font-medium">Instagram</span>
+    </a>
+    
+    <a 
+      href="https://soundcloud.com/djmoral" 
+      target="_blank" 
+      rel="noopener noreferrer"
+      className="flex items-center justify-center w-full sm:w-auto px-6 py-3 rounded-full bg-gradient-to-r from-orange-500 to-red-500 text-white hover:scale-105 transform transition-all duration-300 group min-w-[140px]"
+    >
+      <Music className="w-5 h-5 mr-2 group-hover:animate-pulse flex-shrink-0" />
+      <span className="font-medium">SoundCloud</span>
+    </a>
+    
+    <a 
+      href="https://youtube.com/djmoral" 
+      target="_blank" 
+      rel="noopener noreferrer"
+      className="flex items-center justify-center w-full sm:w-auto px-6 py-3 rounded-full bg-gradient-to-r from-red-600 to-red-700 text-white hover:scale-105 transform transition-all duration-300 group min-w-[140px]"
+    >
+      <Youtube className="w-5 h-5 mr-2 group-hover:animate-pulse flex-shrink-0" />
+      <span className="font-medium">YouTube</span>
+    </a>
+  </div>
+</div>
         </div>
       </div>
       

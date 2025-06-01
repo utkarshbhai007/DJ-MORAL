@@ -5,8 +5,9 @@ import AudioVisualizer from './AudioVisualizer';
 
 const Gallery = () => {
   const { ref, inView } = useInView({
-    threshold: 0.1,
+    threshold: 0.05, // Lower threshold for mobile
     triggerOnce: true,
+    rootMargin: '50px', // Trigger earlier on mobile
   });
 
   const [selectedImage, setSelectedImage] = useState<number | null>(null);
@@ -99,16 +100,16 @@ const Gallery = () => {
         {/* Gallery grid */}
         <div 
           ref={ref}
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
+          className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4 md:gap-6"
         >
           {images.map((image, index) => (
             <div
               key={index}
-              className={`group relative aspect-square overflow-hidden rounded-2xl cursor-pointer transition-all duration-700 ${
+              className={`group relative aspect-square overflow-hidden rounded-xl sm:rounded-2xl cursor-pointer transition-all duration-700 ${
                 inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
               }`}
               style={{ 
-                transitionDelay: `${(index % 12) * 100}ms`,
+                transitionDelay: `${(index % 8) * 50}ms`, // Faster animation for mobile
               }}
               onClick={() => setSelectedImage(index)}
             >
@@ -116,49 +117,51 @@ const Gallery = () => {
                 <img
                   src={image.src}
                   alt={image.alt}
-                  className="w-full h-full object-cover transition-all duration-500 group-hover:scale-110"
+                  className="w-full h-full object-cover transition-all duration-500 group-hover:scale-110 group-active:scale-95"
                   loading="lazy"
                   onError={() => handleImageError(index)}
                   onLoad={() => handleImageLoad(index)}
                   style={{
-                    imageRendering: 'auto'
+                    imageRendering: 'auto',
+                    minHeight: '150px' // Ensure minimum height on mobile
                   }}
+                  sizes="(max-width: 640px) 50vw, (max-width: 768px) 33vw, (max-width: 1024px) 25vw, 20vw"
                 />
               ) : (
-                <div className="w-full h-full bg-gradient-to-br from-dj-purple to-dj-dark flex items-center justify-center">
+                <div className="w-full h-full bg-gradient-to-br from-dj-purple to-dj-dark flex items-center justify-center min-h-[150px]">
                   <div className="text-center text-white/60">
-                    <div className="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-2">
-                      <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 20 20">
+                    <div className="w-12 h-12 sm:w-16 sm:h-16 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-2">
+                      <svg className="w-6 h-6 sm:w-8 sm:h-8" fill="currentColor" viewBox="0 0 20 20">
                         <path fillRule="evenodd" d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z" clipRule="evenodd" />
                       </svg>
                     </div>
-                    <p className="text-sm">Image Loading...</p>
+                    <p className="text-xs sm:text-sm">Loading...</p>
                   </div>
                 </div>
               )}
               
               {/* Overlay */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300">
-                <div className="absolute bottom-4 left-4 right-4">
-                  <p className="text-white font-medium text-sm">{image.alt}</p>
+                <div className="absolute bottom-2 left-2 right-2 sm:bottom-4 sm:left-4 sm:right-4">
+                  <p className="text-white font-medium text-xs sm:text-sm truncate">{image.alt}</p>
                 </div>
               </div>
               
-              {/* Hover effect */}
-              <div className="absolute inset-0 bg-dj-electric/20 opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
+              {/* Hover/Touch effect */}
+              <div className="absolute inset-0 bg-dj-electric/20 opacity-0 group-hover:opacity-100 group-active:opacity-100 transition-all duration-300"></div>
             </div>
-          ))}
+          ))}}
         </div>
 
         {/* Social media section */}
         <div className="mt-20 text-center">
           <h3 className="text-2xl font-bold mb-8 text-gradient">Follow for More</h3>
-          <div className="flex items-center justify-center gap-6">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 px-4">
             <a 
               href="https://instagram.com/djmoral" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="flex items-center px-6 py-3 rounded-full bg-gradient-to-r from-purple-600 to-pink-600 text-white hover:scale-105 transform transition-all duration-300 group"
+              className="flex items-center justify-center w-full sm:w-auto px-6 py-3 rounded-full bg-gradient-to-r from-purple-600 to-pink-600 text-white hover:scale-105 transform transition-all duration-300 group"
             >
               <Instagram className="w-5 h-5 mr-2 group-hover:animate-pulse" />
               <span>Instagram</span>
@@ -168,7 +171,7 @@ const Gallery = () => {
               href="https://soundcloud.com/djmoral" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="flex items-center px-6 py-3 rounded-full bg-gradient-to-r from-orange-500 to-red-500 text-white hover:scale-105 transform transition-all duration-300 group"
+              className="flex items-center justify-center w-full sm:w-auto px-6 py-3 rounded-full bg-gradient-to-r from-orange-500 to-red-500 text-white hover:scale-105 transform transition-all duration-300 group"
             >
               <Music className="w-5 h-5 mr-2 group-hover:animate-pulse" />
               <span>SoundCloud</span>
@@ -178,7 +181,7 @@ const Gallery = () => {
               href="https://youtube.com/djmoral" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="flex items-center px-6 py-3 rounded-full bg-gradient-to-r from-red-600 to-red-700 text-white hover:scale-105 transform transition-all duration-300 group"
+              className="flex items-center justify-center w-full sm:w-auto px-6 py-3 rounded-full bg-gradient-to-r from-red-600 to-red-700 text-white hover:scale-105 transform transition-all duration-300 group"
             >
               <Youtube className="w-5 h-5 mr-2 group-hover:animate-pulse" />
               <span>YouTube</span>
@@ -189,29 +192,29 @@ const Gallery = () => {
 
       {/* Lightbox */}
       {selectedImage !== null && (
-        <div className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4">
-          <div className="relative max-w-4xl max-h-full">
+        <div className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-2 sm:p-4">
+          <div className="relative w-full h-full max-w-4xl flex items-center justify-center">
             {/* Close button */}
             <button
               onClick={() => setSelectedImage(null)}
-              className="absolute top-4 right-4 z-10 p-2 rounded-full bg-black/50 text-white hover:bg-black/70 transition-colors"
+              className="absolute top-2 right-2 sm:top-4 sm:right-4 z-10 p-2 sm:p-3 rounded-full bg-black/50 text-white hover:bg-black/70 transition-colors"
             >
-              <X className="w-6 h-6" />
+              <X className="w-5 h-5 sm:w-6 sm:h-6" />
             </button>
             
             {/* Navigation buttons */}
             <button
               onClick={handlePrevious}
-              className="absolute left-4 top-1/2 transform -translate-y-1/2 z-10 p-2 rounded-full bg-black/50 text-white hover:bg-black/70 transition-colors"
+              className="absolute left-2 top-1/2 transform -translate-y-1/2 z-10 p-2 sm:p-3 rounded-full bg-black/50 text-white hover:bg-black/70 transition-colors"
             >
-              <ChevronLeft className="w-6 h-6" />
+              <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6" />
             </button>
             
             <button
               onClick={handleNext}
-              className="absolute right-4 top-1/2 transform -translate-y-1/2 z-10 p-2 rounded-full bg-black/50 text-white hover:bg-black/70 transition-colors"
+              className="absolute right-2 top-1/2 transform -translate-y-1/2 z-10 p-2 sm:p-3 rounded-full bg-black/50 text-white hover:bg-black/70 transition-colors"
             >
-              <ChevronRight className="w-6 h-6" />
+              <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6" />
             </button>
             
             {/* Image */}
@@ -220,12 +223,14 @@ const Gallery = () => {
               alt={images[selectedImage].alt}
               className="max-w-full max-h-full object-contain rounded-lg"
               style={{
-                imageRendering: 'auto'
+                imageRendering: 'auto',
+                maxHeight: 'calc(100vh - 100px)', // Ensure it fits in viewport
+                maxWidth: 'calc(100vw - 40px)'
               }}
             />
             
             {/* Image counter */}
-            <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 px-4 py-2 rounded-full bg-black/50 text-white text-sm">
+            <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 px-3 py-1 sm:px-4 sm:py-2 rounded-full bg-black/50 text-white text-xs sm:text-sm">
               {selectedImage + 1} / {images.length}
             </div>
           </div>

@@ -13,7 +13,7 @@ const Gallery = () => {
 
   // Gallery images - updated paths for hosted environment
   const images = [
-    { src: './lovable-uploads/0c497e6b-1154-4caa-b3da-172097c9398b.png', alt: 'DJ Moral Performance 1' },
+    { src: 'C:\Users\ASUS\Desktop\dj moral\IMG_1244.JPG', alt: 'DJ Moral Performance 1' },
     { src: './lovable-uploads/1afc50c1-c65b-419b-924e-96a79595b387.png', alt: 'DJ Moral Performance 2' },
     { src: './lovable-uploads/2819bdff-e87b-4cb8-8be5-a1c58b9cb0a8.png', alt: 'DJ Moral Performance 3' },
     { src: './lovable-uploads/28a6f700-4344-4d3f-aac9-7dbf0e282195.png', alt: 'DJ Moral Performance 4' },

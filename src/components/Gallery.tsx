@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { useInView } from 'react-intersection-observer';
 import { X, ChevronLeft, ChevronRight, Instagram, Music, Youtube } from 'lucide-react';
@@ -122,9 +121,7 @@ const Gallery = () => {
                   onError={() => handleImageError(index)}
                   onLoad={() => handleImageLoad(index)}
                   style={{
-                    imageRendering: 'auto',
-                    WebkitImageSmoothing: true,
-                    imageSmoothing: true
+                    imageRendering: 'auto'
                   }}
                 />
               ) : (
@@ -223,9 +220,7 @@ const Gallery = () => {
               alt={images[selectedImage].alt}
               className="max-w-full max-h-full object-contain rounded-lg"
               style={{
-                imageRendering: 'auto',
-                WebkitImageSmoothing: true,
-                imageSmoothing: true
+                imageRendering: 'auto'
               }}
             />
             

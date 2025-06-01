@@ -11,6 +11,7 @@ const Gallery = () => {
   });
 
   const [selectedImage, setSelectedImage] = useState<number | null>(null);
+  const [failedImages, setFailedImages] = useState<Set<number>>(new Set());
 
   // Gallery images - using local images folder
   // Add your images to public/images/gallery/ folder
@@ -18,7 +19,6 @@ const Gallery = () => {
     { src: '/images/gallery/image1.jpg', alt: 'DJ Moral Performance 1' },
     { src: '/images/gallery/image2.jpg', alt: 'DJ Moral Performance 2' },
     { src: '/images/gallery/image3.jpg', alt: 'DJ Moral Performance 3' },
-    
     { src: '/images/gallery/image5.jpg', alt: 'DJ Moral Performance 5' },
     { src: '/images/gallery/image6.jpg', alt: 'DJ Moral Performance 6' },
     { src: '/images/gallery/image7.jpg', alt: 'DJ Moral Performance 7' },
@@ -27,26 +27,33 @@ const Gallery = () => {
     { src: '/images/gallery/image10.jpg', alt: 'DJ Moral Performance 10' },
     { src: '/images/gallery/image11.jpg', alt: 'DJ Moral Performance 11' },
     { src: '/images/gallery/image12.jpg', alt: 'DJ Moral Performance 12' },
-    { src: '/images/gallery/image13.jpg', alt: 'DJ Moral Performance 1' },
-    { src: '/images/gallery/image14.jpg', alt: 'DJ Moral Performance 2' },
-    { src: '/images/gallery/image15.jpg', alt: 'DJ Moral Performance 3' },
-    { src: '/images/gallery/image16.jpg', alt: 'DJ Moral Performance 4' },
-    { src: '/images/gallery/image17.jpg', alt: 'DJ Moral Performance 5' },
-    { src: '/images/gallery/image18.jpg', alt: 'DJ Moral Performance 6' },
-    { src: '/images/gallery/image19.jpg', alt: 'DJ Moral Performance 7' },
-    { src: '/images/gallery/image20.jpg', alt: 'DJ Moral Performance 8' },
-    { src: '/images/gallery/image21.jpg', alt: 'DJ Moral Performance 9' },
-    { src: '/images/gallery/image22.jpg', alt: 'DJ Moral Performance 10' },
-    { src: '/images/gallery/image23.jpg', alt: 'DJ Moral Performance 11' },
-    { src: '/images/gallery/image24.jpg', alt: 'DJ Moral Performance 12' },
-    { src: '/images/gallery/image25.jpg', alt: 'DJ Moral Performance 1' },
-    { src: '/images/gallery/image26.jpg', alt: 'DJ Moral Performance 2' },
-    
-    
-    { src: '/images/gallery/image30.jpg', alt: 'DJ Moral Performance 6' },
-    { src: '/images/gallery/image31.jpg', alt: 'DJ Moral Performance 7' },
-    { src: '/images/gallery/image32.jpg', alt: 'DJ Moral Performance 8' },
+    { src: '/images/gallery/image13.jpg', alt: 'DJ Moral Performance 13' },
+    { src: '/images/gallery/image14.jpg', alt: 'DJ Moral Performance 14' },
+    { src: '/images/gallery/image15.jpg', alt: 'DJ Moral Performance 15' },
+    { src: '/images/gallery/image16.jpg', alt: 'DJ Moral Performance 16' },
+    { src: '/images/gallery/image17.jpg', alt: 'DJ Moral Performance 17' },
+    { src: '/images/gallery/image18.jpg', alt: 'DJ Moral Performance 18' },
+    { src: '/images/gallery/image19.jpg', alt: 'DJ Moral Performance 19' },
+    { src: '/images/gallery/image20.jpg', alt: 'DJ Moral Performance 20' },
+    { src: '/images/gallery/image21.jpg', alt: 'DJ Moral Performance 21' },
+    { src: '/images/gallery/image22.jpg', alt: 'DJ Moral Performance 22' },
+    { src: '/images/gallery/image23.jpg', alt: 'DJ Moral Performance 23' },
+    { src: '/images/gallery/image24.jpg', alt: 'DJ Moral Performance 24' },
+    { src: '/images/gallery/image25.jpg', alt: 'DJ Moral Performance 25' },
+    { src: '/images/gallery/image26.jpg', alt: 'DJ Moral Performance 26' },
+    { src: '/images/gallery/image30.jpg', alt: 'DJ Moral Performance 30' },
+    { src: '/images/gallery/image31.jpg', alt: 'DJ Moral Performance 31' },
+    { src: '/images/gallery/image32.jpg', alt: 'DJ Moral Performance 32' },
   ];
+
+  const handleImageError = (index: number) => {
+    console.log(`Failed to load image at index ${index}: ${images[index].src}`);
+    setFailedImages(prev => new Set([...prev, index]));
+  };
+
+  const handleImageLoad = (index: number) => {
+    console.log(`Successfully loaded image at index ${index}: ${images[index].src}`);
+  };
 
   const handlePrevious = () => {
     if (selectedImage !== null) {
@@ -106,17 +113,32 @@ const Gallery = () => {
               }}
               onClick={() => setSelectedImage(index)}
             >
-              <img
-                src={image.src}
-                alt={image.alt}
-                className="w-full h-full object-cover transition-all duration-500 group-hover:scale-110"
-                loading="lazy"
-                onError={(e) => {
-                  console.log(`Failed to load image: ${image.src}`);
-                  // Show placeholder on error
-                  e.currentTarget.src = 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" viewBox="0 0 400 400"><rect width="400" height="400" fill="%23333"/><text x="50%" y="50%" text-anchor="middle" dy=".3em" fill="%23666" font-family="Arial" font-size="16">Image not found</text></svg>';
-                }}
-              />
+              {!failedImages.has(index) ? (
+                <img
+                  src={image.src}
+                  alt={image.alt}
+                  className="w-full h-full object-cover transition-all duration-500 group-hover:scale-110"
+                  loading="lazy"
+                  onError={() => handleImageError(index)}
+                  onLoad={() => handleImageLoad(index)}
+                  style={{
+                    imageRendering: 'auto',
+                    WebkitImageSmoothing: true,
+                    imageSmoothing: true
+                  }}
+                />
+              ) : (
+                <div className="w-full h-full bg-gradient-to-br from-dj-purple to-dj-dark flex items-center justify-center">
+                  <div className="text-center text-white/60">
+                    <div className="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-2">
+                      <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z" clipRule="evenodd" />
+                      </svg>
+                    </div>
+                    <p className="text-sm">Image Loading...</p>
+                  </div>
+                </div>
+              )}
               
               {/* Overlay */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300">
@@ -200,6 +222,11 @@ const Gallery = () => {
               src={images[selectedImage].src}
               alt={images[selectedImage].alt}
               className="max-w-full max-h-full object-contain rounded-lg"
+              style={{
+                imageRendering: 'auto',
+                WebkitImageSmoothing: true,
+                imageSmoothing: true
+              }}
             />
             
             {/* Image counter */}

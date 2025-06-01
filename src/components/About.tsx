@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState } from 'react';
 import { useInView } from 'react-intersection-observer';
 import { Headphones, Calendar, Globe, Users, Instagram, Music } from 'lucide-react';
@@ -122,7 +123,15 @@ const About = () => {
             
             <div className="relative z-10">
               <p className="text-white/90 mb-6 leading-relaxed text-lg">
-                DJ Moral is one of the most promising and dynamic DJs from Gujarat, India. With a growing presence in the national and international club scene, he has performed in top cities across India and rocked international stages as well. Known for his electrifying sets and crowd-pulling energy, DJ Moral is not just a performer — he's an experience. Whether it's a high-end club or a destination event, he knows how to make the night unforgettable.
+                DJ Moral stands out as one of the most promising and dynamic DJs hailing from Gujarat, India. Renowned for his electrifying sets and magnetic stage presence, he offers more than just a performance — he delivers an unforgettable experience. Whether it's a high-end club or a luxury destination wedding, DJ Moral knows exactly how to make the night come alive.
+              </p>
+              
+              <p className="text-white/90 mb-6 leading-relaxed text-lg">
+                His journey began at the age of 19, when he trained in DJing at the prestigious Snixx Academy. Fueled by a deep passion for music, he further honed his craft by studying music production at Singapore Raffles Music College. This strong foundation in both performance and production has enabled him to develop a versatile, signature style that resonates with diverse audiences.
+              </p>
+              
+              <p className="text-white/90 mb-6 leading-relaxed text-lg">
+                With a growing presence in both national and international scenes, DJ Moral has performed in top cities across India and rocked stages abroad as well. His rise in the music industry has been swift, especially after performing at several high-profile weddings of the elite — including the widely publicized celebrations of Esha Kansara & Siddharth Amit Bhavsar, Navdeep Saini & Swati Asthana, and more.
               </p>
               
               {/* Social media links */}

@@ -1,12 +1,22 @@
 
 import React, { useEffect } from 'react';
+import { useNavigate, useLocation } from 'react-router-dom';
 import Navbar from '@/components/Navbar';
 import Gallery from '@/components/Gallery';
 
 const GalleryPage = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
+
   useEffect(() => {
     document.title = "DJ MORAL - Gallery";
-  }, []);
+    
+    // Handle potential routing issues
+    if (location.pathname !== '/gallery') {
+      console.log('Redirecting to correct gallery path');
+      navigate('/gallery', { replace: true });
+    }
+  }, [navigate, location]);
 
   return (
     <div className="min-h-screen bg-black text-white">

@@ -18,7 +18,7 @@ const Gallery = () => {
     { src: '/images/gallery/image1.jpg', alt: 'DJ Moral Performance 1' },
     { src: '/images/gallery/image2.jpg', alt: 'DJ Moral Performance 2' },
     { src: '/images/gallery/image3.jpg', alt: 'DJ Moral Performance 3' },
-    { src: '/images/gallery/image4.jpg', alt: 'DJ Moral Performance 4' },
+    
     { src: '/images/gallery/image5.jpg', alt: 'DJ Moral Performance 5' },
     { src: '/images/gallery/image6.jpg', alt: 'DJ Moral Performance 6' },
     { src: '/images/gallery/image7.jpg', alt: 'DJ Moral Performance 7' },
@@ -41,9 +41,8 @@ const Gallery = () => {
     { src: '/images/gallery/image24.jpg', alt: 'DJ Moral Performance 12' },
     { src: '/images/gallery/image25.jpg', alt: 'DJ Moral Performance 1' },
     { src: '/images/gallery/image26.jpg', alt: 'DJ Moral Performance 2' },
-    { src: '/images/gallery/image27.jpg', alt: 'DJ Moral Performance 3' },
-    { src: '/images/gallery/image28.jpg', alt: 'DJ Moral Performance 4' },
-    { src: '/images/gallery/image29.jpg', alt: 'DJ Moral Performance 5' },
+    
+    
     { src: '/images/gallery/image30.jpg', alt: 'DJ Moral Performance 6' },
     { src: '/images/gallery/image31.jpg', alt: 'DJ Moral Performance 7' },
     { src: '/images/gallery/image32.jpg', alt: 'DJ Moral Performance 8' },

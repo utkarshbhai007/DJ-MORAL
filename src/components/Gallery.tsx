@@ -47,7 +47,6 @@ const Gallery = () => {
     { src: '/images/gallery/image30.jpg', alt: 'DJ Moral Performance 6' },
     { src: '/images/gallery/image31.jpg', alt: 'DJ Moral Performance 7' },
     { src: '/images/gallery/image32.jpg', alt: 'DJ Moral Performance 8' },
-    { src: '/images/gallery/image33.jpg', alt: 'DJ Moral Performance 9' },
   ];
 
   const handlePrevious = () => {

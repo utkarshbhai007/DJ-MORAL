@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { useInView } from 'react-intersection-observer';
 import { Music2, Users, Glasses, PartyPopper, Mic, Instagram, Music, Youtube } from 'lucide-react';
@@ -86,27 +87,26 @@ const Services = () => {
       icon: <Music2 className="w-8 h-8 text-dj-electric group-hover:text-white transition-all duration-300" />,
       title: "Club",
       description: "High-energy DJ sets perfectly curated for clubs and nightlife venues.",
-      color: "#8B5CF6" // dj-electric
+      color: "#8B5CF6"
     },
     {
       icon: <Glasses className="w-8 h-8 text-dj-blue group-hover:text-white transition-all duration-300" />,
       title: "Destination Wedding",
       description: "Memorable A-list wedding performances with personalized playlists.",
-      color: "#0EA5E9" // dj-blue
+      color: "#0EA5E9"
     },
     {
       icon: <Users className="w-8 h-8 text-dj-pink group-hover:text-white transition-all duration-300" />,
       title: "Private Parties",
       description: "Customized music experiences for exclusive and private celebrations.",
-      color: "#D946EF" // dj-pink
+      color: "#D946EF"
     },
     {
       icon: <PartyPopper className="w-8 h-8 text-dj-light group-hover:text-white transition-all duration-300" />,
       title: "Corporate Events",
       description: "Professional DJ services for corporate gatherings and product launches.",
-      color: "#D6BCFA" // dj-light
+      color: "#D6BCFA"
     },
-    
   ];
 
   const musicGenres = ['Bollywood', 'Punjabi', 'EDM', 'Techno', 'Hip Hop', 'Commercial', 'House', 'Remixes'];
@@ -216,43 +216,41 @@ const Services = () => {
             <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-32 bg-dj-electric/20 rounded-full blur-3xl -z-10"></div>
           </div>
 
-         // Replace the social media section (around line 165-190) with this improved version:
-
-{/* Social media section */}
-<div className="mt-20">
-  <h4 className="text-xl font-bold mb-6 text-gradient">Follow for More</h4>
-  <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 max-w-md sm:max-w-none mx-auto">
-    <a 
-      href="https://instagram.com/djmoral" 
-      target="_blank" 
-      rel="noopener noreferrer"
-      className="flex items-center justify-center w-full sm:w-auto px-6 py-3 rounded-full bg-gradient-to-r from-purple-600 to-pink-600 text-white hover:scale-105 transform transition-all duration-300 group min-w-[140px]"
-    >
-      <Instagram className="w-5 h-5 mr-2 group-hover:animate-pulse flex-shrink-0" />
-      <span className="font-medium">Instagram</span>
-    </a>
-    
-    <a 
-      href="https://soundcloud.com/djmoral" 
-      target="_blank" 
-      rel="noopener noreferrer"
-      className="flex items-center justify-center w-full sm:w-auto px-6 py-3 rounded-full bg-gradient-to-r from-orange-500 to-red-500 text-white hover:scale-105 transform transition-all duration-300 group min-w-[140px]"
-    >
-      <Music className="w-5 h-5 mr-2 group-hover:animate-pulse flex-shrink-0" />
-      <span className="font-medium">SoundCloud</span>
-    </a>
-    
-    <a 
-      href="https://youtube.com/djmoral" 
-      target="_blank" 
-      rel="noopener noreferrer"
-      className="flex items-center justify-center w-full sm:w-auto px-6 py-3 rounded-full bg-gradient-to-r from-red-600 to-red-700 text-white hover:scale-105 transform transition-all duration-300 group min-w-[140px]"
-    >
-      <Youtube className="w-5 h-5 mr-2 group-hover:animate-pulse flex-shrink-0" />
-      <span className="font-medium">YouTube</span>
-    </a>
-  </div>
-</div>
+          {/* Social media section */}
+          <div className="mt-20">
+            <h4 className="text-xl font-bold mb-6 text-gradient">Follow for More</h4>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 max-w-md sm:max-w-none mx-auto">
+              <a 
+                href="https://instagram.com/djmoral" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="flex items-center justify-center w-full sm:w-auto px-6 py-3 rounded-full bg-gradient-to-r from-purple-600 to-pink-600 text-white hover:scale-105 transform transition-all duration-300 group min-w-[140px]"
+              >
+                <Instagram className="w-5 h-5 mr-2 group-hover:animate-pulse flex-shrink-0" />
+                <span className="font-medium">Instagram</span>
+              </a>
+              
+              <a 
+                href="https://soundcloud.com/djmoral" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="flex items-center justify-center w-full sm:w-auto px-6 py-3 rounded-full bg-gradient-to-r from-orange-500 to-red-500 text-white hover:scale-105 transform transition-all duration-300 group min-w-[140px]"
+              >
+                <Music className="w-5 h-5 mr-2 group-hover:animate-pulse flex-shrink-0" />
+                <span className="font-medium">SoundCloud</span>
+              </a>
+              
+              <a 
+                href="https://youtube.com/djmoral" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="flex items-center justify-center w-full sm:w-auto px-6 py-3 rounded-full bg-gradient-to-r from-red-600 to-red-700 text-white hover:scale-105 transform transition-all duration-300 group min-w-[140px]"
+              >
+                <Youtube className="w-5 h-5 mr-2 group-hover:animate-pulse flex-shrink-0" />
+                <span className="font-medium">YouTube</span>
+              </a>
+            </div>
+          </div>
         </div>
       </div>
       

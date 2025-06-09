@@ -11,12 +11,47 @@ const Navbar = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
+      const scrollY = window.scrollY;
+      setIsScrolled(scrollY > 50); // Increased threshold for better mobile behavior
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    // Throttle scroll events for better performance
+    let ticking = false;
+    const throttledHandleScroll = () => {
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          handleScroll();
+          ticking = false;
+        });
+        ticking = true;
+      }
+    };
+
+    window.addEventListener('scroll', throttledHandleScroll, { passive: true });
+    
+    // Initial check
+    handleScroll();
+    
+    return () => window.removeEventListener('scroll', throttledHandleScroll);
   }, []);
+
+  // Close mobile menu when route changes
+  useEffect(() => {
+    setIsMobileMenuOpen(false);
+  }, [location.pathname]);
+
+  // Prevent body scroll when mobile menu is open
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [isMobileMenuOpen]);
 
   const isActive = (path: string) => {
     if (path === '/') {
@@ -30,16 +65,16 @@ const Navbar = () => {
       className={cn(
         'fixed top-0 left-0 right-0 z-50 transition-all duration-300',
         isScrolled 
-          ? 'py-3 bg-black/80 backdrop-blur-lg border-b border-white/10' 
-          : 'py-6 bg-transparent'
+          ? 'py-2 md:py-3 bg-black/90 backdrop-blur-lg border-b border-white/10' 
+          : 'py-4 md:py-6 bg-transparent'
       )}
     >
-      <div className="container flex justify-between items-center">
+      <div className="container flex justify-between items-center px-4">
         <Link to="/" className="flex items-center gap-3 group">
           <img 
             src="/lovable-uploads/d79a8e6f-167c-43c5-a5c6-81983abe8000.png"
             alt="DJ Moral Logo"
-            className="w-12 h-12 object-contain group-hover:animate-pulse-glow transition-all"
+            className="w-10 h-10 md:w-12 md:h-12 object-contain group-hover:animate-pulse-glow transition-all"
           />
         </Link>
 
@@ -109,8 +144,9 @@ const Navbar = () => {
 
         {/* Mobile menu toggle */}
         <button 
-          className="md:hidden text-white p-2" 
+          className="md:hidden text-white p-2 z-50 relative" 
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
         >
           {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
         </button>
@@ -118,32 +154,44 @@ const Navbar = () => {
 
       {/* Mobile menu */}
       {isMobileMenuOpen && (
-        <div className="fixed inset-0 bg-black/95 z-40 pt-20 backdrop-blur-xl animate-fade-in">
-          <nav className="flex flex-col items-center gap-8 p-8">
+        <div className="fixed inset-0 bg-black/95 z-40 pt-20 backdrop-blur-xl animate-fade-in md:hidden">
+          <nav className="flex flex-col items-center gap-8 p-8 h-full overflow-y-auto">
             <Link 
               to="/" 
-              className="text-white text-2xl font-medium hover:text-gradient" 
+              className={cn(
+                "text-white text-2xl font-medium hover:text-gradient transition-all",
+                isActive('/') && "text-gradient"
+              )}
               onClick={() => setIsMobileMenuOpen(false)}
             >
               HOME
             </Link>
             <Link 
               to="/services" 
-              className="text-white text-2xl font-medium hover:text-gradient" 
+              className={cn(
+                "text-white text-2xl font-medium hover:text-gradient transition-all",
+                isActive('/services') && "text-gradient"
+              )}
               onClick={() => setIsMobileMenuOpen(false)}
             >
               SERVICES
             </Link>
             <Link 
               to="/gallery" 
-              className="text-white text-2xl font-medium hover:text-gradient" 
+              className={cn(
+                "text-white text-2xl font-medium hover:text-gradient transition-all",
+                isActive('/gallery') && "text-gradient"
+              )}
               onClick={() => setIsMobileMenuOpen(false)}
             >
               GALLERY
             </Link>
             <Link 
               to="/contact" 
-              className="text-white text-2xl font-medium hover:text-gradient" 
+              className={cn(
+                "text-white text-2xl font-medium hover:text-gradient transition-all",
+                isActive('/contact') && "text-gradient"
+              )}
               onClick={() => setIsMobileMenuOpen(false)}
             >
               CONTACT

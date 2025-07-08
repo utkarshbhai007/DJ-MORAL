@@ -9,8 +9,14 @@ const Index = () => {
   const [showLoading, setShowLoading] = useState(true);
 
   useEffect(() => {
-    // Update page title
-    document.title = "DJ MORAL - Music Producer & DJ";
+    // Update page title and meta description
+    document.title = "DJ Moral – Best DJ in Gujarat & International Performer | Top Indian DJ";
+    
+    // Add meta description
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute('content', 'DJ Moral - Gujarat\'s #1 DJ and international music producer. Book India\'s top DJ for weddings, clubs, corporate events & festivals. Professional DJ services across India and worldwide.');
+    }
   }, []);
 
   const handleLoadingComplete = () => {
@@ -23,20 +29,49 @@ const Index = () => {
       
       {!showLoading && (
         <>
-          <Navbar />
-          <Hero />
+          {/* SEO-friendly header with structured content */}
+          <header>
+            <Navbar />
+            <Hero />
+          </header>
           
-          {/* Content sections with black background */}
-          <div className="bg-black relative z-10">
+          {/* Main content with semantic HTML */}
+          <main className="bg-black relative z-10">
             <div className="absolute top-0 inset-x-0 h-24 bg-gradient-to-b from-black to-transparent z-10"></div>
-            <About />
-          </div>
+            
+            {/* About section with structured content */}
+            <section aria-label="About DJ Moral">
+              <About />
+            </section>
+            
+            {/* Hidden SEO content for better indexing */}
+            <div className="sr-only">
+              <h1>DJ Moral - Premier DJ in Gujarat, India</h1>
+              <p>Professional DJ services for weddings, corporate events, clubs, and festivals across Gujarat and India. International music producer with years of experience in electronic music, Bollywood, and fusion genres.</p>
+              <h2>Services Offered</h2>
+              <ul>
+                <li>Wedding DJ Services in Gujarat</li>
+                <li>Corporate Event DJ</li>
+                <li>Club DJ Performances</li>
+                <li>Festival DJ Sets</li>
+                <li>Music Production</li>
+                <li>Sound System Rental</li>
+              </ul>
+              <h2>Coverage Areas</h2>
+              <p>Serving Ahmedabad, Surat, Vadodara, Rajkot, Gandhinagar, and all major cities in Gujarat. Also available for events across India and international bookings.</p>
+            </div>
+          </main>
           
-          {/* Footer */}
+          {/* Footer with structured data */}
           <footer className="py-8 text-center text-white/50 text-sm bg-black border-t border-white/10">
             <div className="container mx-auto px-4">
               <p>&copy; {new Date().getFullYear()} DJ MORAL. All rights reserved.</p>
               <p className="mt-2 text-xs text-white/30">Experience the Ultimate Mix</p>
+              <address className="sr-only">
+                <p>DJ Moral - Professional DJ Services</p>
+                <p>Gujarat, India</p>
+                <p>Available for bookings across India and internationally</p>
+              </address>
             </div>
           </footer>
         </>

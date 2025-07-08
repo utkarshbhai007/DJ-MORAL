@@ -9,7 +9,16 @@ const GalleryPage = () => {
   const location = useLocation();
 
   useEffect(() => {
-    document.title = "DJ MORAL - Gallery";
+    document.title = "DJ Moral Gallery - Live Performance Photos & Videos | Gujarat DJ";
+    
+    // Add meta description for gallery page
+    let metaDescription = document.querySelector('meta[name="description"]');
+    if (!metaDescription) {
+      metaDescription = document.createElement('meta');
+      metaDescription.setAttribute('name', 'description');
+      document.head.appendChild(metaDescription);
+    }
+    metaDescription.setAttribute('content', 'View DJ Moral\'s live performance gallery - Photos and videos from weddings, corporate events, clubs, and festivals across Gujarat and India.');
     
     // Handle potential routing issues
     if (location.pathname !== '/gallery') {
@@ -21,9 +30,9 @@ const GalleryPage = () => {
   return (
     <div className="min-h-screen bg-black text-white">
       <Navbar />
-      <div className="pt-20 bg-black">
+      <main className="pt-20 bg-black">
         <Gallery />
-      </div>
+      </main>
       
       {/* Footer */}
       <footer className="py-8 text-center text-white/50 text-sm bg-black border-t border-white/10">

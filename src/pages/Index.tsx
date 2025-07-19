@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
 import About from '@/components/About';
+import BookingForm from '@/components/BookingForm';
 import LoadingScreen from '@/components/LoadingScreen';
 
 const Index = () => {
@@ -42,6 +43,11 @@ const Index = () => {
             {/* About section with structured content */}
             <section aria-label="About DJ Moral">
               <About />
+            </section>
+            
+            {/* Booking Form section */}
+            <section aria-label="Book DJ Moral">
+              <BookingForm />
             </section>
             
             {/* Hidden SEO content for better indexing */}

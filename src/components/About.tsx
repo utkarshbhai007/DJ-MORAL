@@ -137,7 +137,7 @@ const About = () => {
               {/* Social media links */}
               <div className="flex items-center justify-center gap-6 mt-8">
                 <a 
-                  href="https://instagram.com/djmoral" 
+                  href="https://www.instagram.com/dj_moral/" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="flex items-center px-6 py-3 rounded-full bg-gradient-to-r from-purple-600 to-pink-600 text-white hover:scale-105 transform transition-all duration-300 group"
@@ -147,7 +147,7 @@ const About = () => {
                 </a>
                 
                 <a 
-                  href="https://soundcloud.com/djmoral" 
+                  href="https://soundcloud.com/dj_moral" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="flex items-center px-6 py-3 rounded-full bg-gradient-to-r from-orange-500 to-red-500 text-white hover:scale-105 transform transition-all duration-300 group"

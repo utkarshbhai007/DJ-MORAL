@@ -221,7 +221,7 @@ const Services = () => {
             <h4 className="text-xl font-bold mb-6 text-gradient">Follow for More</h4>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 max-w-md sm:max-w-none mx-auto">
               <a 
-                href="https://instagram.com/djmoral" 
+                href="https://www.instagram.com/dj_moral/" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="flex items-center justify-center w-full sm:w-auto px-6 py-3 rounded-full bg-gradient-to-r from-purple-600 to-pink-600 text-white hover:scale-105 transform transition-all duration-300 group min-w-[140px]"
@@ -231,7 +231,7 @@ const Services = () => {
               </a>
               
               <a 
-                href="https://soundcloud.com/djmoral" 
+                href="https://soundcloud.com/dj_moral" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="flex items-center justify-center w-full sm:w-auto px-6 py-3 rounded-full bg-gradient-to-r from-orange-500 to-red-500 text-white hover:scale-105 transform transition-all duration-300 group min-w-[140px]"
@@ -241,7 +241,7 @@ const Services = () => {
               </a>
               
               <a 
-                href="https://youtube.com/djmoral" 
+                href="https://www.youtube.com/@dj_moral" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="flex items-center justify-center w-full sm:w-auto px-6 py-3 rounded-full bg-gradient-to-r from-red-600 to-red-700 text-white hover:scale-105 transform transition-all duration-300 group min-w-[140px]"

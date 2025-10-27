@@ -19,7 +19,7 @@ const About = () => {
       <div className="absolute top-0 left-0 right-0 w-full h-full overflow-hidden z-0">
         <div className="absolute top-1/4 left-1/4 w-72 h-72 rounded-full bg-dj-electric/30 blur-[100px] animate-pulse-slow"></div>
         <div className="absolute bottom-1/4 right-1/4 w-80 h-80 rounded-full bg-dj-pink/30 blur-[120px] animate-pulse-slow" style={{ animationDelay: '2s' }}></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-dj-blue/20 rounded-full blur-[80px] animate-spotlight-slow"></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-youtu96 h-96 bg-dj-blue/20 rounded-full blur-[80px] animate-spotlight-slow"></div>
       </div>
       
       <div className="container mx-auto px-4 relative z-10">

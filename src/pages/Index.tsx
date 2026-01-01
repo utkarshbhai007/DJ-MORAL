@@ -70,16 +70,29 @@ const Index = () => {
           
           {/* Footer with structured data */}
           <footer className="py-8 text-center text-white/50 text-sm bg-black border-t border-white/10">
-            <div className="container mx-auto px-4">
-              <p>&copy; {new Date().getFullYear()} DJ MORAL. All rights reserved.</p>
-              <p className="mt-2 text-xs text-white/30">Experience the Ultimate Mix</p>
-              <address className="sr-only">
-                <p>DJ Moral - Professional DJ Services</p>
-                <p>Gujarat, India</p>
-                <p>Available for bookings across India and internationally</p>
-              </address>
-            </div>
-          </footer>
+  <div className="container mx-auto px-4">
+    <p>&copy; {new Date().getFullYear()} DJ MORAL. All rights reserved.</p>
+    <p className="mt-2 text-xs text-white/30">Experience the Ultimate Mix</p>
+
+    <p className="mt-3 text-xs text-white/40">
+      Made with ❤️ by <a 
+        href="https://udaanworks.com" 
+        target="_blank" 
+        rel="noopener noreferrer" 
+        className="underline hover:text-white"
+      >
+        Udaan Works
+      </a>
+    </p>
+
+    <address className="sr-only">
+      <p>DJ Moral - Professional DJ Services</p>
+      <p>Gujarat, India</p>
+      <p>Available for bookings across India and internationally</p>
+    </address>
+  </div>
+</footer>
+
         </>
       )}
     </div>

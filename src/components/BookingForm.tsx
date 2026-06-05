@@ -3,16 +3,13 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Calendar, Clock, MapPin, Music } from 'lucide-react';
+import { Calendar, Clock, MapPin } from 'lucide-react';
 
 const BookingForm = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     setIsSubmitting(true);
-    // FormSubmit will handle the actual submission
-    // The timeout is just for UX feedback
     setTimeout(() => {
       setIsSubmitting(false);
     }, 1000);
@@ -20,7 +17,7 @@ const BookingForm = () => {
 
   const functionTypes = [
     "After Party (Cocktail)",
-    "Carnival", 
+    "Carnival",
     "College Gigs",
     "Commercial Events",
     "Haldi Ceremony",
@@ -30,7 +27,7 @@ const BookingForm = () => {
 
   const timeSlots = [
     "Morning",
-    "Evening", 
+    "Evening",
     "Full Day"
   ];
 
@@ -40,189 +37,195 @@ const BookingForm = () => {
   ];
 
   return (
-    <section className="py-20 px-4 bg-gradient-to-b from-black to-gray-900">
-      <div className="container mx-auto max-w-2xl">
-        <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold text-white mb-4">Book DJ Moral</h2>
-          <p className="text-xl text-gray-300">Ready to make your event unforgettable? Get in touch!</p>
-        </div>
-        
-        <Card className="bg-black/50 border-white/20 backdrop-blur-sm">
-          <CardHeader>
-            <CardTitle className="text-white text-center flex items-center justify-center gap-2">
-              <Music className="h-6 w-6 text-primary" />
-              Event Booking Form
-            </CardTitle>
-          </CardHeader>
-          <CardContent>
-            <form 
-              action="https://formsubmit.co/djmoral.booking@gmail.com" 
-              method="POST"
-              onSubmit={handleSubmit}
-              className="space-y-6"
-            >
-              {/* Hidden FormSubmit configuration */}
-              <input type="hidden" name="_subject" value="New DJ Booking Request" />
-              <input type="hidden" name="_captcha" value="false" />
-              <input type="hidden" name="_template" value="table" />
-              
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="space-y-2">
-                  <label htmlFor="name" className="text-white text-sm font-medium">Name *</label>
-                  <Input
-                    id="name"
-                    name="name"
-                    type="text"
-                    required
-                    placeholder="Your full name"
-                    className="bg-gray-800/50 border-gray-600 text-white placeholder:text-gray-400"
-                  />
-                </div>
-                
-                <div className="space-y-2">
-                  <label htmlFor="phone" className="text-white text-sm font-medium">Phone *</label>
-                  <Input
-                    id="phone"
-                    name="phone"
-                    type="tel"
-                    required
-                    placeholder="Your phone number"
-                    className="bg-gray-800/50 border-gray-600 text-white placeholder:text-gray-400"
-                  />
-                </div>
-              </div>
+    <section id="booking" className="py-32 px-6 bg-[#030303] border-t border-white/10 select-none relative z-10">
 
+      {/* BACKGROUND GRAPH GRID ARCHITECTURE */}
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.005)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.005)_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none z-0"></div>
+
+      <div className="container mx-auto max-w-3xl relative z-10">
+
+        {/* HEADER TRACK LAYER */}
+        <div className="w-full flex flex-col items-start border-b border-white/10 pb-12 mb-16">
+          <p className="font-mono text-[10px] text-zinc-500 tracking-[0.4em] uppercase mb-4">// REGISTRATION GATE</p>
+          <h2 className="font-sans text-5xl md:text-7xl font-black uppercase italic tracking-tighter text-white">
+            SECURE ACCESS.
+          </h2>
+          <p className="font-mono text-xs text-zinc-400 uppercase tracking-widest mt-4">
+            Request execution logs and verify schedule options.
+          </p>
+        </div>
+
+        {/* HARD MATRIX FORM BOX */}
+        <div className="bg-[#080808] border border-white/10 p-8 md:p-12 rounded-none relative">
+          <span className="absolute top-4 right-4 font-mono text-[9px] text-zinc-600">SYS_TRANSMIT // B_DECK</span>
+
+          <form
+            action="https://formsubmit.co/djmoral.booking@gmail.com"
+            method="POST"
+            onSubmit={handleSubmit}
+            className="space-y-8"
+          >
+            {/* Hidden FormSubmit Configurations */}
+            <input type="hidden" name="_subject" value="New DJ Booking Request" />
+            <input type="hidden" name="_captcha" value="false" />
+            <input type="hidden" name="_template" value="table" />
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="space-y-2">
-                <label htmlFor="email" className="text-white text-sm font-medium">Email *</label>
+                <label htmlFor="name" className="font-mono text-[10px] uppercase font-bold tracking-widest text-zinc-400">Name *</label>
                 <Input
-                  id="email"
-                  name="email"
-                  type="email"
+                  id="name"
+                  name="name"
+                  type="text"
                   required
-                  placeholder="your@email.com"
-                  className="bg-gray-800/50 border-gray-600 text-white placeholder:text-gray-400"
+                  placeholder="IDENTITY PROFILE TITLE"
+                  className="bg-black border-white/10 text-xs font-mono text-white placeholder:text-zinc-700 h-14 rounded-none focus:border-white transition-colors"
                 />
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="space-y-2">
-                  <label htmlFor="date" className="text-white text-sm font-medium flex items-center gap-2">
-                    <Calendar className="h-4 w-4" />
-                    Event Date *
-                  </label>
-                  <Input
-                    id="date"
-                    name="date"
-                    type="date"
-                    required
-                    className="bg-gray-800/50 border-gray-600 text-white"
-                  />
-                </div>
-                
-                <div className="space-y-2">
-                  <label htmlFor="city" className="text-white text-sm font-medium flex items-center gap-2">
-                    <MapPin className="h-4 w-4" />
-                    City *
-                  </label>
-                  <Input
-                    id="city"
-                    name="city"
-                    type="text"
-                    required
-                    placeholder="Event city"
-                    className="bg-gray-800/50 border-gray-600 text-white placeholder:text-gray-400"
-                  />
-                </div>
+              <div className="space-y-2">
+                <label htmlFor="phone" className="font-mono text-[10px] uppercase font-bold tracking-widest text-zinc-400">Phone *</label>
+                <Input
+                  id="phone"
+                  name="phone"
+                  type="tel"
+                  required
+                  placeholder="+91 OPERATIONAL LINK"
+                  className="bg-black border-white/10 text-xs font-mono text-white placeholder:text-zinc-700 h-14 rounded-none focus:border-white transition-colors"
+                />
+              </div>
+            </div>
+
+            <div className="space-y-2">
+              <label htmlFor="email" className="font-mono text-[10px] uppercase font-bold tracking-widest text-zinc-400">Email *</label>
+              <Input
+                id="email"
+                name="email"
+                type="email"
+                required
+                placeholder="ENDPOINT@DOMAIN.COM"
+                className="bg-black border-white/10 text-xs font-mono text-white placeholder:text-zinc-700 h-14 rounded-none focus:border-white transition-colors"
+              />
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="space-y-2">
+                <label htmlFor="date" className="font-mono text-[10px] uppercase font-bold tracking-widest text-zinc-400 flex items-center gap-2">
+                  <Calendar className="h-3.5 w-3.5 text-zinc-600" />
+                  Event Date *
+                </label>
+                <Input
+                  id="date"
+                  name="date"
+                  type="date"
+                  required
+                  className="bg-black border-white/10 text-xs font-mono text-white h-14 rounded-none focus:border-white transition-colors uppercase"
+                />
               </div>
 
               <div className="space-y-2">
-                <label htmlFor="function_type" className="text-white text-sm font-medium">Function Type *</label>
-                <Select name="function_type" required>
-                  <SelectTrigger className="bg-gray-800/50 border-gray-600 text-white">
-                    <SelectValue placeholder="Select function type" />
+                <label htmlFor="city" className="font-mono text-[10px] uppercase font-bold tracking-widest text-zinc-400 flex items-center gap-2">
+                  <MapPin className="h-3.5 w-3.5 text-zinc-600" />
+                  City *
+                </label>
+                <Input
+                  id="city"
+                  name="city"
+                  type="text"
+                  required
+                  placeholder="TARGET LOCATION CITY"
+                  className="bg-black border-white/10 text-xs font-mono text-white placeholder:text-zinc-700 h-14 rounded-none focus:border-white transition-colors"
+                />
+              </div>
+            </div>
+
+            <div className="space-y-2">
+              <label htmlFor="function_type" className="font-mono text-[10px] uppercase font-bold tracking-widest text-zinc-400">Function Type *</label>
+              <Select name="function_type" required>
+                <SelectTrigger className="bg-black border-white/10 text-xs font-mono text-zinc-400 h-14 rounded-none focus:border-white transition-colors uppercase">
+                  <SelectValue placeholder="SELECT COMPOSITION CLASS" />
+                </SelectTrigger>
+                <SelectContent className="bg-[#090909] border-white/10 rounded-none">
+                  {functionTypes.map((type) => (
+                    <SelectItem key={type} value={type} className="text-white hover:bg-white hover:text-black font-mono text-xs uppercase rounded-none transition-colors">
+                      {type}
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="space-y-2">
+                <label htmlFor="time_slot" className="font-mono text-[10px] uppercase font-bold tracking-widest text-zinc-400 flex items-center gap-2">
+                  <Clock className="h-3.5 w-3.5 text-zinc-600" />
+                  Time Slot *
+                </label>
+                <Select name="time_slot" required>
+                  <SelectTrigger className="bg-black border-white/10 text-xs font-mono text-zinc-400 h-14 rounded-none focus:border-white transition-colors uppercase">
+                    <SelectValue placeholder="CHOOSE TIME FRAME" />
                   </SelectTrigger>
-                  <SelectContent className="bg-gray-800 border-gray-600">
-                    {functionTypes.map((type) => (
-                      <SelectItem key={type} value={type} className="text-white hover:bg-gray-700">
-                        {type}
+                  <SelectContent className="bg-[#090909] border-white/10 rounded-none">
+                    {timeSlots.map((slot) => (
+                      <SelectItem key={slot} value={slot} className="text-white hover:bg-white hover:text-black font-mono text-xs uppercase rounded-none transition-colors">
+                        {slot}
                       </SelectItem>
                     ))}
                   </SelectContent>
                 </Select>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="space-y-2">
-                  <label htmlFor="time_slot" className="text-white text-sm font-medium flex items-center gap-2">
-                    <Clock className="h-4 w-4" />
-                    Time Slot *
-                  </label>
-                  <Select name="time_slot" required>
-                    <SelectTrigger className="bg-gray-800/50 border-gray-600 text-white">
-                      <SelectValue placeholder="Select time slot" />
-                    </SelectTrigger>
-                    <SelectContent className="bg-gray-800 border-gray-600">
-                      {timeSlots.map((slot) => (
-                        <SelectItem key={slot} value={slot} className="text-white hover:bg-gray-700">
-                          {slot}
-                        </SelectItem>
-                      ))}
-                    </SelectContent>
-                  </Select>
-                </div>
-                
-                <div className="space-y-2">
-                  <label htmlFor="sound_requirements" className="text-white text-sm font-medium">Sound Requirements *</label>
-                  <Select name="sound_requirements" required>
-                    <SelectTrigger className="bg-gray-800/50 border-gray-600 text-white">
-                      <SelectValue placeholder="Sound system needs" />
-                    </SelectTrigger>
-                    <SelectContent className="bg-gray-800 border-gray-600">
-                      {soundRequirements.map((req) => (
-                        <SelectItem key={req} value={req} className="text-white hover:bg-gray-700">
-                          {req}
-                        </SelectItem>
-                      ))}
-                    </SelectContent>
-                  </Select>
-                </div>
-              </div>
-
               <div className="space-y-2">
-                <label htmlFor="venue_name" className="text-white text-sm font-medium">Venue Name</label>
-                <Input
-                  id="venue_name"
-                  name="venue_name"
-                  type="text"
-                  placeholder="Event venue name"
-                  className="bg-gray-800/50 border-gray-600 text-white placeholder:text-gray-400"
-                />
+                <label htmlFor="sound_requirements" className="font-mono text-[10px] uppercase font-bold tracking-widest text-zinc-400">Sound Requirements *</label>
+                <Select name="sound_requirements" required>
+                  <SelectTrigger className="bg-black border-white/10 text-xs font-mono text-zinc-400 h-14 rounded-none focus:border-white transition-colors uppercase">
+                    <SelectValue placeholder="AMPLIFICATION ARRAYS" />
+                  </SelectTrigger>
+                  <SelectContent className="bg-[#090909] border-white/10 rounded-none">
+                    {soundRequirements.map((req) => (
+                      <SelectItem key={req} value={req} className="text-white hover:bg-white hover:text-black font-mono text-xs uppercase rounded-none transition-colors">
+                        {req}
+                      </SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
               </div>
+            </div>
 
-              <div className="space-y-2">
-                <label htmlFor="additional_details" className="text-white text-sm font-medium">Additional Details</label>
-                <Textarea
-                  id="additional_details"
-                  name="additional_details"
-                  placeholder="Any special requirements, guest count, or other details..."
-                  className="bg-gray-800/50 border-gray-600 text-white placeholder:text-gray-400 min-h-[100px]"
-                />
-              </div>
+            <div className="space-y-2">
+              <label htmlFor="venue_name" className="font-mono text-[10px] uppercase font-bold tracking-widest text-zinc-400">Venue Name</label>
+              <Input
+                id="venue_name"
+                name="venue_name"
+                type="text"
+                placeholder="PROPOSED VENUE CODES"
+                className="bg-black border-white/10 text-xs font-mono text-white placeholder:text-zinc-700 h-14 rounded-none focus:border-white transition-colors"
+              />
+            </div>
 
-              <Button 
-                type="submit" 
-                disabled={isSubmitting}
-                className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105"
-              >
-                {isSubmitting ? "Sending..." : "Book Now"}
-              </Button>
-              
-              <p className="text-sm text-gray-400 text-center">
-                We'll get back to you within 24 hours with availability and pricing details.
-              </p>
-            </form>
-          </CardContent>
-        </Card>
+            <div className="space-y-2">
+              <label htmlFor="additional_details" className="font-mono text-[10px] uppercase font-bold tracking-widest text-zinc-400">Additional Details</label>
+              <Textarea
+                id="additional_details"
+                name="additional_details"
+                placeholder="ENTER SYSTEM BALANCING PARAMETERS, ESTIMATED USER ATTENDEE COUNTS, AND LOGISTICS DATA CRITERIA..."
+                className="bg-black border-white/10 text-xs font-mono text-white placeholder:text-zinc-700 min-h-[120px] rounded-none focus:border-white transition-colors uppercase resize-none p-4"
+              />
+            </div>
+
+            <Button
+              type="submit"
+              disabled={isSubmitting}
+              className="w-full bg-[#ffffff] text-black font-mono text-sm font-black py-6 rounded-none hover:bg-zinc-200 active:scale-[0.99] transition-all uppercase tracking-[0.2em] italic"
+            >
+              {isSubmitting ? "TRANSMITTING DATA..." : "TRANSMIT PROJECT BRIEF"}
+            </Button>
+
+            <p className="font-mono text-[9px] text-zinc-600 tracking-widest text-center uppercase">
+              // DATA CLEARANCE REVIEW loop completes inside 24 hours.
+            </p>
+          </form>
+        </div>
       </div>
     </section>
   );

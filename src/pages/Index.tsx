@@ -5,6 +5,7 @@ import Hero from '@/components/Hero';
 import About from '@/components/About';
 import BookingForm from '@/components/BookingForm';
 import LoadingScreen from '@/components/LoadingScreen';
+import Footer from '@/components/Footer';
 
 const Index = () => {
   const [showLoading, setShowLoading] = useState(true);
@@ -12,7 +13,7 @@ const Index = () => {
   useEffect(() => {
     // Update page title and meta description
     document.title = "DJ Moral – Best DJ in Gujarat & International Performer | Top Indian DJ";
-    
+
     // Add meta description
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
@@ -27,7 +28,7 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-black text-white">
       {showLoading && <LoadingScreen onLoadingComplete={handleLoadingComplete} />}
-      
+
       {!showLoading && (
         <>
           {/* SEO-friendly header with structured content */}
@@ -35,21 +36,21 @@ const Index = () => {
             <Navbar />
             <Hero />
           </header>
-          
+
           {/* Main content with semantic HTML */}
           <main className="bg-black relative z-10">
             <div className="absolute top-0 inset-x-0 h-24 bg-gradient-to-b from-black to-transparent z-10"></div>
-            
+
             {/* About section with structured content */}
             <section aria-label="About DJ Moral">
               <About />
             </section>
-            
+
             {/* Booking Form section */}
             <section aria-label="Book DJ Moral">
               <BookingForm />
             </section>
-            
+
             {/* Hidden SEO content for better indexing */}
             <div className="sr-only">
               <h1>DJ Moral - Premier DJ in Gujarat, India</h1>
@@ -67,31 +68,9 @@ const Index = () => {
               <p>Serving Ahmedabad, Surat, Vadodara, Rajkot, Gandhinagar, and all major cities in Gujarat. Also available for events across India and international bookings.</p>
             </div>
           </main>
-          
+
           {/* Footer with structured data */}
-          <footer className="py-8 text-center text-white/50 text-sm bg-black border-t border-white/10">
-  <div className="container mx-auto px-4">
-    <p>&copy; {new Date().getFullYear()} DJ MORAL. All rights reserved.</p>
-    <p className="mt-2 text-xs text-white/30">Experience the Ultimate Mix</p>
-
-    <p className="mt-3 text-xs text-white/40">
-      Made with ❤️ by <a 
-        href="https://udaanworks.com" 
-        target="_blank" 
-        rel="noopener noreferrer" 
-        className="underline hover:text-white"
-      >
-        Udaan Works
-      </a>
-    </p>
-
-    <address className="sr-only">
-      <p>DJ Moral - Professional DJ Services</p>
-      <p>Gujarat, India</p>
-      <p>Available for bookings across India and internationally</p>
-    </address>
-  </div>
-</footer>
+          <Footer />
 
         </>
       )}

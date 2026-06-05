@@ -1,4 +1,3 @@
-
 import { useLocation, useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 
@@ -11,8 +10,7 @@ const NotFound = () => {
       "404 Error: User attempted to access non-existent route:",
       location.pathname
     );
-    
-    // If user is trying to access gallery with wrong path, redirect them
+
     if (location.pathname.includes('gallery')) {
       console.log('Redirecting gallery access to correct path');
       navigate('/gallery', { replace: true });
@@ -20,22 +18,54 @@ const NotFound = () => {
   }, [location.pathname, navigate]);
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-black text-white">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4 text-white">404</h1>
-        <p className="text-xl text-white/80 mb-4">Oops! Page not found</p>
-        <div className="space-y-2">
-          <a href="/" className="block text-dj-electric hover:text-dj-pink underline transition-colors">
-            Return to Home
+    <div className="min-h-screen flex flex-col justify-center items-center p-6 bg-[#030303] text-white select-none relative">
+
+      {/* 1. INTERNAL HARD HARDWARE MATRIX GRID */}
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.005)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.01)_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none z-0"></div>
+
+      {/* 2. INDUSTRIAL ALIGNMENT INTERFACE PANEL */}
+      <div className="relative z-10 w-full max-w-xl border border-white/10 bg-[#090909] p-8 md:p-12 rounded-none flex flex-col items-start">
+
+        {/* System telemetry headers */}
+        <span className="absolute top-3 left-4 font-mono text-[8px] text-red-500 tracking-[0.4em] uppercase font-bold">// CRITICAL_SYSTEM_DISRUPTION</span>
+        <span className="absolute bottom-3 right-4 font-mono text-[8px] text-zinc-700">CODE::ERR_404</span>
+
+        {/* Macro Brutalist Header Error Output */}
+        <h1 className="font-sans text-7xl md:text-[6vw] font-black tracking-tighter leading-none text-white italic uppercase select-none mb-4">
+          DISRUPT.
+        </h1>
+
+        <p className="font-mono text-xs uppercase text-zinc-400 tracking-widest leading-relaxed mb-12 border-b border-white/5 pb-4 w-full">
+          Requested system routing node data does not exist or has been permanently reallocated.
+        </p>
+
+        {/* STARK HIGH-CONTRAST DATA ACTION LINKS */}
+        <div className="space-y-2 w-full font-mono text-[11px] font-bold tracking-widest uppercase">
+          <a
+            href="/"
+            className="flex items-center justify-between border border-white/10 bg-[#ffffff] text-black p-4 w-full hover:bg-zinc-200 transition-colors rounded-none"
+          >
+            <span>RETURN TO BASE CORE</span>
+            <span>[ HOME ]</span>
           </a>
-          <a href="/gallery" className="block text-dj-electric hover:text-dj-pink underline transition-colors">
-            Visit Gallery
+
+          <a
+            href="/gallery"
+            className="flex items-center justify-between border border-white/10 bg-zinc-900 text-white p-4 w-full hover:bg-zinc-800 transition-colors rounded-none"
+          >
+            <span>ACCESS VISUAL CAPTURES</span>
+            <span>[ GALLERY ]</span>
           </a>
         </div>
-        <p className="mt-4 text-sm text-white/60">
-          Attempted to access: {location.pathname}
-        </p>
+
+        {/* Terminal diagnostic metrics track */}
+        <div className="mt-12 pt-6 border-t border-white/5 w-full font-mono text-[9px] text-zinc-600 tracking-wider flex justify-between uppercase">
+          <span>TARGET_ROUTE // {location.pathname}</span>
+          <span className="text-red-500/70">STATUS: FAILED</span>
+        </div>
+
       </div>
+
     </div>
   );
 };

@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from 'react';
 import { useInView } from 'react-intersection-observer';
 import { Headphones, Calendar, Globe, Users, Instagram, Music } from 'lucide-react';
@@ -14,155 +13,178 @@ const About = () => {
   const [activeCard, setActiveCard] = useState<number | null>(null);
 
   return (
-    <section id="about" className="py-24 relative overflow-hidden">
-      {/* Background effects */}
-      <div className="absolute top-0 left-0 right-0 w-full h-full overflow-hidden z-0">
-        <div className="absolute top-1/4 left-1/4 w-72 h-72 rounded-full bg-dj-electric/30 blur-[100px] animate-pulse-slow"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 rounded-full bg-dj-pink/30 blur-[120px] animate-pulse-slow" style={{ animationDelay: '2s' }}></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-youtu96 h-96 bg-dj-blue/20 rounded-full blur-[80px] animate-spotlight-slow"></div>
+    <section id="about" className="py-32 relative overflow-hidden bg-[#050505] border-t border-white/10 select-none">
+
+      {/* 1. BRUTALIST GRID PATTERN & SHADOW LABELS */}
+      <div className="absolute inset-0 z-0 opacity-10 pointer-events-none">
+        <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.01)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.01)_1px,transparent_1px)] bg-[size:50px_50px]"></div>
       </div>
-      
-      <div className="container mx-auto px-4 relative z-10">
-        {/* Section header with animated elements */}
-        <div className="text-center mb-16 relative">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gradient animate-text-gradient">About DJ Moral</h2>
-          <div className="w-32 h-2 bg-gradient-to-r from-dj-electric via-dj-pink to-dj-blue mx-auto mb-6 rounded-full relative overflow-hidden">
-            <div className="absolute inset-0 bg-white/30 animate-pulse-slow"></div>
+
+      {/* Subtle single white backlight for ambient separation instead of pink/blue orbs */}
+      <div className="absolute top-1/2 left-1/4 w-[500px] h-[500px] bg-white/[0.02] rounded-full blur-[140px] pointer-events-none"></div>
+
+      <div className="container mx-auto px-6 relative z-10">
+
+        {/* 2. HEADER: MONOSPACE TRACKER METRICS */}
+        <div className="w-full flex flex-col items-start border-b border-white/10 pb-12 mb-20 relative">
+          <p className="font-mono text-[10px] text-zinc-500 tracking-[0.4em] uppercase mb-4">// INTEL FILE 01</p>
+          <h2 className="font-sans text-5xl md:text-7xl font-black uppercase italic tracking-tighter text-white">
+            THE ARCHITECT.
+          </h2>
+
+          {/* Audio Monitor Anchored Asymmetrically right in header track */}
+          <div className="absolute right-0 bottom-4 opacity-20 hidden md:block">
+            <AudioVisualizer barCount={12} active={true} />
           </div>
-          <AudioVisualizer className="absolute top-0 left-0 w-24 h-16 opacity-50" barCount={8} />
-          <AudioVisualizer className="absolute top-0 right-0 w-24 h-16 opacity-50" barCount={8} />
         </div>
 
-        {/* About content */}
-        <div 
-          ref={ref} 
-          className={`grid md:grid-cols-2 gap-10 items-center transition-all duration-1000 ${
-            inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-          }`}
+        {/* 3. CORE MATRIX STRUCTURE */}
+        <div
+          ref={ref}
+          className={cn(
+            "grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start transition-all duration-1000 transform",
+            inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+          )}
         >
-          {/* Stats with hover effects */}
-          <div className="grid grid-cols-2 gap-6">
-            <div 
-              className="glass-morphism p-6 rounded-2xl transform transition-all duration-500 hover:scale-105 hover:bg-gradient-to-br hover:from-black hover:to-dj-dark hover:shadow-lg hover:shadow-dj-electric/30 hover:-translate-y-1 group"
-              onMouseEnter={() => setActiveCard(0)} 
+          {/* STATS: SHARP EDGE DATA MODULES */}
+          <div className="lg:col-span-5 grid grid-cols-2 gap-2 w-full">
+
+            {/* Card 0 */}
+            <div
+              className={cn(
+                "border p-8 flex flex-col justify-between h-[240px] transition-all duration-500 rounded-none cursor-crosshair",
+                activeCard === 0
+                  ? "bg-[#ffffff] text-black border-white"
+                  : "bg-[#090909] border-white/10 text-white"
+              )}
+              onMouseEnter={() => setActiveCard(0)}
               onMouseLeave={() => setActiveCard(null)}
             >
-              <div className={cn(
-                "flex items-center justify-center w-16 h-16 rounded-full mb-4 mx-auto transition-all duration-500",
-                activeCard === 0 ? "bg-gradient-to-r from-dj-electric to-dj-pink" : "bg-dj-electric/20"
-              )}>
-                <Calendar className={cn(
-                  "w-8 h-8 transition-all duration-500",
-                  activeCard === 0 ? "text-white animate-pulse" : "text-dj-electric"
-                )} />
+              <div className="flex justify-between items-start">
+                <Calendar className={cn("w-5 h-5", activeCard === 0 ? "text-black" : "text-zinc-600")} />
+                <span className="font-mono text-[9px] opacity-40">EXP_01</span>
               </div>
-              <h3 className="text-2xl sm:text-3xl font-bold text-white mb-2 text-center group-hover:text-glow">8+ Years</h3>
-              <p className="text-white/70 text-center group-hover:text-white text-sm">Professional Experience</p>
+              <div>
+                <h3 className="text-3xl md:text-4xl font-black tracking-tighter uppercase mb-1">8+ Years</h3>
+                <p className={cn("font-mono text-[10px] uppercase tracking-wider", activeCard === 0 ? "text-black/60" : "text-zinc-500")}>
+                  Professional Experience
+                </p>
+              </div>
             </div>
-            
-            <div 
-              className="glass-morphism p-6 rounded-2xl transform transition-all duration-500 hover:scale-105 hover:bg-gradient-to-br hover:from-black hover:to-dj-dark hover:shadow-lg hover:shadow-dj-pink/30 hover:-translate-y-1 group"
-              onMouseEnter={() => setActiveCard(1)} 
+
+            {/* Card 1 */}
+            <div
+              className={cn(
+                "border p-8 flex flex-col justify-between h-[240px] transition-all duration-500 rounded-none cursor-crosshair",
+                activeCard === 1
+                  ? "bg-[#ffffff] text-black border-white"
+                  : "bg-[#090909] border-white/10 text-white"
+              )}
+              onMouseEnter={() => setActiveCard(1)}
               onMouseLeave={() => setActiveCard(null)}
             >
-              <div className={cn(
-                "flex items-center justify-center w-16 h-16 rounded-full mb-4 mx-auto transition-all duration-500",
-                activeCard === 1 ? "bg-gradient-to-r from-dj-pink to-dj-electric" : "bg-dj-pink/20"
-              )}>
-                <Globe className={cn(
-                  "w-8 h-8 transition-all duration-500",
-                  activeCard === 1 ? "text-white animate-pulse" : "text-dj-pink"
-                )} />
+              <div className="flex justify-between items-start">
+                <Globe className={cn("w-5 h-5", activeCard === 1 ? "text-black" : "text-zinc-600")} />
+                <span className="font-mono text-[9px] opacity-40">LOC_02</span>
               </div>
-              <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-2 text-center group-hover:text-glow leading-tight">Shows</h3>
-              <p className="text-white/70 text-center group-hover:text-white text-sm">India & internationally</p>
+              <div>
+                <h3 className="text-3xl md:text-4xl font-black tracking-tighter uppercase mb-1">GLOBAL</h3>
+                <p className={cn("font-mono text-[10px] uppercase tracking-wider", activeCard === 1 ? "text-black/60" : "text-zinc-500")}>
+                  India & Internationally
+                </p>
+              </div>
             </div>
-            
-            <div 
-              className="glass-morphism p-6 rounded-2xl transform transition-all duration-500 hover:scale-105 hover:bg-gradient-to-br hover:from-black hover:to-dj-dark hover:shadow-lg hover:shadow-dj-blue/30 hover:-translate-y-1 group"
-              onMouseEnter={() => setActiveCard(2)} 
+
+            {/* Card 2 */}
+            <div
+              className={cn(
+                "border p-8 flex flex-col justify-between h-[240px] transition-all duration-500 rounded-none cursor-crosshair",
+                activeCard === 2
+                  ? "bg-[#ffffff] text-black border-white"
+                  : "bg-[#090909] border-white/10 text-white"
+              )}
+              onMouseEnter={() => setActiveCard(2)}
               onMouseLeave={() => setActiveCard(null)}
             >
-              <div className={cn(
-                "flex items-center justify-center w-16 h-16 rounded-full mb-4 mx-auto transition-all duration-500",
-                activeCard === 2 ? "bg-gradient-to-r from-dj-blue to-dj-light" : "bg-dj-blue/20"
-              )}>
-                <Users className={cn(
-                  "w-8 h-8 transition-all duration-500",
-                  activeCard === 2 ? "text-white animate-pulse" : "text-dj-blue"
-                )} />
+              <div className="flex justify-between items-start">
+                <Users className={cn("w-5 h-5", activeCard === 2 ? "text-black" : "text-zinc-600")} />
+                <span className="font-mono text-[9px] opacity-40">VEN_03</span>
               </div>
-              <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-2 text-center group-hover:text-glow leading-tight">Premium Events</h3>
-              <p className="text-white/70 text-center group-hover:text-white text-sm">Celebrity & Destination Weddings</p>
+              <div>
+                <h3 className="text-2xl md:text-3xl font-black tracking-tighter uppercase mb-1">PREMIUM</h3>
+                <p className={cn("font-mono text-[10px] uppercase tracking-wider", activeCard === 2 ? "text-black/60" : "text-zinc-500")}>
+                  Celebrity & Destination
+                </p>
+              </div>
             </div>
-            
-            <div 
-              className="glass-morphism p-6 rounded-2xl transform transition-all duration-500 hover:scale-105 hover:bg-gradient-to-br hover:from-black hover:to-dj-dark hover:shadow-lg hover:shadow-dj-light/30 hover:-translate-y-1 group"
-              onMouseEnter={() => setActiveCard(3)} 
+
+            {/* Card 3 */}
+            <div
+              className={cn(
+                "border p-8 flex flex-col justify-between h-[240px] transition-all duration-500 rounded-none cursor-crosshair",
+                activeCard === 3
+                  ? "bg-[#ffffff] text-black border-white"
+                  : "bg-[#090909] border-white/10 text-white"
+              )}
+              onMouseEnter={() => setActiveCard(3)}
               onMouseLeave={() => setActiveCard(null)}
             >
-              <div className={cn(
-                "flex items-center justify-center w-16 h-16 rounded-full mb-4 mx-auto transition-all duration-500",
-                activeCard === 3 ? "bg-gradient-to-r from-dj-light to-dj-blue" : "bg-dj-light/20"
-              )}>
-                <Headphones className={cn(
-                  "w-8 h-8 transition-all duration-500",
-                  activeCard === 3 ? "text-white animate-pulse" : "text-dj-light"
-                )} />
+              <div className="flex justify-between items-start">
+                <Headphones className={cn("w-5 h-5", activeCard === 3 ? "text-black" : "text-zinc-600")} />
+                <span className="font-mono text-[9px] opacity-40">MAT_04</span>
               </div>
-              <h3 className="text-2xl sm:text-3xl font-bold text-white mb-2 text-center group-hover:text-glow">1000+</h3>
-              <p className="text-white/70 text-center group-hover:text-white text-sm">Shows Performed</p>
+              <div>
+                <h3 className="text-3xl md:text-4xl font-black tracking-tighter uppercase mb-1">1000+</h3>
+                <p className={cn("font-mono text-[10px] uppercase tracking-wider", activeCard === 3 ? "text-black/60" : "text-zinc-500")}>
+                  Shows Performed
+                </p>
+              </div>
             </div>
+
           </div>
-          
-          {/* Bio with social media */}
-          <div className="glass-morphism p-8 rounded-3xl relative overflow-hidden group">
-            {/* Animated background */}
-            <div className="absolute inset-0 bg-gradient-to-br from-dj-dark/40 to-black/40 opacity-80 group-hover:opacity-100 transition-opacity duration-500"></div>
-            <div className="absolute -right-24 -bottom-24 w-48 h-48 rounded-full bg-dj-electric/20 blur-3xl group-hover:bg-dj-electric/30 transition-all duration-500"></div>
-            
-            <div className="relative z-10">
-              <p className="text-white/90 mb-6 leading-relaxed text-lg">
-                DJ Moral stands out as one of the most promising and dynamic DJs hailing from Gujarat, India. Renowned for his electrifying sets and magnetic stage presence, he offers more than just a performance — he delivers an unforgettable experience. Whether it's a high-end club or a luxury destination wedding, DJ Moral knows exactly how to make the night come alive.
+
+          {/* BIO DESCRIPTOR: NO-MARGIN STARK TEXT PANELS */}
+          <div className="lg:col-span-7 bg-[#090909] border border-white/10 p-8 md:p-12 rounded-none relative">
+            <span className="absolute top-4 right-4 font-mono text-[9px] text-zinc-600">MANIFESTO // LOG</span>
+
+            <div className="space-y-6 text-zinc-400 font-sans text-sm md:text-base leading-relaxed font-light">
+              <p>
+                <span className="text-white font-bold tracking-tight">DJ Moral</span> stands out as one of the most promising and dynamic DJs hailing from Gujarat, India. Renowned for his electrifying sets and magnetic stage presence, he offers more than just a performance — he delivers an unforgettable experience. Whether it's a high-end club or a luxury destination wedding, DJ Moral knows exactly how to make the night come alive.
               </p>
-              
-              <p className="text-white/90 mb-6 leading-relaxed text-lg">
+              <p>
                 His journey began at the age of 19, when he trained in DJing at the prestigious Snixx Academy. Fueled by a deep passion for music, he further honed his craft by studying music production at Singapore Raffles Music College. This strong foundation in both performance and production has enabled him to develop a versatile, signature style that resonates with diverse audiences.
               </p>
-              
-              <p className="text-white/90 mb-6 leading-relaxed text-lg">
+              <p>
                 With a growing presence in both national and international scenes, DJ Moral has performed in top cities across India and rocked stages abroad as well. His rise in the music industry has been swift, especially after performing at several high-profile weddings of the elite — including the widely publicized celebrations of Esha Kansara & Siddharth Amit Bhavsar, Navdeep Saini & Swati Asthana, and more.
               </p>
-              
-              {/* Social media links */}
-              <div className="flex items-center justify-center gap-6 mt-8">
-                <a 
-                  href="https://www.instagram.com/dj_moral/" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="flex items-center px-6 py-3 rounded-full bg-gradient-to-r from-purple-600 to-pink-600 text-white hover:scale-105 transform transition-all duration-300 group"
-                >
-                  <Instagram className="w-5 h-5 mr-2 group-hover:animate-pulse" />
-                  <span>Instagram</span>
-                </a>
-                
-                <a 
-                  href="https://soundcloud.com/dj_moral" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="flex items-center px-6 py-3 rounded-full bg-gradient-to-r from-orange-500 to-red-500 text-white hover:scale-105 transform transition-all duration-300 group"
-                >
-                  <Music className="w-5 h-5 mr-2 group-hover:animate-pulse" />
-                  <span>SoundCloud</span>
-                </a>
-              </div>
+            </div>
+
+            {/* HIGH CONTRAST INDUSTRIAL ACTION LINKS */}
+            <div className="flex flex-col sm:flex-row gap-2 mt-12 pt-8 border-t border-white/10">
+              <a
+                href="https://www.instagram.com/dj_moral/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center bg-[#ffffff] text-black p-4 font-mono text-xs font-bold uppercase tracking-widest hover:bg-zinc-200 transition duration-300 w-full rounded-none"
+              >
+                <Instagram className="w-4 h-4 mr-2 stroke-[2.5]" />
+                Instagram Framework
+              </a>
+
+              <a
+                href="https://soundcloud.com/dj_moral"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center bg-zinc-900 border border-white/10 text-white p-4 font-mono text-xs font-bold uppercase tracking-widest hover:bg-zinc-800 transition duration-300 w-full rounded-none"
+              >
+                <Music className="w-4 h-4 mr-2" />
+                Soundcloud Stream
+              </a>
             </div>
           </div>
+
         </div>
       </div>
-      
-      {/* Background elements */}
-      <div className="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-t from-black to-transparent z-20"></div>
     </section>
   );
 };

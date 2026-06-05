@@ -1,13 +1,12 @@
-
 import React, { useEffect } from 'react';
 import Navbar from '@/components/Navbar';
 import Contact from '@/components/Contact';
+import Footer from '@/components/Footer';
 
 const ContactPage = () => {
   useEffect(() => {
     document.title = "Contact DJ Moral - Book Best DJ in Gujarat | DJ Booking";
-    
-    // Add meta description for contact page
+
     let metaDescription = document.querySelector('meta[name="description"]');
     if (!metaDescription) {
       metaDescription = document.createElement('meta');
@@ -18,19 +17,18 @@ const ContactPage = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-black text-white">
+    <div className="min-h-screen bg-[#030303] text-white selection:bg-white selection:text-black antialiased relative">
       <Navbar />
-      <main className="pt-20 bg-black">
+
+      {/* PERSISTENT STRUCTURAL BACKPLANE GRID */}
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.005)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.005)_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none z-0"></div>
+
+      <main className="pt-24 bg-transparent relative z-10">
         <Contact />
       </main>
-      
-      {/* Footer */}
-      <footer className="py-8 text-center text-white/50 text-sm bg-black border-t border-white/10">
-        <div className="container mx-auto px-4">
-          <p>&copy; {new Date().getFullYear()} DJ MORAL. All rights reserved.</p>
-          <p className="mt-2 text-xs text-white/30">Experience the Ultimate Mix</p>
-        </div>
-      </footer>
+
+      {/* HARD STARK SYSTEM FOOTER */}
+      <Footer />
     </div>
   );
 };

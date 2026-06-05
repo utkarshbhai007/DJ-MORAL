@@ -2,11 +2,12 @@
 import React, { useEffect } from 'react';
 import Navbar from '@/components/Navbar';
 import Services from '@/components/Services';
+import Footer from '@/components/Footer';
 
 const ServicesPage = () => {
   useEffect(() => {
     document.title = "DJ Services - Wedding DJ, Corporate Events | DJ Moral Gujarat";
-    
+
     // Add meta description for services page
     let metaDescription = document.querySelector('meta[name="description"]');
     if (!metaDescription) {
@@ -23,14 +24,9 @@ const ServicesPage = () => {
       <main className="pt-20 bg-black">
         <Services />
       </main>
-      
+
       {/* Footer */}
-      <footer className="py-8 text-center text-white/50 text-sm bg-black border-t border-white/10">
-        <div className="container mx-auto px-4">
-          <p>&copy; {new Date().getFullYear()} DJ MORAL. All rights reserved.</p>
-          <p className="mt-2 text-xs text-white/30">Experience the Ultimate Mix</p>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 };

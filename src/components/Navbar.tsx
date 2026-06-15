@@ -143,7 +143,7 @@ const Navbar = () => {
           </div>
 
           <nav className="flex flex-col items-start gap-6 relative z-10">
-            <span className="font-mono text-[9px] text-zinc-600 tracking-[0.4em] mb-4">// PORTAL NAVIGATION SECTIONS</span>
+            <span className="font-mono text-[9px] text-zinc-600 tracking-[0.4em] mb-4">// NAVIGATION MENU</span>
             <Link
               to="/"
               className={cn(
@@ -190,10 +190,10 @@ const Navbar = () => {
               rel="noopener noreferrer"
               className="flex items-center justify-center gap-2 bg-[#ffffff] text-black w-full py-4 font-sans text-xs font-black uppercase tracking-widest italic"
             >
-              <Play className="w-3 h-3 fill-black stroke-none" /> LAUNCH AUDIO STREAM
+              <Play className="w-3 h-3 fill-black stroke-none" /> LISTEN ON SOUNDCLOUD
             </a>
             <div className="flex justify-between items-center font-mono text-[9px] text-zinc-600 tracking-widest uppercase">
-              <span>M_SYS_V2 // AHD</span>
+              <span>DJ MORAL // AHMEDABAD</span>
               <span>©2026</span>
             </div>
           </div>

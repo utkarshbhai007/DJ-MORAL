@@ -32,7 +32,7 @@ const Contact = () => {
         {/* SECTION HEADER TRACK */}
         <div className="w-full flex flex-col md:flex-row justify-between items-start md:items-end border-b border-white/10 pb-12 mb-20 gap-6">
           <div>
-            <p className="font-mono text-[10px] text-zinc-500 tracking-[0.4em] uppercase mb-4">// MODULE 05 // ENDPOINT_SYNC</p>
+            <p className="font-mono text-[10px] text-zinc-500 tracking-[0.4em] uppercase mb-4">// CONTACT</p>
             <h2 className="font-sans text-5xl md:text-7xl font-black uppercase italic tracking-tighter text-white">
               CONNECT.
             </h2>
@@ -70,7 +70,7 @@ const Contact = () => {
                 {/* Visual Content Data Overlay */}
                 <div className="absolute inset-0 flex flex-col justify-end p-8 z-20">
                   <div className="bg-black/80 border border-white/5 p-6 rounded-none space-y-4">
-                    <span className="font-mono text-[8px] text-zinc-500 uppercase tracking-widest">// RADAR_COMMUNITY_SYNC</span>
+                    <span className="font-mono text-[8px] text-zinc-500 uppercase tracking-widest">// SOCIAL LINKS</span>
 
                     {/* High-Contrast Social Link Block */}
                     <div className="flex flex-col gap-2">
@@ -126,13 +126,13 @@ const Contact = () => {
                           <Phone className="w-4 h-4" />
                         </div>
                         <div>
-                          <span className="font-mono text-[9px] text-zinc-600 block uppercase tracking-widest">COMMS_PHONE</span>
+                          <span className="font-mono text-[9px] text-zinc-600 block uppercase tracking-widest">PHONE</span>
                           <a href="tel:+918401430191" className="text-zinc-300 font-mono text-xs tracking-wider uppercase group-hover:text-white transition-colors">
                             +91 84014 30191
                           </a>
                         </div>
                       </div>
-                      <span className="font-mono text-[9px] text-zinc-700 hidden sm:inline">[ CH_01 ]</span>
+                      <span className="font-mono text-[9px] text-zinc-700 hidden sm:inline">[ DIRECT ]</span>
                     </div>
 
                     {/* Line 2 */}
@@ -142,13 +142,13 @@ const Contact = () => {
                           <Mail className="w-4 h-4" />
                         </div>
                         <div>
-                          <span className="font-mono text-[9px] text-zinc-600 block uppercase tracking-widest">COMMS_EMAIL</span>
+                          <span className="font-mono text-[9px] text-zinc-600 block uppercase tracking-widest">EMAIL</span>
                           <span className="text-zinc-300 font-mono text-xs tracking-wider uppercase group-hover:text-white transition-colors">
                             djmoral.booking@gmail.com
                           </span>
                         </div>
                       </div>
-                      <span className="font-mono text-[9px] text-zinc-700 hidden sm:inline">[ CH_02 ]</span>
+                      <span className="font-mono text-[9px] text-zinc-700 hidden sm:inline">[ INQUIRIES ]</span>
                     </div>
 
                     {/* Line 3 */}
@@ -158,13 +158,13 @@ const Contact = () => {
                           <MapPin className="w-4 h-4" />
                         </div>
                         <div>
-                          <span className="font-mono text-[9px] text-zinc-600 block uppercase tracking-widest">COORDINATES</span>
+                          <span className="font-mono text-[9px] text-zinc-600 block uppercase tracking-widest">LOCATION</span>
                           <p className="text-zinc-300 font-mono text-xs tracking-wider uppercase group-hover:text-white transition-colors">
                             Ahmedabad, Gujarat, India
                           </p>
                         </div>
                       </div>
-                      <span className="font-mono text-[9px] text-zinc-700 hidden sm:inline">[ CH_03 ]</span>
+                      <span className="font-mono text-[9px] text-zinc-700 hidden sm:inline">[ REGION ]</span>
                     </div>
 
                   </div>
@@ -177,10 +177,10 @@ const Contact = () => {
                     className="w-full h-16 bg-[#ffffff] text-black font-mono text-xs font-black tracking-[0.2em] rounded-none hover:bg-zinc-200 active:scale-[0.99] transition-all uppercase italic"
                   >
                     <Phone className="w-4 h-4 mr-2 stroke-[2.5]" />
-                    INITIALIZE SECURE CALL
+                    CALL DJ MORAL
                   </Button>
                   <p className="font-mono text-[9px] text-zinc-600 tracking-widest text-center uppercase">
-                    // Touch to establish direct cellular tracking loop.
+                    // Touch to call directly for bookings and inquiries.
                   </p>
                 </div>
 

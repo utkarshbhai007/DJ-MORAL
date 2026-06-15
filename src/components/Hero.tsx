@@ -59,14 +59,7 @@ const Hero = () => {
           }}
         />
 
-        {/* Coordinates */}
-        <div className="absolute top-24 left-8 font-mono text-[10px] text-zinc-500 tracking-[0.3em] uppercase hidden sm:block">
-          [ FREQUENCY SYSTEM // ACTIVE ]
-        </div>
 
-        <div className="absolute top-24 right-8 font-mono text-[10px] text-zinc-500 tracking-widest hidden sm:block">
-          AHD // 23.0225° N, 72.5714° E
-        </div>
       </div>
 
       {/* CONTENT */}
@@ -91,9 +84,7 @@ const Hero = () => {
           <div className="w-full flex flex-col md:flex-row justify-between items-start md:items-end gap-8 border-t border-white/10 pt-8 mt-4">
             {/* Audio Visualizer */}
             <div className="relative w-full md:max-w-xs group">
-              <div className="absolute -top-6 left-0 font-mono text-[9px] tracking-widest text-zinc-600 uppercase">
-                实时音频频谱 // LIVE OSCILLOSCOPE MONITOR
-              </div>
+
 
               <AudioVisualizer
                 barCount={32}
@@ -102,11 +93,7 @@ const Hero = () => {
               />
             </div>
 
-            {/* Scroll Indicator */}
-            <div className="font-mono text-[10px] text-zinc-400 tracking-[0.3em] uppercase flex items-center gap-3 animate-pulse">
-              SCANNED AUDIO MATRIX{' '}
-              <span className="text-white font-black">[ ▼ ]</span>
-            </div>
+
           </div>
         </div>
       </div>

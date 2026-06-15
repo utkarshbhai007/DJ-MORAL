@@ -265,7 +265,7 @@ const About = () => {
         <div className="w-full flex flex-col items-start border-b border-white/[0.08] pb-10 mb-16 relative">
           <div className="flex items-center gap-3 mb-3">
             <span className="w-2 h-2 rounded-full bg-dj-electric animate-pulse" />
-            <p className="font-mono text-[10px] text-zinc-500 tracking-[0.4em] uppercase">// METADATA FILE 01</p>
+            <p className="font-mono text-[10px] text-zinc-500 tracking-[0.4em] uppercase">// BIOGRAPHY</p>
           </div>
           <h2 className="font-sans text-5xl md:text-7xl font-black uppercase italic tracking-tighter text-white">
             THE ARCHITECT.
@@ -296,7 +296,7 @@ const About = () => {
               onMouseLeave={() => setHoveredCard(null)}
             >
               <div className="flex justify-between items-start">
-                <span className="font-mono text-[9px] text-zinc-600 tracking-[0.2em] uppercase">// EXP_01</span>
+                <span className="font-mono text-[9px] text-zinc-600 tracking-[0.2em] uppercase">// EXPERIENCE</span>
                 <span className={cn(
                   "w-1.5 h-1.5 rounded-full transition-all duration-300", 
                   hoveredCard === 0 ? "bg-dj-blue shadow-[0_0_8px_#0EA5E9]" : "bg-zinc-800"
@@ -351,7 +351,7 @@ const About = () => {
               onMouseLeave={() => setHoveredCard(null)}
             >
               <div className="flex justify-between items-start">
-                <span className="font-mono text-[9px] text-zinc-600 tracking-[0.2em] uppercase">// LOC_02</span>
+                <span className="font-mono text-[9px] text-zinc-600 tracking-[0.2em] uppercase">// LOCATION</span>
                 <span className={cn(
                   "w-1.5 h-1.5 rounded-full transition-all duration-300", 
                   hoveredCard === 1 ? "bg-emerald-400 shadow-[0_0_8px_#34d399]" : "bg-zinc-800"
@@ -391,7 +391,7 @@ const About = () => {
               onMouseLeave={() => setHoveredCard(null)}
             >
               <div className="flex justify-between items-start">
-                <span className="font-mono text-[9px] text-zinc-600 tracking-[0.2em] uppercase">// DYN_03</span>
+                <span className="font-mono text-[9px] text-zinc-600 tracking-[0.2em] uppercase">// DYNAMICS</span>
                 <span className={cn(
                   "w-1.5 h-1.5 rounded-full transition-all duration-300", 
                   hoveredCard === 2 ? "bg-amber-400 shadow-[0_0_8px_#f59e0b]" : "bg-zinc-800"
@@ -447,7 +447,7 @@ const About = () => {
               onMouseLeave={() => setHoveredCard(null)}
             >
               <div className="flex justify-between items-start">
-                <span className="font-mono text-[9px] text-zinc-600 tracking-[0.2em] uppercase">// MAT_04</span>
+                <span className="font-mono text-[9px] text-zinc-600 tracking-[0.2em] uppercase">// PERFORMANCE</span>
                 <span className={cn(
                   "w-1.5 h-1.5 rounded-full transition-all duration-300", 
                   hoveredCard === 3 ? "bg-dj-pink shadow-[0_0_8px_#D946EF]" : "bg-zinc-800"
@@ -510,7 +510,7 @@ const About = () => {
                       : "border-transparent text-zinc-500 hover:text-zinc-300"
                   )}
                 >
-                  // PROFILE.LOG
+                  BIOGRAPHY
                 </button>
                 <button
                   onClick={() => setActiveTab('sampler')}
@@ -522,10 +522,10 @@ const About = () => {
                   )}
                 >
                   <Activity className={cn("w-3.5 h-3.5", activeTab === 'sampler' && "text-dj-pink animate-pulse")} />
-                  // SAMPLER.PAD
+                  LIVE SAMPLER
                 </button>
               </div>
-              <span className="font-mono text-[9px] text-zinc-600 tracking-wider hidden sm:block">SYSTEM_STATUS: OK</span>
+              <span className="font-mono text-[9px] text-zinc-600 tracking-wider hidden sm:block">STATUS: ONLINE</span>
             </div>
 
             {/* TAB CONTENT: PROFILE LOG */}
@@ -535,7 +535,7 @@ const About = () => {
                 <div className="absolute left-0 right-0 h-[1.5px] bg-dj-electric/25 shadow-[0_0_8px_rgba(139,92,246,0.6)] pointer-events-none animate-[bounce_6s_infinite_linear]" />
 
                 <p>
-                  <span className="text-white font-bold tracking-tight bg-white/5 border border-white/10 px-1.5 py-0.5 mr-1 font-mono text-xs uppercase">// INTEL //</span>{' '}
+                  <span className="text-white font-bold tracking-tight bg-white/5 border border-white/10 px-1.5 py-0.5 mr-1 font-mono text-xs uppercase">BIO OVERVIEW</span>{' '}
                   <span className="text-white font-black tracking-tight">DJ Moral</span> stands out as one of the most
                   promising and dynamic DJs hailing from Gujarat, India. Renowned for his electrifying sets and magnetic
                   stage presence, he offers more than just a performance — he delivers an unforgettable experience.
@@ -563,8 +563,8 @@ const About = () => {
                 {/* Oscilloscope Visualizer Box */}
                 <div className="bg-black/60 border border-white/[0.06] p-4 h-24 mb-6 rounded flex flex-col justify-between relative overflow-hidden">
                   <div className="flex justify-between items-center text-[8px] font-mono text-zinc-500 z-10">
-                    <span>OSCILLOSCOPE_STREAM</span>
-                    <span className="text-dj-pink animate-pulse">// ACTIVE</span>
+                    <span>AUDIO_WAVEFORM_STREAM</span>
+                    <span className="text-dj-pink animate-pulse">ACTIVE</span>
                   </div>
                   
                   {/* SVG Wave */}

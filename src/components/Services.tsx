@@ -38,7 +38,7 @@ const ServiceCard = ({ icon, title, description, delay, inView, isActive, onHove
             className: cn("w-5 h-5 transition-colors", isActive ? "text-white" : "text-zinc-400")
           })}
         </div>
-        <span className="font-mono text-[9px] opacity-30">UNIT_SRV_{delay}</span>
+        <span className="font-mono text-[9px] opacity-30">SERVICE_0{delay}</span>
       </div>
 
       <div className="mt-12 space-y-3">
@@ -108,9 +108,9 @@ const Services = () => {
         {/* SECTION HEADER TRACK */}
         <div className="w-full flex flex-col md:flex-row justify-between items-start md:items-end border-b border-white/10 pb-12 mb-20 gap-6">
           <div>
-            <p className="font-mono text-[10px] text-zinc-500 tracking-[0.4em] uppercase mb-4">// MODULE 02 // CAPABILITIES</p>
+            <p className="font-mono text-[10px] text-zinc-500 tracking-[0.4em] uppercase mb-4">// SERVICES</p>
             <h2 className="font-sans text-5xl md:text-7xl font-black uppercase italic tracking-tighter text-white">
-              THE SONIC SPEC.
+              WHAT WE DO.
             </h2>
           </div>
           <p className="font-mono text-xs text-zinc-400 uppercase tracking-widest max-w-sm leading-relaxed">
@@ -120,7 +120,7 @@ const Services = () => {
 
         {/* SYSTEM RECAP AUDIO FREQUENCY MONITOR BLOCK */}
         <div className="mb-20 w-full border border-white/10 p-6 bg-[#090909]/60 relative group">
-          <span className="absolute top-2 left-4 font-mono text-[8px] text-zinc-600 uppercase tracking-widest">REALTIME_FREQ_MATRIX // MONITOR</span>
+          <span className="absolute top-2 left-4 font-mono text-[8px] text-zinc-600 uppercase tracking-widest">AUDIO VISUALIZER</span>
           <AudioVisualizer barCount={64} className="mx-auto h-24 opacity-30 group-hover:opacity-60 transition-opacity duration-500 w-full" active={true} />
         </div>
 
@@ -150,8 +150,8 @@ const Services = () => {
           {/* ELEMENT DECK */}
           <div className="border border-white/10 bg-[#090909] p-8 md:p-10 flex flex-col justify-between">
             <div>
-              <p className="font-mono text-[9px] text-zinc-600 tracking-widest uppercase mb-4">// PERFORMANCE_ADDITIONS</p>
-              <h4 className="text-2xl font-black text-white uppercase tracking-tight mb-8">LIVE COLLABORATION ENGINES</h4>
+              <p className="font-mono text-[9px] text-zinc-600 tracking-widest uppercase mb-4">// PERFORMANCE ADDITIONS</p>
+              <h4 className="text-2xl font-black text-white uppercase tracking-tight mb-8">LIVE COLLABORATIVE PERFORMANCES</h4>
             </div>
             <div className="flex flex-wrap gap-1.5">
               {performanceElements.map((element, index) => (
@@ -168,8 +168,8 @@ const Services = () => {
           {/* GENRE DECK */}
           <div className="border border-white/10 bg-[#090909] p-8 md:p-10 flex flex-col justify-between">
             <div>
-              <p className="font-mono text-[9px] text-zinc-600 tracking-widest uppercase mb-4">// SONIC_SPECTRUM_MAPPING</p>
-              <h3 className="text-2xl font-black text-white uppercase tracking-tight mb-8">CURATED ARCHIVE GENRES</h3>
+              <p className="font-mono text-[9px] text-zinc-600 tracking-widest uppercase mb-4">// MUSIC GENRES</p>
+              <h3 className="text-2xl font-black text-white uppercase tracking-tight mb-8">CURATED MUSIC GENRES</h3>
             </div>
             <div className="flex flex-wrap gap-1.5">
               {musicGenres.map((genre, index) => (
@@ -187,7 +187,7 @@ const Services = () => {
 
         {/* HIGH CONTRAST SYNDICATE LINKS */}
         <div className="mt-32 border-t border-white/10 pt-16 text-center max-w-xl mx-auto space-y-6">
-          <h4 className="font-mono text-[10px] font-bold text-zinc-500 tracking-[0.3em] uppercase">TRANSMIT RADAR FOLLOWS</h4>
+          <h4 className="font-mono text-[10px] font-bold text-zinc-500 tracking-[0.3em] uppercase">FOLLOW DJ MORAL</h4>
           <div className="flex flex-col sm:flex-row gap-2 w-full">
             <a
               href="https://www.instagram.com/dj_moral/"

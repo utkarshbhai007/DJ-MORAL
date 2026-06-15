@@ -46,18 +46,18 @@ const BookingForm = () => {
 
         {/* HEADER TRACK LAYER */}
         <div className="w-full flex flex-col items-start border-b border-white/10 pb-12 mb-16">
-          <p className="font-mono text-[10px] text-zinc-500 tracking-[0.4em] uppercase mb-4">// REGISTRATION GATE</p>
+          <p className="font-mono text-[10px] text-zinc-500 tracking-[0.4em] uppercase mb-4">// BOOKING FORM</p>
           <h2 className="font-sans text-5xl md:text-7xl font-black uppercase italic tracking-tighter text-white">
-            SECURE ACCESS.
+            BOOK DJ MORAL.
           </h2>
           <p className="font-mono text-xs text-zinc-400 uppercase tracking-widest mt-4">
-            Request execution logs and verify schedule options.
+            Let us know your event details and check availability.
           </p>
         </div>
 
         {/* HARD MATRIX FORM BOX */}
         <div className="bg-[#080808] border border-white/10 p-8 md:p-12 rounded-none relative">
-          <span className="absolute top-4 right-4 font-mono text-[9px] text-zinc-600">SYS_TRANSMIT // B_DECK</span>
+          <span className="absolute top-4 right-4 font-mono text-[9px] text-zinc-600">INQUIRY FORM</span>
 
           <form
             action="https://formsubmit.co/djmoral.booking@gmail.com"
@@ -78,7 +78,7 @@ const BookingForm = () => {
                   name="name"
                   type="text"
                   required
-                  placeholder="IDENTITY PROFILE TITLE"
+                  placeholder="YOUR FULL NAME"
                   className="bg-black border-white/10 text-xs font-mono text-white placeholder:text-zinc-700 h-14 rounded-none focus:border-white transition-colors"
                 />
               </div>
@@ -90,7 +90,7 @@ const BookingForm = () => {
                   name="phone"
                   type="tel"
                   required
-                  placeholder="+91 OPERATIONAL LINK"
+                  placeholder="YOUR PHONE NUMBER"
                   className="bg-black border-white/10 text-xs font-mono text-white placeholder:text-zinc-700 h-14 rounded-none focus:border-white transition-colors"
                 />
               </div>
@@ -103,7 +103,7 @@ const BookingForm = () => {
                 name="email"
                 type="email"
                 required
-                placeholder="ENDPOINT@DOMAIN.COM"
+                placeholder="YOUR EMAIL ADDRESS"
                 className="bg-black border-white/10 text-xs font-mono text-white placeholder:text-zinc-700 h-14 rounded-none focus:border-white transition-colors"
               />
             </div>
@@ -133,7 +133,7 @@ const BookingForm = () => {
                   name="city"
                   type="text"
                   required
-                  placeholder="TARGET LOCATION CITY"
+                  placeholder="VENUE LOCATION / CITY"
                   className="bg-black border-white/10 text-xs font-mono text-white placeholder:text-zinc-700 h-14 rounded-none focus:border-white transition-colors"
                 />
               </div>
@@ -143,7 +143,7 @@ const BookingForm = () => {
               <label htmlFor="function_type" className="font-mono text-[10px] uppercase font-bold tracking-widest text-zinc-400">Function Type *</label>
               <Select name="function_type" required>
                 <SelectTrigger className="bg-black border-white/10 text-xs font-mono text-zinc-400 h-14 rounded-none focus:border-white transition-colors uppercase">
-                  <SelectValue placeholder="SELECT COMPOSITION CLASS" />
+                  <SelectValue placeholder="SELECT EVENT TYPE" />
                 </SelectTrigger>
                 <SelectContent className="bg-[#090909] border-white/10 rounded-none">
                   {functionTypes.map((type) => (
@@ -163,7 +163,7 @@ const BookingForm = () => {
                 </label>
                 <Select name="time_slot" required>
                   <SelectTrigger className="bg-black border-white/10 text-xs font-mono text-zinc-400 h-14 rounded-none focus:border-white transition-colors uppercase">
-                    <SelectValue placeholder="CHOOSE TIME FRAME" />
+                    <SelectValue placeholder="SELECT TIME SLOT" />
                   </SelectTrigger>
                   <SelectContent className="bg-[#090909] border-white/10 rounded-none">
                     {timeSlots.map((slot) => (
@@ -179,7 +179,7 @@ const BookingForm = () => {
                 <label htmlFor="sound_requirements" className="font-mono text-[10px] uppercase font-bold tracking-widest text-zinc-400">Sound Requirements *</label>
                 <Select name="sound_requirements" required>
                   <SelectTrigger className="bg-black border-white/10 text-xs font-mono text-zinc-400 h-14 rounded-none focus:border-white transition-colors uppercase">
-                    <SelectValue placeholder="AMPLIFICATION ARRAYS" />
+                    <SelectValue placeholder="SELECT SOUND REQUIREMENTS" />
                   </SelectTrigger>
                   <SelectContent className="bg-[#090909] border-white/10 rounded-none">
                     {soundRequirements.map((req) => (
@@ -198,7 +198,7 @@ const BookingForm = () => {
                 id="venue_name"
                 name="venue_name"
                 type="text"
-                placeholder="PROPOSED VENUE CODES"
+                placeholder="VENUE NAME"
                 className="bg-black border-white/10 text-xs font-mono text-white placeholder:text-zinc-700 h-14 rounded-none focus:border-white transition-colors"
               />
             </div>
@@ -208,7 +208,7 @@ const BookingForm = () => {
               <Textarea
                 id="additional_details"
                 name="additional_details"
-                placeholder="ENTER SYSTEM BALANCING PARAMETERS, ESTIMATED USER ATTENDEE COUNTS, AND LOGISTICS DATA CRITERIA..."
+                placeholder="ENTER ANY ADDITIONAL EVENT DETAILS OR SPECIAL REQUESTS..."
                 className="bg-black border-white/10 text-xs font-mono text-white placeholder:text-zinc-700 min-h-[120px] rounded-none focus:border-white transition-colors uppercase resize-none p-4"
               />
             </div>
@@ -218,11 +218,11 @@ const BookingForm = () => {
               disabled={isSubmitting}
               className="w-full bg-[#ffffff] text-black font-mono text-sm font-black py-6 rounded-none hover:bg-zinc-200 active:scale-[0.99] transition-all uppercase tracking-[0.2em] italic"
             >
-              {isSubmitting ? "TRANSMITTING DATA..." : "TRANSMIT PROJECT BRIEF"}
+              {isSubmitting ? "SUBMITTING REQUEST..." : "SUBMIT INQUIRY"}
             </Button>
 
             <p className="font-mono text-[9px] text-zinc-600 tracking-widest text-center uppercase">
-              // DATA CLEARANCE REVIEW loop completes inside 24 hours.
+              // We will get back to you within 24 hours.
             </p>
           </form>
         </div>

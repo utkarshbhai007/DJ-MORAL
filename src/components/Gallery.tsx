@@ -79,7 +79,7 @@ const Gallery = () => {
         {/* HARDWARE INTERFACE SECTION HEADER */}
         <div className="w-full flex flex-col md:flex-row justify-between items-start md:items-end border-b border-white/10 pb-12 mb-20 gap-6">
           <div>
-            <p className="font-mono text-[10px] text-zinc-500 tracking-[0.4em] uppercase mb-4">// MODULE 03 // ARCHIVE_VISUALS</p>
+            <p className="font-mono text-[10px] text-zinc-500 tracking-[0.4em] uppercase mb-4">// GALLERY</p>
             <h2 className="font-sans text-5xl md:text-7xl font-black uppercase italic tracking-tighter text-white">
               THE CAPTURES.
             </h2>
@@ -91,7 +91,7 @@ const Gallery = () => {
 
         {/* STATIC AUDIO RASTER BLOCK */}
         <div className="mb-20 w-full border border-white/10 p-6 bg-[#090909]/60 relative group">
-          <span className="absolute top-2 left-4 font-mono text-[8px] text-zinc-600 uppercase tracking-widest">CAPTURED_SIGNAL_SPECTRUM</span>
+          <span className="absolute top-2 left-4 font-mono text-[8px] text-zinc-600 uppercase tracking-widest">AUDIO SPECTRUM</span>
           <AudioVisualizer barCount={32} className="mx-auto h-24 opacity-30 group-hover:opacity-60 transition-opacity duration-500 w-full" active={true} />
         </div>
 
@@ -125,13 +125,13 @@ const Gallery = () => {
                 />
               ) : (
                 <div className="w-full h-full flex flex-col items-center justify-center min-h-[150px] border border-dashed border-white/10">
-                  <span className="font-mono text-[9px] text-zinc-600 uppercase tracking-widest">LOADING // VECTOR</span>
+                  <span className="font-mono text-[9px] text-zinc-600 uppercase tracking-widest">LOADING IMAGE</span>
                 </div>
               )}
 
               {/* STARK BRUTALIST DATA OVERLAY */}
               <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-between p-4">
-                <span className="font-mono text-[8px] text-white/40 tracking-widest self-end">SYS_PLATE_0{index + 1}</span>
+                <span className="font-mono text-[8px] text-white/40 tracking-widest self-end">IMAGE_0{index + 1}</span>
                 <div>
                   <p className="text-white font-mono text-[10px] uppercase tracking-wider truncate">{image.alt}</p>
                 </div>
@@ -145,7 +145,7 @@ const Gallery = () => {
 
         {/* HIGH CONTRAST FOOTER RADAR LINKS */}
         <div className="mt-32 border-t border-white/10 pt-16 text-center max-w-xl mx-auto space-y-6">
-          <h4 className="font-mono text-[10px] font-bold text-zinc-500 tracking-[0.3em] uppercase">TRANSMIT RADAR FOLLOWS</h4>
+          <h4 className="font-mono text-[10px] font-bold text-zinc-500 tracking-[0.3em] uppercase">FOLLOW DJ MORAL</h4>
           <div className="flex flex-col sm:flex-row gap-2 w-full">
             <a
               href="https://www.instagram.com/dj_moral/"
@@ -187,7 +187,7 @@ const Gallery = () => {
           {/* Lightbox Header Telemetry */}
           <div className="flex justify-between items-center border-b border-white/10 pb-4 w-full">
             <div className="font-mono text-[10px] text-zinc-500 tracking-widest uppercase">
-              PREVIEW SYSTEM // IMAGE_0{selectedImage + 1}
+              PREVIEW // IMAGE_0{selectedImage + 1}
             </div>
             <button
               onClick={() => setSelectedImage(null)}
@@ -231,7 +231,7 @@ const Gallery = () => {
           <div className="flex justify-between items-center border-t border-white/10 pt-4 w-full font-mono text-[9px] text-zinc-500 tracking-widest uppercase">
             <div>META: {images[selectedImage].alt}</div>
             <div className="bg-white/10 text-white px-3 py-1">
-              INDEX: {selectedImage + 1} // {images.length}
+              IMAGE {selectedImage + 1} OF {images.length}
             </div>
           </div>
 

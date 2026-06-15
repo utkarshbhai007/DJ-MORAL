@@ -33,18 +33,18 @@ const Footer = () => {
 
           {/* Column B: Internal System Vectors */}
           <div className="md:col-span-3 space-y-4 font-mono text-[11px] font-bold tracking-widest uppercase">
-            <p className="text-zinc-600 text-[10px] tracking-[0.3em] font-normal">// SYSTEM VECTORS</p>
+            <p className="text-zinc-600 text-[10px] tracking-[0.3em] font-normal">// QUICK LINKS</p>
             <div className="flex flex-col gap-2.5">
-              <Link to="/" className="text-zinc-400 hover:text-white hover:underline underline-offset-4 decoration-2 transition-colors w-fit">01_BASE // HOME</Link>
-              <Link to="/services" className="text-zinc-400 hover:text-white hover:underline underline-offset-4 decoration-2 transition-colors w-fit">02_CAP // SERVICES</Link>
-              <Link to="/gallery" className="text-zinc-400 hover:text-white hover:underline underline-offset-4 decoration-2 transition-colors w-fit">03_VIS // GALLERY</Link>
-              <Link to="/contact" className="text-zinc-400 hover:text-white hover:underline underline-offset-4 decoration-2 transition-colors w-fit">04_CON // CONTACT</Link>
+              <Link to="/" className="text-zinc-400 hover:text-white hover:underline underline-offset-4 decoration-2 transition-colors w-fit">HOME</Link>
+              <Link to="/services" className="text-zinc-400 hover:text-white hover:underline underline-offset-4 decoration-2 transition-colors w-fit">SERVICES</Link>
+              <Link to="/gallery" className="text-zinc-400 hover:text-white hover:underline underline-offset-4 decoration-2 transition-colors w-fit">GALLERY</Link>
+              <Link to="/contact" className="text-zinc-400 hover:text-white hover:underline underline-offset-4 decoration-2 transition-colors w-fit">CONTACT</Link>
             </div>
           </div>
 
           {/* Column C: Transmission Endpoints */}
           <div className="md:col-span-3 space-y-4 font-mono text-[11px] font-bold tracking-widest uppercase">
-            <p className="text-zinc-600 text-[10px] tracking-[0.3em] font-normal">// TRANSMISSION</p>
+            <p className="text-zinc-600 text-[10px] tracking-[0.3em] font-normal">// SOCIAL MEDIA</p>
             <div className="flex flex-col gap-2.5">
               <a href="https://www.instagram.com/dj_moral/" target="_blank" rel="noopener noreferrer" className="text-zinc-400 hover:text-white flex items-center gap-2 group transition-colors w-fit">
                 <Instagram className="w-3.5 h-3.5 stroke-[2.5]" /> INSTAGRAM
@@ -75,9 +75,9 @@ const Footer = () => {
         <div className="border-t border-white/5 pt-12 flex flex-col md:flex-row justify-between items-center gap-6 font-mono text-[10px] tracking-widest uppercase text-zinc-600">
           
           <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-8 text-center md:text-left">
-            <span>© {new Date().getFullYear()} DJ MORAL ARCHIVE FRAMEWORK</span>
+            <span>© {new Date().getFullYear()} DJ MORAL. ALL RIGHTS RESERVED.</span>
             <span className="hidden sm:inline text-zinc-800">|</span>
-            <span>COORDINATES // 23.0225° N, 72.5714° E</span>
+            <span>AHMEDABAD, GUJARAT, INDIA</span>
           </div>
 
           <div className="text-center md:text-right flex items-center gap-2 group">

@@ -39,7 +39,7 @@ const BookingForm = () => {
   return (
     <section id="booking" className="py-32 px-6 bg-[#030303] border-t border-white/10 select-none relative z-10">
 
-      {/* BACKGROUND GRAPH GRID ARCHITECTURE */}
+      {/* BACKGROUND GRID */}
       <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.005)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.005)_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none z-0"></div>
 
       <div className="container mx-auto max-w-3xl relative z-10">

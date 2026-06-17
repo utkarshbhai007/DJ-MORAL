@@ -26,8 +26,8 @@ const Footer = () => {
               </span>
             </Link>
             <p className="font-mono text-xs text-zinc-500 uppercase tracking-wider leading-relaxed max-w-sm">
-              India's premier sonic architect and electronic music producer. 
-              Engineering raw frequencies and industrial sensory environments across elite corporate platforms, clubs, and heritage destination events.
+              India's premier electronic music producer and DJ.
+              Crafting high-energy performances and custom musical sets across elite corporate events, clubs, and luxury destination weddings.
             </p>
           </div>
 
@@ -81,7 +81,7 @@ const Footer = () => {
           </div>
 
           <div className="text-center md:text-right flex items-center gap-2 group">
-            <span className="text-zinc-700 font-light text-[9px] tracking-normal">ARCHITECTURE ASSEMBLED BY</span>
+            <span className="text-zinc-700 font-light text-[9px] tracking-normal">WEBSITE DESIGNED BY</span>
             <a 
               href="https://www.udaanworks.com" 
               target="_blank" 

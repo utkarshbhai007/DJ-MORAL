@@ -268,7 +268,7 @@ const About = () => {
             <p className="font-mono text-[10px] text-zinc-500 tracking-[0.4em] uppercase">// BIOGRAPHY</p>
           </div>
           <h2 className="font-sans text-5xl md:text-7xl font-black uppercase italic tracking-tighter text-white">
-            THE ARCHITECT.
+            THE ARTIST.
           </h2>
           <div className="absolute right-0 bottom-4 opacity-30 hidden md:block">
             <AudioVisualizer barCount={16} active={true} />

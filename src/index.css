@@ -86,8 +86,6 @@
 
   .visualizer-bar {
     @apply w-1 rounded-full bg-gradient-to-t from-dj-electric to-dj-pink mx-[2px];
-    animation: audio-wave calc(1s + (random() * 0.5s)) ease-in-out infinite;
-    animation-delay: calc(random() * 0.5s);
   }
 
   .text-glow {

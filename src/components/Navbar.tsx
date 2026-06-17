@@ -85,6 +85,15 @@ const Navbar = () => {
             HOME
           </Link>
           <Link
+            to="/music"
+            className={cn(
+              "transition-colors relative py-1",
+              isActive('/music') ? "text-white underline underline-offset-4 decoration-2" : "text-zinc-500 hover:text-white"
+            )}
+          >
+            MUSIC
+          </Link>
+          <Link
             to="/services"
             className={cn(
               "transition-colors relative py-1",
@@ -152,6 +161,15 @@ const Navbar = () => {
               )}
             >
               HOME
+            </Link>
+            <Link
+              to="/music"
+              className={cn(
+                "text-4xl font-black tracking-tighter uppercase italic transition-all",
+                isActive('/music') ? "text-white pl-2 border-l-2 border-white" : "text-zinc-700"
+              )}
+            >
+              MUSIC
             </Link>
             <Link
               to="/services"

@@ -1,0 +1,17 @@
+DJ MORAL - PERSONAL SONGS FOLDER
+================================
+
+Please place your 7 custom DJ tracks/songs in this folder.
+By default, the music player is configured to look for the following file names:
+
+1. song1.mp3 -> Title: Bollywood Club Mashup
+2. song2.mp3 -> Title: Punjabi Dhol Mix
+3. song3.mp3 -> Title: EDM Festival Anthem
+4. song4.mp3 -> Title: Techno Underground Set
+5. song5.mp3 -> Title: Retro Bollywood Fusion
+6. song6.mp3 -> Title: Commercial House Grooves
+7. song7.mp3 -> Title: Chillout Sunset Session
+
+Note: 
+- You can place files with different names, but make sure to update the names and paths in `src/data/songs.ts`!
+- The audio player supports .mp3, .wav, .m4a and other web-compatible formats.

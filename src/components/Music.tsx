@@ -495,7 +495,7 @@ const Music = () => {
             )}
           </div>
 
-          {/* RIGHT PANEL: 7-TRACK LIST CONTROLLER (5 COLS) */}
+          {/* RIGHT PANEL: TRACK LIST CONTROLLER (5 COLS) */}
           <div className="lg:col-span-5 flex flex-col gap-6">
 
             {/* SELECTION LIST */}

@@ -71,5 +71,14 @@ export const songs: Song[] = [
     duration: "06:17",
     genre: "Melodic House",
     description: "Stunning, emotional melodic edit of Vaari Jaavan. Soft chords, driving bass sweeps, and rich atmospheric drops."
+  },
+  {
+    id: "track-8",
+    title: "Aabaad Barbaad",
+    artist: "DJ Moral",
+    url: "/songs/song8.mp3",
+    duration: "03:30",
+    genre: "Bollywood Remix",
+    description: "Dynamic and high-energy edit of Aabaad Barbaad, featuring driving club beats and clean vocal arrangements."
   }
 ];

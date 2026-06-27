@@ -312,16 +312,10 @@ const Music = () => {
       <div className="container mx-auto px-6 relative z-10">
         
         {/* HEADER SECTION */}
-        <div className="w-full flex flex-col md:flex-row justify-between items-start md:items-end border-b border-white/10 pb-12 mb-16 gap-6">
-          <div>
-            <p className="font-mono text-[10px] text-zinc-500 tracking-[0.4em] uppercase mb-4">// TRANSMISSIONS</p>
-            <h2 className="font-sans text-5xl md:text-7xl font-black uppercase italic tracking-tighter text-white">
-              THE BEAT.STORE
-            </h2>
-          </div>
-          <p className="font-mono text-xs text-zinc-400 uppercase tracking-widest max-w-sm leading-relaxed">
-            Exclusive sound designs and private bootlegs. Customize your session by previewing individual DJ sets below.
-          </p>
+        <div className="w-full border-b border-white/10 pb-12 mb-16">
+          <h2 className="font-sans text-3xl sm:text-4xl md:text-6xl font-black uppercase italic tracking-tighter text-white">
+            MUSIC.
+          </h2>
         </div>
 
         {/* INDUSTRIAL WORKSPACE LAYOUT */}

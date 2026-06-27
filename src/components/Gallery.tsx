@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { useInView } from 'react-intersection-observer';
 import { X, ChevronLeft, ChevronRight, Instagram, Music, Youtube } from 'lucide-react';
-import AudioVisualizer from './AudioVisualizer';
 import { cn } from '@/lib/utils';
 
 const Gallery = () => {
@@ -87,12 +86,6 @@ const Gallery = () => {
           <p className="font-mono text-xs text-zinc-400 uppercase tracking-widest max-w-sm leading-relaxed">
             Experience the energy and excitement of DJ Moral's performances through these captivating moments.
           </p>
-        </div>
-
-        {/* STATIC AUDIO RASTER BLOCK */}
-        <div className="mb-20 w-full border border-white/10 p-6 bg-[#090909]/60 relative group">
-          <span className="absolute top-2 left-4 font-mono text-[8px] text-zinc-600 uppercase tracking-widest">AUDIO SPECTRUM</span>
-          <AudioVisualizer barCount={32} className="mx-auto h-24 opacity-30 group-hover:opacity-60 transition-opacity duration-500 w-full" active={true} />
         </div>
 
         {/* BRUTALIST ASYMMETRICAL IMAGE PLATFORM GRID */}

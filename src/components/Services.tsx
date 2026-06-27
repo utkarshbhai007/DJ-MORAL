@@ -118,12 +118,6 @@ const Services = () => {
           </p>
         </div>
 
-        {/* SYSTEM RECAP AUDIO FREQUENCY MONITOR BLOCK */}
-        <div className="mb-20 w-full border border-white/10 p-6 bg-[#090909]/60 relative group">
-          <span className="absolute top-2 left-4 font-mono text-[8px] text-zinc-600 uppercase tracking-widest">AUDIO VISUALIZER</span>
-          <AudioVisualizer barCount={64} className="mx-auto h-24 opacity-30 group-hover:opacity-60 transition-opacity duration-500 w-full" active={true} />
-        </div>
-
         {/* SERVICES SYSTEM INTEGRATION GRID */}
         <div
           ref={ref}

@@ -263,12 +263,8 @@ const About = () => {
 
         {/* header */}
         <div className="w-full flex flex-col items-start border-b border-white/[0.08] pb-10 mb-16 relative">
-          <div className="flex items-center gap-3 mb-3">
-            <span className="w-2 h-2 rounded-full bg-dj-electric animate-pulse" />
-            <p className="font-mono text-[10px] text-zinc-500 tracking-[0.4em] uppercase">// BIOGRAPHY</p>
-          </div>
           <h2 className="font-sans text-5xl md:text-7xl font-black uppercase italic tracking-tighter text-white">
-            THE ARTIST.
+            ARTIST.
           </h2>
           <div className="absolute right-0 bottom-4 opacity-30 hidden md:block">
             <AudioVisualizer barCount={16} active={true} />
@@ -283,214 +279,35 @@ const About = () => {
             inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12',
           )}
         >
-          {/* STAT DECK (SYNTHESIZER RACK MODULES) */}
-          <div className="lg:col-span-5 grid grid-cols-1 sm:grid-cols-2 gap-4">
+          {/* STAT DECK (ANIMATED TEXT) */}
+          <div className="lg:col-span-5 flex flex-col justify-center gap-10">
+            <div className="group transition-all duration-500 hover:translate-x-4">
+              <h3 className="font-sans text-5xl md:text-6xl font-black text-white uppercase tracking-tighter flex items-center gap-4">
+                8+ <span className="text-xl md:text-2xl text-dj-blue">Years</span>
+              </h3>
+              <p className="font-mono text-xs text-zinc-500 tracking-[0.2em] uppercase mt-2">Professional Experience</p>
+            </div>
             
-            {/* Card 01 - ROTARY DIAL (Years) */}
-            <div 
-              className={cn(
-                "relative flex flex-col justify-between p-6 h-[240px] bg-[#070707] border transition-all duration-500 group overflow-hidden select-none",
-                hoveredCard === 0 ? "border-dj-blue bg-[#0d0d0d] shadow-[0_0_30px_rgba(14,165,233,0.08)]" : "border-white/[0.06]"
-              )}
-              onMouseEnter={() => setHoveredCard(0)}
-              onMouseLeave={() => setHoveredCard(null)}
-            >
-              <div className="flex justify-between items-start">
-                <span className="font-mono text-[9px] text-zinc-600 tracking-[0.2em] uppercase">// EXPERIENCE</span>
-                <span className={cn(
-                  "w-1.5 h-1.5 rounded-full transition-all duration-300", 
-                  hoveredCard === 0 ? "bg-dj-blue shadow-[0_0_8px_#0EA5E9]" : "bg-zinc-800"
-                )} />
-              </div>
-
-              {/* Rotary Knob Visual */}
-              <div className="relative w-24 h-24 mx-auto my-2 flex items-center justify-center">
-                <svg className="w-full h-full transform -rotate-90" viewBox="0 0 100 100">
-                  <circle cx="50" cy="50" r="38" stroke="rgba(255,255,255,0.03)" strokeWidth="5" fill="transparent" />
-                  <circle 
-                    cx="50" 
-                    cy="50" 
-                    r="38" 
-                    stroke="#0EA5E9" 
-                    strokeWidth="5" 
-                    fill="transparent" 
-                    strokeDasharray="238.7" 
-                    strokeDashoffset={238.7 - (238.7 * 0.8)} // 80% filled
-                    className="transition-all duration-1000 ease-out" 
-                    style={{ stroke: hoveredCard === 0 ? '#D946EF' : '#0EA5E9' }}
-                  />
-                </svg>
-                <div className="absolute w-[76px] h-[76px] rounded-full bg-[#050505] flex flex-col items-center justify-center border border-white/[0.06] shadow-[inset_0_2px_8px_rgba(0,0,0,0.8)]">
-                  <span className="font-sans text-2xl font-black text-white leading-none tracking-tight">8+</span>
-                  <span className="font-mono text-[7px] text-zinc-500 mt-1 uppercase tracking-widest">TEMPO</span>
-                  
-                  {/* Dial pointer pin */}
-                  <div 
-                    className="w-[2px] h-[30px] absolute top-1.5 origin-[bottom_center] transition-transform duration-700 ease-out"
-                    style={{ 
-                      transform: hoveredCard === 0 ? 'rotate(240deg)' : 'rotate(180deg)',
-                      background: hoveredCard === 0 ? '#D946EF' : '#0EA5E9'
-                    }} 
-                  />
-                </div>
-              </div>
-
-              <div>
-                <h4 className="font-sans text-xs font-bold uppercase tracking-wider text-zinc-300">YEARS ACTIVE</h4>
-                <p className="font-mono text-[9px] uppercase tracking-widest text-zinc-600 mt-1">Professional Experience</p>
-              </div>
+            <div className="group transition-all duration-500 hover:translate-x-4">
+              <h3 className="font-sans text-5xl md:text-6xl font-black text-white uppercase tracking-tighter flex items-center gap-4">
+                GLOBAL
+              </h3>
+              <p className="font-mono text-xs text-zinc-500 tracking-[0.2em] uppercase mt-2">India & Internationally</p>
             </div>
 
-            {/* Card 02 - RADAR SCOPE (Global) */}
-            <div 
-              className={cn(
-                "relative flex flex-col justify-between p-6 h-[240px] bg-[#070707] border transition-all duration-500 group overflow-hidden select-none",
-                hoveredCard === 1 ? "border-emerald-500 bg-[#0d0d0d] shadow-[0_0_30px_rgba(16,185,129,0.08)]" : "border-white/[0.06]"
-              )}
-              onMouseEnter={() => setHoveredCard(1)}
-              onMouseLeave={() => setHoveredCard(null)}
-            >
-              <div className="flex justify-between items-start">
-                <span className="font-mono text-[9px] text-zinc-600 tracking-[0.2em] uppercase">// LOCATION</span>
-                <span className={cn(
-                  "w-1.5 h-1.5 rounded-full transition-all duration-300", 
-                  hoveredCard === 1 ? "bg-emerald-400 shadow-[0_0_8px_#34d399]" : "bg-zinc-800"
-                )} />
-              </div>
-
-              {/* Radar Grid Graphic */}
-              <div className="relative w-24 h-24 mx-auto my-2 border border-white/[0.05] rounded-full flex items-center justify-center overflow-hidden bg-black/40">
-                <div className="absolute inset-0 border-t border-b border-white/[0.03]" />
-                <div className="absolute inset-0 border-l border-r border-white/[0.03]" />
-                <div className="absolute w-[64px] h-[64px] border border-white/[0.03] rounded-full" />
-                <div className="absolute w-[32px] h-[32px] border border-white/[0.03] rounded-full" />
-                
-                {/* sweeping blade */}
-                <div className="absolute inset-0 origin-center bg-gradient-to-tr from-transparent via-transparent to-emerald-500/20 rounded-full animate-spin" style={{ animationDuration: '3s' }} />
-                
-                {/* target pips */}
-                <div className="absolute top-5 left-7 w-1 h-1 bg-emerald-400 rounded-full animate-ping" />
-                <div className="absolute top-16 left-14 w-1 h-1 bg-emerald-400 rounded-full animate-ping" style={{ animationDelay: '1.2s' }} />
-                
-                <span className="font-sans text-xs font-black text-white uppercase tracking-wider z-10 bg-[#070707]/90 px-2 py-0.5 border border-white/[0.08]">GLOBAL</span>
-              </div>
-
-              <div>
-                <h4 className="font-sans text-xs font-bold uppercase tracking-wider text-zinc-300">LOCATION</h4>
-                <p className="font-mono text-[9px] uppercase tracking-widest text-zinc-600 mt-1">India & Internationally</p>
-              </div>
+            <div className="group transition-all duration-500 hover:translate-x-4">
+              <h3 className="font-sans text-4xl md:text-5xl font-black text-white uppercase tracking-tighter flex items-center gap-4">
+                DYNAMICS
+              </h3>
+              <p className="font-mono text-xs text-zinc-500 tracking-[0.2em] uppercase mt-2">Premium & Celebrity Shows</p>
             </div>
 
-            {/* Card 03 - VOLUME VU METER (Premium) */}
-            <div 
-              className={cn(
-                "relative flex flex-col justify-between p-6 h-[240px] bg-[#070707] border transition-all duration-500 group overflow-hidden select-none",
-                hoveredCard === 2 ? "border-amber-400 bg-[#0d0d0d] shadow-[0_0_30px_rgba(245,158,11,0.08)]" : "border-white/[0.06]"
-              )}
-              onMouseEnter={() => setHoveredCard(2)}
-              onMouseLeave={() => setHoveredCard(null)}
-            >
-              <div className="flex justify-between items-start">
-                <span className="font-mono text-[9px] text-zinc-600 tracking-[0.2em] uppercase">// DYNAMICS</span>
-                <span className={cn(
-                  "w-1.5 h-1.5 rounded-full transition-all duration-300", 
-                  hoveredCard === 2 ? "bg-amber-400 shadow-[0_0_8px_#f59e0b]" : "bg-zinc-800"
-                )} />
-              </div>
-
-              {/* Stereo VU Meter LEDs */}
-              <div className="flex gap-4 justify-center items-center h-24 my-1 w-full px-4">
-                {/* Left Channel */}
-                <div className="flex flex-col gap-[3px] w-1/2">
-                  {Array.from({ length: 8 }).map((_, barIdx) => {
-                    const isLit = vuLevels.l[barIdx];
-                    const barNum = 7 - barIdx;
-                    const colorClass = isLit
-                      ? (barNum >= 6 ? 'bg-red-500 shadow-[0_0_5px_#ef4444]' : barNum >= 4 ? 'bg-amber-400 shadow-[0_0_5px_#fbbf24]' : 'bg-dj-electric shadow-[0_0_5px_#8b5cf6]')
-                      : 'bg-zinc-900';
-                    return (
-                      <div key={barIdx} className={cn("h-[6px] w-full rounded-sm transition-all duration-100", colorClass)} />
-                    );
-                  })}
-                  <div className="text-[7px] font-mono text-zinc-600 text-center mt-1">L_PEAK</div>
-                </div>
-
-                {/* Right Channel */}
-                <div className="flex flex-col gap-[3px] w-1/2">
-                  {Array.from({ length: 8 }).map((_, barIdx) => {
-                    const isLit = vuLevels.r[barIdx];
-                    const barNum = 7 - barIdx;
-                    const colorClass = isLit
-                      ? (barNum >= 6 ? 'bg-red-500 shadow-[0_0_5px_#ef4444]' : barNum >= 4 ? 'bg-amber-400 shadow-[0_0_5px_#fbbf24]' : 'bg-dj-electric shadow-[0_0_5px_#8b5cf6]')
-                      : 'bg-zinc-900';
-                    return (
-                      <div key={barIdx} className={cn("h-[6px] w-full rounded-sm transition-all duration-100", colorClass)} />
-                    );
-                  })}
-                  <div className="text-[7px] font-mono text-zinc-600 text-center mt-1">R_PEAK</div>
-                </div>
-              </div>
-
-              <div>
-                <h4 className="font-sans text-xs font-bold uppercase tracking-wider text-zinc-300">STAGE DYNAMICS</h4>
-                <p className="font-mono text-[9px] uppercase tracking-widest text-zinc-600 mt-1">Premium & Celebrity Shows</p>
-              </div>
+            <div className="group transition-all duration-500 hover:translate-x-4">
+              <h3 className="font-sans text-5xl md:text-6xl font-black text-white uppercase tracking-tighter flex items-center gap-4">
+                1000+ <span className="text-xl md:text-2xl text-dj-pink">Shows</span>
+              </h3>
+              <p className="font-mono text-xs text-zinc-500 tracking-[0.2em] uppercase mt-2">Performed Worldwide</p>
             </div>
-
-            {/* Card 04 - OUTPUT FADER (Shows) */}
-            <div 
-              className={cn(
-                "relative flex flex-col justify-between p-6 h-[240px] bg-[#070707] border transition-all duration-500 group overflow-hidden select-none",
-                hoveredCard === 3 ? "border-dj-pink bg-[#0d0d0d] shadow-[0_0_30px_rgba(217,70,239,0.08)]" : "border-white/[0.06]"
-              )}
-              onMouseEnter={() => setHoveredCard(3)}
-              onMouseLeave={() => setHoveredCard(null)}
-            >
-              <div className="flex justify-between items-start">
-                <span className="font-mono text-[9px] text-zinc-600 tracking-[0.2em] uppercase">// PERFORMANCE</span>
-                <span className={cn(
-                  "w-1.5 h-1.5 rounded-full transition-all duration-300", 
-                  hoveredCard === 3 ? "bg-dj-pink shadow-[0_0_8px_#D946EF]" : "bg-zinc-800"
-                )} />
-              </div>
-
-              {/* Console Fader Track */}
-              <div className="relative w-16 h-28 mx-auto my-1 flex justify-center items-center">
-                {/* Vertical track line */}
-                <div className="absolute h-full w-1 bg-black border border-white/[0.06] rounded-full overflow-hidden">
-                  <div 
-                    className="absolute bottom-0 w-full bg-gradient-to-t from-dj-purple to-dj-pink transition-all duration-500" 
-                    style={{ height: hoveredCard === 3 ? '85%' : '55%' }} 
-                  />
-                </div>
-                {/* Decibel Marks */}
-                <div className="absolute left-1 top-0 h-full flex flex-col justify-between text-[6px] font-mono text-zinc-700 leading-none">
-                  <span>+12</span>
-                  <span>+6</span>
-                  <span>0</span>
-                  <span>-10</span>
-                  <span>-30</span>
-                  <span>-INF</span>
-                </div>
-                {/* Fader Knob */}
-                <div 
-                  className="absolute w-8 h-4 bg-[#111] border border-white/[0.15] rounded shadow-[0_3px_8px_rgba(0,0,0,0.8)] flex flex-col items-center justify-center cursor-ns-resize transition-all duration-500 ease-out z-10"
-                  style={{
-                    bottom: hoveredCard === 3 ? 'calc(85% - 8px)' : 'calc(55% - 8px)',
-                  }}
-                >
-                  <div className="w-6 h-[1px] bg-white/20" />
-                  <div className="w-6 h-[1.5px] bg-dj-pink mt-[1px]" />
-                  <div className="w-6 h-[1px] bg-white/20 mt-[1px]" />
-                </div>
-              </div>
-
-              <div>
-                <h4 className="font-sans text-xs font-bold uppercase tracking-wider text-zinc-300">100+ SHOWS</h4>
-                <p className="font-mono text-[9px] uppercase tracking-widest text-zinc-600 mt-1">Performed Worldwide</p>
-              </div>
-            </div>
-
           </div>
 
           {/* CYBER TERMINAL TAB COMPONENT (Bio & Sampler) */}
